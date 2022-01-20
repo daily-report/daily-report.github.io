@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fertilizer | Storage Info</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="./css/fontawesome.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="./css/all.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="./css/animate.css" type="text/css" media="all">
+    <link rel="stylesheet" href="./style.css" type="text/css" media="all">
+
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./js/wow.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/custom.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+</head>
+
+<body>
+    <header class="header-area">
+        <div class="container">
+            <div class="logo">
+                <a href="./index.html"><img src="images/urea.png"" alt="Logo" style="width: 50px" "height:50px"><b style= "color: Blue">  Daily Report | Hatibandha</b></a>
+            </div>
+            <div class="header-menu-bar">
+                <a href="./profile-card.html"> <i class="fas fa-home"></i> </a>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="content-area">
+        <div class="container">
+
+            <div class="row">
+              <div class="col-md-12 col-12 p-1 rcorners2">
+                <a href="https://raw.githubusercontent.com/fertilizerreport/fertilizerreport.github.io/main/assets/dec21.jpg">
+                    <div class="content-item">
+			
+    			<h2>দৈনন্দিন রিপোর্টসমূহ  অনলাইনে প্রদানের জন্য এই অ্যাপটি তৈরী করা হয়েছে। ব্লকভিত্তিক রিপোর্টসমূহ নিয়মিত এখানে প্রদান করুন। সবসময় আপডেট থাকুন। বিভিন্ন প্রকল্পের প্রদর্শনীর তথ্য, রাজস্ব খাতের অর্থায়নে  স্থাপিত প্রদর্শনীর তথ্য, প্রধান প্রধান শস্যের বাজারদর, ব্লকের কৃষি বিষয়ক তথ্যসমূহ প্রদানের ব্যবস্থা  আছে অ্যাপটিতে। <h2>
+				<br><br>
+				<br><br>
+			<p>&nbsp; &nbsp;মোঃ ওমর ফারুক</p>
+			<p>উপজেলা কৃষি অফিসার</p>
+			<p>হাতীবান্ধা, লালমনিরহাট।</p>
+
+                    </div>
+                </a>
+              </div>
+            </div>
+
+        </div>
+    </div>
+<br>
+<br>
+<!-- linking javascript -->
+</body>
+
+     <footer>
+        <div class="container">
+            <div class="footer">
+                <small><center>Copyright &copy; 2019 <i>by</i><a href="https://fertilizerreport.github.io"> gentle touch </a>  All right reserved</small></center>
+            </div>
+        </div>
+    </footer>
+
+<script>const shareData = {
+    title: 'Fertilizer Report',
+    text: 'Fertilizer Report from dealer',
+    url: 'https://play.google.com/store/apps/details?id=com.gentletouch.fertilizerreport'
+  }
+
+  const btn = document.querySelector('share');
+  const resultPara = document.querySelector('.result');
+
+  // Share must be triggered by "user activation"
+  btn.addEventListener('click', async () => {
+    try {
+      await navigator.share(shareData)
+      resultPara.textContent = ''
+    } catch(err) {
+      resultPara.textContent = 'Error: ' + err
+    }
+  });
+</script>
+</html>

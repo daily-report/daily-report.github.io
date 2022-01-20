@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width , initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.css">
+		<link rel="stylesheet" type="text/css" href="../css/index.css">
+		<link rel="stylesheet" href="../css/stylenav.css">
+
+  
+  
+  
+    <title>Project Demo</title>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+   <script src="../js/fbinit.js"></script>
+   
+   
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+
+
+<body>
+ <br>
+ 
+ <!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">-->
+
+  
+  <h4 style="text-align: center;"><span style="color: #800000;">প্রদর্শনী তথ্য(প্রকল্প)</span></h4> 
+  <div style="overflow-x:auto;">
+    <table border="1" align="center" table rules="all" style="width:100%" id="myTable">
+    <tr id="tr">
+	<th rowspan= "2"  style="text-align:center">ব্লকের <br> নাম</th>
+	<th colspan= "6" style="text-align:center">রাডারডিপি প্রকল্পের প্রদর্শনী</th>
+	<th colspan= "3" style="text-align:center">পরিবেশ বান্ধব প্রকল্পের প্রদর্শনী</th>
+	<th colspan= "2" style="text-align:center">ডাল, তেল ও মসলা(এসএমই) প্রকল্পের প্রদর্শনী</th>
+	<th colspan= "2" style="text-align:center">ধান, গম ও পাট বীজ প্রকল্পের প্রদর্শনী</th>
+	<th colspan= "3" style="text-align:center">তেল জাতীয় প্রকল্পের প্রদর্শনী</th>
+	<th colspan= "4" style="text-align:center">কন্দাল ফসল প্রকল্প প্রদর্শনী</th>
+	<th colspan= "4" style="text-align:center">অনাবাদী পতিত প্রদর্শনী</th>
+	
+       <tr> 
+	    <th>প্রদর্শনী-১</th>
+	    <th>প্রদর্শনী-২</th>
+	    <th>প্রদর্শনী-৩</th>
+	    <th>প্রদর্শনী-৪</th>
+	    <th>প্রদর্শনী-৫</th>
+	    <th>প্রদর্শনী-৬</th>
+        
+		<th>প্রদর্শনী-১</th>
+	    <th>প্রদর্শনী-২</th>
+	    <th>প্রদর্শনী-৩</th>
+        
+		<th>প্রদর্শনী-১</th>
+	    <th>প্রদর্শনী-২</th>
+        
+		<th>প্রদর্শনী-১</th>
+	    <th>প্রদর্শনী-২</th>
+         
+		<th>প্রদর্শনী-১</th>
+	    <th>প্রদর্শনী-২</th>
+	    <th>প্রদর্শনী-৩</th>
+       
+		<th>প্রদর্শনী-১</th>
+	    <th>প্রদর্শনী-২</th>
+	    <th>প্রদর্শনী-৩</th>
+	    <th>প্রদর্শনী-৪</th>
+	    
+		<th>প্রদর্শনী-১</th>
+	    <th>প্রদর্শনী-২</th>
+	    <th>প্রদর্শনী-৩</th>
+	    <th>প্রদর্শনী-৪</th>
+	   
+ 
+</tr>
+
+      </tr>
+	</table>
+		<div>
+			<br>
+			<button onclick="window.print()">Print info</button>
+		</div> 
+								
+    <script>
+      var database = firebase.database();
+      database.ref('projectdemo').orderByChild('union').once('value', function(snapshot) {
+        if (snapshot.exists()) {
+          var content = '';
+          snapshot.forEach(function(data) {
+            var val = data.val();
+            content += '<tr>';
+            content += '<td>' + val.blockname + '<br>' + val.union + '<br>' + val.lastupdate + '</td>';
+            content += '<td>' + 'নাম: ' + val.maizefarmer1 + '<br>' + 'ঠিকানা: ' + val.maizefarmer1address + '<br>'  + 'মোবাইল: ' + val.maizefarmer1mobile + '<br>'  + 'এনআইডি: ' + val.maizefarmer1nid + '<br>'  + 'জাত: ' + val.maizefarmer1variety + '<br>'  + 'স্থাপনের তারিখ: ' + val.maizefarmer1date + '<br>'  + 'প্রদর্শনীর অবস্থা/ মন্তব্য: ' + val.maizefarmer1comment + '<br>' + '</td>';
+            content += '<td>' + 'নাম: ' + val.maizefarmer2 + '<br>' + 'ঠিকানা: ' + val.maizefarmer2address + '<br>'  + 'মোবাইল: ' + val.maizefarmer2mobile + '<br>'  + 'এনআইডি: ' + val.maizefarmer2nid + '<br>'  + 'জাত: ' + val.maizefarmer2variety + '<br>'  + 'স্থাপনের তারিখ: ' + val.maizefarmer2date + '<br>'  + 'প্রদর্শনীর অবস্থা/ মন্তব্য: ' + val.maizefarmer2comment + '<br>' + '</td>';
+            content += '<td>' + 'নাম: ' + val.maizefarmer3 + '<br>' + 'ঠিকানা: ' + val.maizefarmer3address + '<br>'  + 'মোবাইল: ' + val.maizefarmer3mobile + '<br>'  + 'এনআইডি: ' + val.maizefarmer3nid + '<br>'  + 'জাত: ' + val.maizefarmer3variety + '<br>'  + 'স্থাপনের তারিখ: ' + val.maizefarmer3date + '<br>'  + 'প্রদর্শনীর অবস্থা/ মন্তব্য: ' + val.maizefarmer3comment + '<br>' + '</td>';
+            content += '<td>' + 'নাম: ' + val.maizefarmer4 + '<br>' + 'ঠিকানা: ' + val.maizefarmer4address + '<br>'  + 'মোবাইল: ' + val.maizefarmer4mobile + '<br>'  + 'এনআইডি: ' + val.maizefarmer4nid + '<br>'  + 'জাত: ' + val.maizefarmer4variety + '<br>'  + 'স্থাপনের তারিখ: ' + val.maizefarmer4date + '<br>'  + 'প্রদর্শনীর অবস্থা/ মন্তব্য: ' + val.maizefarmer4comment + '<br>' + '</td>';
+            content += '<td>' + 'নাম: ' + val.maizefarmer5 + '<br>' + 'ঠিকানা: ' + val.maizefarmer5address + '<br>'  + 'মোবাইল: ' + val.maizefarmer5mobile + '<br>'  + 'এনআইডি: ' + val.maizefarmer5nid + '<br>'  + 'জাত: ' + val.maizefarmer5variety + '<br>'  + 'স্থাপনের তারিখ: ' + val.maizefarmer5date + '<br>'  + 'প্রদর্শনীর অবস্থা/ মন্তব্য: ' + val.maizefarmer5comment + '<br>' + '</td>';
+            content += '<td>' + 'নাম: ' + val.maizefarmer6 + '<br>' + 'ঠিকানা: ' + val.maizefarmer6address + '<br>'  + 'মোবাইল: ' + val.maizefarmer6mobile + '<br>'  + 'এনআইডি: ' + val.maizefarmer6nid + '<br>'  + 'জাত: ' + val.maizefarmer6variety + '<br>'  + 'স্থাপনের তারিখ: ' + val.maizefarmer6date + '<br>'  + 'প্রদর্শনীর অবস্থা/ মন্তব্য: ' + val.maizefarmer6comment + '<br>' + '</td>';
+            
+            content += '<td>' + 'নাম: ' + val.mustardfarmer1 + '<br>' + 'ঠিকানা: ' + val.mustardfarmer1address + '<br>'  + 'মোবাইল: ' + val.mustardfarmer1mobile + '<br>'  + 'এনআইডি: ' + val.mustardfarmer1nid + '<br>'  + 'জাত: ' + val.mustardfarmer1variety + '<br>'  + 'স্থাপনের তারিখ: ' + val.mustardfarmer1date + '<br>'  + 'প্রদর্শনীর অবস্থা/ মন্তব্য: ' + val.mustardfarmer1comment + '<br>' + '</td>';
+            content += '<td>' + 'নাম: ' + val.mustardfarmer2 + '<br>' + 'ঠিকানা: ' + val.mustardfarmer2address + '<br>'  + 'মোবাইল: ' + val.mustardfarmer2mobile + '<br>'  + 'এনআইডি: ' + val.mustardfarmer2nid + '<br>'  + 'জাত: ' + val.mustardfarmer2variety + '<br>'  + 'স্থাপনের তারিখ: ' + val.mustardfarmer2date + '<br>'  + 'প্রদর্শনীর অবস্থা/ মন্তব্য: ' + val.mustardfarmer2comment + '<br>' + '</td>';
+            content += '<td>' + 'নাম: ' + val.mustardfarmer3 + '<br>' + 'ঠিকানা: ' + val.mustardfarmer3address + '<br>'  + 'মোবাইল: ' + val.mustardfarmer3mobile + '<br>'  + 'এনআইডি: ' + val.mustardfarmer3nid + '<br>'  + 'জাত: ' + val.mustardfarmer3variety + '<br>'  + 'স্থাপনের তারিখ: ' + val.mustardfarmer3date + '<br>'  + 'প্রদর্শনীর অবস্থা/ মন্তব্য: ' + val.mustardfarmer3comment + '<br>' + '</td>';
+            content += '<td>' + 'নাম: ' + val.mustardfarmer4 + '<br>' + 'ঠিকানা: ' + val.mustardfarmer4address + '<br>'  + 'মোবাইল: ' + val.mustardfarmer4mobile + '<br>'  + 'এনআইডি: ' + val.mustardfarmer4nid + '<br>'  + 'জাত: ' + val.mustardfarmer4variety + '<br>'  + 'স্থাপনের তারিখ: ' + val.mustardfarmer4date + '<br>'  + 'প্রদর্শনীর অবস্থা/ মন্তব্য: ' + val.mustardfarmer4comment + '<br>' + '</td>';
+            content += '<td>' + 'নাম: ' + val.mustardfarmer5 + '<br>' + 'ঠিকানা: ' + val.mustardfarmer5address + '<br>'  + 'মোবাইল: ' + val.mustardfarmer5mobile + '<br>'  + 'এনআইডি: ' + val.mustardfarmer5nid + '<br>'  + 'জাত: ' + val.mustardfarmer5variety + '<br>'  + 'স্থাপনের তারিখ: ' + val.mustardfarmer5date + '<br>'  + 'প্রদর্শনীর অবস্থা/ মন্তব্য: ' + val.mustardfarmer5comment + '<br>' + '</td>';
+            content += '<td>' + 'নাম: ' + val.mustardfarmer6 + '<br>' + 'ঠিকানা: ' + val.mustardfarmer6address + '<br>'  + 'মোবাইল: ' + val.mustardfarmer6mobile + '<br>'  + 'এনআইডি: ' + val.mustardfarmer6nid + '<br>'  + 'জাত: ' + val.mustardfarmer6variety + '<br>'  + 'স্থাপনের তারিখ: ' + val.mustardfarmer6date + '<br>'  + 'প্রদর্শনীর অবস্থা/ মন্তব্য: ' + val.mustardfarmer6comment + '<br>' + '</td>';
+            
+            content += '<td>' + 'নাম: ' + val.borofarmer1 + '<br>' + 'ঠিকানা: ' + val.borofarmer1address + '<br>'  + 'মোবাইল: ' + val.borofarmer1mobile + '<br>'  + 'এনআইডি: ' + val.borofarmer1nid + '<br>'  + 'জাত: ' + val.borofarmer1variety + '<br>'  + 'স্থাপনের তারিখ: ' + val.borofarmer1date + '<br>'  + 'প্রদর্শনীর অবস্থা/ মন্তব্য: ' + val.borofarmer1comment + '<br>' + '</td>';
+            content += '<td>' + 'নাম: ' + val.borofarmer2 + '<br>' + 'ঠিকানা: ' + val.borofarmer2address + '<br>'  + 'মোবাইল: ' + val.borofarmer2mobile + '<br>'  + 'এনআইডি: ' + val.borofarmer2nid + '<br>'  + 'জাত: ' + val.borofarmer2variety + '<br>'  + 'স্থাপনের তারিখ: ' + val.borofarmer2date + '<br>'  + 'প্রদর্শনীর অবস্থা/ মন্তব্য: ' + val.borofarmer2comment + '<br>' + '</td>';
+            content += '<td>' + 'নাম: ' + val.borofarmer3 + '<br>' + 'ঠিকানা: ' + val.borofarmer3address + '<br>'  + 'মোবাইল: ' + val.borofarmer3mobile + '<br>'  + 'এনআইডি: ' + val.borofarmer3nid + '<br>'  + 'জাত: ' + val.borofarmer3variety + '<br>'  + 'স্থাপনের তারিখ: ' + val.borofarmer3date + '<br>'  + 'প্রদর্শনীর অবস্থা/ মন্তব্য: ' + val.borofarmer3comment + '<br>' + '</td>';
+            content += '<td>' + 'নাম: ' + val.borofarmer4 + '<br>' + 'ঠিকানা: ' + val.borofarmer4address + '<br>'  + 'মোবাইল: ' + val.borofarmer4mobile + '<br>'  + 'এনআইডি: ' + val.borofarmer4nid + '<br>'  + 'জাত: ' + val.borofarmer4variety + '<br>'  + 'স্থাপনের তারিখ: ' + val.borofarmer4date + '<br>'  + 'প্রদর্শনীর অবস্থা/ মন্তব্য: ' + val.borofarmer4comment + '<br>' + '</td>';
+            content += '<td>' + 'নাম: ' + val.borofarmer5 + '<br>' + 'ঠিকানা: ' + val.borofarmer5address + '<br>'  + 'মোবাইল: ' + val.borofarmer5mobile + '<br>'  + 'এনআইডি: ' + val.borofarmer5nid + '<br>'  + 'জাত: ' + val.borofarmer5variety + '<br>'  + 'স্থাপনের তারিখ: ' + val.borofarmer5date + '<br>'  + 'প্রদর্শনীর অবস্থা/ মন্তব্য: ' + val.borofarmer5comment + '<br>' + '</td>';
+            content += '<td>' + 'নাম: ' + val.borofarmer6 + '<br>' + 'ঠিকানা: ' + val.borofarmer6address + '<br>'  + 'মোবাইল: ' + val.borofarmer6mobile + '<br>'  + 'এনআইডি: ' + val.borofarmer6nid + '<br>'  + 'জাত: ' + val.borofarmer6variety + '<br>'  + 'স্থাপনের তারিখ: ' + val.borofarmer6date + '<br>'  + 'প্রদর্শনীর অবস্থা/ মন্তব্য: ' + val.borofarmer6comment + '<br>' + '</td>';
+ 
+            content += '<td>' + 'নাম: ' + val.amanfarmer1 + '<br>' + 'ঠিকানা: ' + val.amanfarmer1address + '<br>'  + 'মোবাইল: ' + val.amanfarmer1mobile + '<br>'  + 'এনআইডি: ' + val.amanfarmer1nid + '<br>'  + 'জাত: ' + val.amanfarmer1variety + '<br>'  + 'স্থাপনের তারিখ: ' + val.amanfarmer1date + '<br>'  + 'প্রদর্শনীর অবস্থা/ মন্তব্য: ' + val.amanfarmer1comment + '<br>' + '</td>';
+            content += '<td>' + 'নাম: ' + val.amanfarmer2 + '<br>' + 'ঠিকানা: ' + val.amanfarmer2address + '<br>'  + 'মোবাইল: ' + val.amanfarmer2mobile + '<br>'  + 'এনআইডি: ' + val.amanfarmer2nid + '<br>'  + 'জাত: ' + val.amanfarmer2variety + '<br>'  + 'স্থাপনের তারিখ: ' + val.amanfarmer2date + '<br>'  + 'প্রদর্শনীর অবস্থা/ মন্তব্য: ' + val.amanfarmer2comment + '<br>' + '</td>';
+            content += '<td>' + 'নাম: ' + val.amanfarmer3 + '<br>' + 'ঠিকানা: ' + val.amanfarmer3address + '<br>'  + 'মোবাইল: ' + val.amanfarmer3mobile + '<br>'  + 'এনআইডি: ' + val.amanfarmer3nid + '<br>'  + 'জাত: ' + val.amanfarmer3variety + '<br>'  + 'স্থাপনের তারিখ: ' + val.amanfarmer3date + '<br>'  + 'প্রদর্শনীর অবস্থা/ মন্তব্য: ' + val.amanfarmer3comment + '<br>' + '</td>';
+            content += '<td>' + 'নাম: ' + val.amanfarmer4 + '<br>' + 'ঠিকানা: ' + val.amanfarmer4address + '<br>'  + 'মোবাইল: ' + val.amanfarmer4mobile + '<br>'  + 'এনআইডি: ' + val.amanfarmer4nid + '<br>'  + 'জাত: ' + val.amanfarmer4variety + '<br>'  + 'স্থাপনের তারিখ: ' + val.amanfarmer4date + '<br>'  + 'প্রদর্শনীর অবস্থা/ মন্তব্য: ' + val.amanfarmer4comment + '<br>' + '</td>';
+            content += '<td>' + 'নাম: ' + val.amanfarmer5 + '<br>' + 'ঠিকানা: ' + val.amanfarmer5address + '<br>'  + 'মোবাইল: ' + val.amanfarmer5mobile + '<br>'  + 'এনআইডি: ' + val.amanfarmer5nid + '<br>'  + 'জাত: ' + val.amanfarmer5variety + '<br>'  + 'স্থাপনের তারিখ: ' + val.amanfarmer5date + '<br>'  + 'প্রদর্শনীর অবস্থা/ মন্তব্য: ' + val.amanfarmer5comment + '<br>' + '</td>';
+            //content += '<td>' + 'নাম: ' + val.amanfarmer6 + '<br>' + 'ঠিকানা: ' + val.amanfarmer6address + '<br>'  + 'মোবাইল: ' + val.amanfarmer6mobile + '<br>'  + 'এনআইডি: ' + val.amanfarmer6nid + '<br>'  + 'জাত: ' + val.amanfarmer6variety + '<br>'  + 'স্থাপনের তারিখ: ' + val.amanfarmer6date + '<br>'  + 'প্রদর্শনীর অবস্থা/ মন্তব্য: ' + val.amanfarmer6comment + '<br>' + '</td>';
+ 
+            content += '<td>' + 'নাম: ' + val.onionfarmer1 + '<br>' + 'ঠিকানা: ' + val.onionfarmer1address + '<br>'  + 'মোবাইল: ' + val.onionfarmer1mobile + '<br>'  + 'এনআইডি: ' + val.onionfarmer1nid + '<br>'  + 'জাত: ' + val.onionfarmer1variety + '<br>'  + 'স্থাপনের তারিখ: ' + val.onionfarmer1date + '<br>'  + 'প্রদর্শনীর অবস্থা/ মন্তব্য: ' + val.onionfarmer1comment + '<br>' + '</td>';
+          //  content += '<td>' + 'নাম: ' + val.onionfarmer2 + '<br>' + 'ঠিকানা: ' + val.onionfarmer2address + '<br>'  + 'মোবাইল: ' + val.onionfarmer2mobile + '<br>'  + 'এনআইডি: ' + val.onionfarmer2nid + '<br>'  + 'জাত: ' + val.onionfarmer2variety + '<br>'  + 'স্থাপনের তারিখ: ' + val.onionfarmer2date + '<br>'  + 'প্রদর্শনীর অবস্থা/ মন্তব্য: ' + val.onionfarmer2comment + '<br>' + '</td>';
+            
+		//	content += '<td>' + 'নাম: ' + val.wheatfarmer1 + '<br>' + 'ঠিকানা: ' + val.wheatfarmer1address + '<br>'  + 'মোবাইল: ' + val.wheatfarmer1mobile + '<br>'  + 'এনআইডি: ' + val.wheatfarmer1nid + '<br>'  + 'জাত: ' + val.wheatfarmer1variety + '<br>'  + 'স্থাপনের তারিখ: ' + val.wheatfarmer1date + '<br>'  + 'প্রদর্শনীর অবস্থা/ মন্তব্য: ' + val.wheatfarmer1comment + '<br>' + '</td>';
+          //  content += '<td>' + 'নাম: ' + val.wheatfarmer2 + '<br>' + 'ঠিকানা: ' + val.wheatfarmer2address + '<br>'  + 'মোবাইল: ' + val.wheatfarmer2mobile + '<br>'  + 'এনআইডি: ' + val.wheatfarmer2nid + '<br>'  + 'জাত: ' + val.wheatfarmer2variety + '<br>'  + 'স্থাপনের তারিখ: ' + val.wheatfarmer2date + '<br>'  + 'প্রদর্শনীর অবস্থা/ মন্তব্য: ' + val.wheatfarmer2comment + '<br>' + '</td>';
+            
+            content += '</tr>';
+          });
+          $('#myTable').append(content);
+        }
+      });
+    </script>
+	
+	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+		
+		<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+	</body>
+	
+</html>
+	
+	
+	
+	
+	
+	

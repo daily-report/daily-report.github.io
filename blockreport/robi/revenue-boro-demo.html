@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width , initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.css">
+		<link rel="stylesheet" type="text/css" href="../css/index.css">
+		<link rel="stylesheet" href="../css/stylenav.css">
+
+  
+  
+  
+    <title>Revenue Demo</title>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+   <script src="../js/fbinit.js"></script>
+   
+   
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+
+
+<body>
+ <br>
+ 
+ <!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">-->
+
+  
+  <h4 style="text-align: center;"><span style="color: #800000;">বোরো প্রদর্শনীর তথ্য(রাজস্ব)</span></h4> 
+  <div style="overflow-x:auto;">
+    <table border="1" align="center" table rules="all" style="width:100%" id="myTable">
+    <tr id="tr">
+	<th rowspan= "2"  style="text-align:center">ব্লকের <br> নাম</th>
+	<th colspan= "6" style="text-align:center"> প্রদর্শনী-১</th>
+	<th colspan= "6" style="text-align:center"> প্রদর্শনী-২</th>
+	<th colspan= "6" style="text-align:center"> প্রদর্শনী-৩</th>
+	<th colspan= "6" style="text-align:center"> প্রদর্শনী-৪</th>
+	<th colspan= "6" style="text-align:center"> প্রদর্শনী-৫</th>
+	<th colspan= "6" style="text-align:center"> প্রদর্শনী-৬</th>
+	
+       <tr> 
+	    <th>নাম </th>
+	    <th>ঠিকানা </th>
+	    <th>এনআইডি ও মোবাইল নং</th>
+	    <th>জাত</th>
+	    <th>স্থপনের তারিখ</th>
+	    <th>অবস্থা/মন্তব্য</th>
+ 	    
+		<th>নাম </th>
+	    <th>ঠিকানা </th>
+	    <th>এনআইডি ও মোবাইল নং</th>
+	    <th>জাত</th>
+	    <th>স্থপনের তারিখ</th>
+	    <th>অবস্থা/মন্তব্য</th>
+ 	    
+		<th>নাম </th>
+	    <th>ঠিকানা </th>
+	    <th>এনআইডি ও মোবাইল নং</th>
+	    <th>জাত</th>
+	    <th>স্থপনের তারিখ</th>
+	    <th>অবস্থা/মন্তব্য</th>
+ 	    
+		<th>নাম </th>
+	    <th>ঠিকানা </th>
+	    <th>এনআইডি ও মোবাইল নং</th>
+	    <th>জাত</th>
+	    <th>স্থপনের তারিখ</th>
+	    <th>অবস্থা/মন্তব্য</th>
+ 	    
+		<th>নাম </th>
+	    <th>ঠিকানা </th>
+	    <th>এনআইডি ও মোবাইল নং</th>
+	    <th>জাত</th>
+	    <th>স্থপনের তারিখ</th>
+	    <th>অবস্থা/মন্তব্য</th>
+ 	    
+		<th>নাম </th>
+	    <th>ঠিকানা </th>
+	    <th>এনআইডি ও মোবাইল নং</th>
+	    <th>জাত</th>
+	    <th>স্থপনের তারিখ</th>
+	    <th>অবস্থা/মন্তব্য</th>
+	   
+ 
+</tr>
+
+      </tr>
+	</table>
+		<div>
+			<br>
+			<button onclick="window.print()">Print info</button>
+		</div> 
+								
+    <script>
+      var database = firebase.database();
+      database.ref('revenuedemo').orderByChild('union').once('value', function(snapshot) {
+        if (snapshot.exists()) {
+          var content = '';
+          snapshot.forEach(function(data) {
+            var val = data.val();
+            content += '<tr>';
+            content += '<td>' + val.blockname + '<br>' + val.union + '<br>' + val.lastupdate + '</td>';
+            content += '<td>' + val.borofarmer1 + '</td>';
+            content += '<td>' + val.borofarmer1address + '<br>' + '</td>';
+            content += '<td>' + val.borofarmer1nid + '<br>'  + val.borofarmer1mobile + '</td>';
+            content += '<td>' + val.borofarmer1variety + '<br>' + '</td>';
+            content += '<td>' + val.borofarmer1date + '<br>' + '</td>';
+            content += '<td>' + val.borofarmer1comment + '<br>' + '</td>';
+			
+			content += '<td>' + val.borofarmer2 + '</td>';
+            content += '<td>' + val.borofarmer2address + '<br>' + '</td>';
+            content += '<td>' + val.borofarmer2nid + '<br>'  + val.borofarmer2mobile + '</td>';
+            content += '<td>' + val.borofarmer2variety + '<br>' + '</td>';
+            content += '<td>' + val.borofarmer2date + '<br>' + '</td>';
+            content += '<td>' + val.borofarmer2comment + '<br>' + '</td>';
+			
+            content += '<td>' + val.borofarmer3 + '</td>';
+            content += '<td>' + val.borofarmer3address + '<br>' + '</td>';
+            content += '<td>' + val.borofarmer3nid + '<br>'  + val.borofarmer3mobile + '</td>';
+            content += '<td>' + val.borofarmer3variety + '<br>' + '</td>';
+            content += '<td>' + val.borofarmer3date + '<br>' + '</td>';
+            content += '<td>' + val.borofarmer3comment + '<br>' + '</td>';
+			
+            content += '<td>' + val.borofarmer4 + '</td>';
+            content += '<td>' + val.borofarmer4address + '<br>' + '</td>';
+            content += '<td>' + val.borofarmer4nid + '<br>'  + val.borofarmer4mobile + '</td>';
+            content += '<td>' + val.borofarmer4variety + '<br>' + '</td>';
+            content += '<td>' + val.borofarmer4date + '<br>' + '</td>';
+            content += '<td>' + val.borofarmer4comment + '<br>' + '</td>';
+			
+            content += '<td>' + val.borofarmer5 + '</td>';
+            content += '<td>' + val.borofarmer5address + '<br>' + '</td>';
+            content += '<td>' + val.borofarmer5nid + '<br>'  + val.borofarmer5mobile + '</td>';
+            content += '<td>' + val.borofarmer5variety + '<br>' + '</td>';
+            content += '<td>' + val.borofarmer5date + '<br>' + '</td>';
+            content += '<td>' + val.borofarmer5comment + '<br>' + '</td>';
+			
+            content += '<td>' + val.borofarmer6 + '</td>';
+            content += '<td>' + val.borofarmer6address + '<br>' + '</td>';
+            content += '<td>' + val.borofarmer6nid + '<br>'  + val.borofarmer6mobile + '</td>';
+            content += '<td>' + val.borofarmer6variety + '<br>' + '</td>';
+            content += '<td>' + val.borofarmer6date + '<br>' + '</td>';
+            content += '<td>' + val.borofarmer6comment + '<br>' + '</td>';
+			
+			
+			
+            content += '</tr>';
+          });
+          $('#myTable').append(content);
+        }
+      });
+    </script>
+	
+	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+		
+		<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+	</body>
+	
+</html>
+	
+	
+	
+	
+	
+	

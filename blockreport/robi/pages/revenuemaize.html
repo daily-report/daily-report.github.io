@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/stylenav.css">
+    <!-- Sweet Alert JavaScript -->
+    <script src="../../js/sweetalert2.js"></script>
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <!-- Nunito Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
+    <title>Boro Report | Hatibandha</title>
+</head>
+<body class="bg-light">
+
+    <div>
+        <div class="row mx-1">
+            <div class="col-lg-10 col-md-10 offset-lg-1 offset-md-1 bg-white shadow my-5 border border-warning">
+                <div>
+                    <div>
+                        <div id="profileSection">
+						<br>
+						<div class="col-12 col-12 mb-4 text-center">
+                                <span class="h4" style="color:#00b903">রবি ফসলের আবাদের অগ্রগতি(হেঃ)</span>
+                            </div>
+							<hr/>
+							
+                            <div class="col-12 col-12 mb-3 text-center">
+                                <img style="border-radius: 50%" id="userAvatar" src="../../images/maize.jpg" alt="avatar icon" >
+                            </div>
+                             <div class="col-12 col-12 mb-4 text-center">
+                                <span class="h4" style="color:#FF007F" id="pfblockname">please wait...</span><br>
+                                <span class="h4" style="color:#FF007F" id="pfunion"></span><br>
+								<span>Update Time:  </span><span style="color:blue" id="pflastupdate">loading...</span>
+                            </div>
+							<hr/>
+							<span style="color:violet">রবি ফসলের  আবাদের অগ্রগতি(হেঃ)</span>
+							<hr/>
+							<center><h5>সরিষা(হেঃ)<hr/></h5></center>
+							<span>অর্জন:  </span><span style="color:blue" id="pfmustardAchieve">loading...</span><br>
+							<span>কর্তন:  </span><span style="color:blue" id="pfmustardHarvest">loading...</span><br>
+							<span>গড় ফলন:   </span><span style="color:blue" id="pfmustardProduction">loading...</span><br>
+							
+							<center><h5>গম(হেঃ)<hr/></h5></center>
+							<span>অর্জন:  </span><span style="color:blue" id="pfwheatAchieve">loading...</span><br>
+							<span>কর্তন:  </span><span style="color:blue" id="pfwheatHarvest">loading...</span><br>
+							<span>গড় ফলন:   </span><span style="color:blue" id="pfwheatProduction">loading...</span><br>
+							
+							<center><h5>গোল আলু-হেঃ<hr/></h5></center>
+							<span>উফশী:  </span><span style="color:blue" id="pfpotatoInbrid">loading...</span><br>
+							<span>স্থানীয়:  </span><span style="color:blue" id="pfpotatoLocal">loading...</span><br>
+							<span>কর্তন:  </span><span style="color:blue" id="pfpotatoHarvest">loading...</span><br>
+							<span>গড় ফলন:  </span><span style="color:blue" id="pfpotatoProduction">loading...</span><br>
+							
+							<center><h5>ভুট্টা আবাদ অগ্রগতি(হেঃ)<hr/></h5></center>
+							<span>অর্জন:  </span><span style="color:blue" id="pfmaizeAchieve">loading...</span><br>
+							<span>কর্তন:  </span><span style="color:blue" id="pfmaizeHarvest">loading...</span><br>
+							<span>ফলন:  </span><span style="color:blue" id="pfmaizeProduction">loading...</span><br>
+							
+							<center><h5>চীনাবাদাম আবাদ(হেঃ)<hr/></h5></center>
+							<span>অর্জন:  </span><span style="color:blue" id="pfpeanutAchieve">loading...</span><br>
+							<span>কর্তন:  </span><span style="color:blue" id="pfpeanutHarvest">loading...</span><br>
+							<span>ফলন:  </span><span style="color:blue" id="pfpeanutProduction">loading...</span><br>
+							
+							<center><h5>পেঁয়াজ আবাদ(হেঃ)<hr/></h5></center>
+							<span>কন্দ বপন:  </span><span style="color:blue" id="pfonionBulb">loading...</span><br>
+							<span>বীজ বপন:  </span><span style="color:blue" id="pfonionSeed">loading...</span><br>
+							<span>মোট:  </span><span style="color:blue" id="pfonionTotal">loading...</span><br>
+							<span>কর্তন:  </span><span style="color:blue" id="pfonionHarvest">loading...</span><br>
+							<span>ফলন:  </span><span style="color:blue" id="pfonionProduction">loading...</span><br>
+							
+							<center><h5>রসুন আবাদ(হেঃ)<hr/></h5></center>
+							<span>অর্জন:  </span><span style="color:blue" id="pfgarlicAchieve">loading...</span><br>
+							<span>কর্তন:  </span><span style="color:blue" id="pfgarlicHarvest">loading...</span><br>
+							<span>ফলন:  </span><span style="color:blue" id="pfgarlicProduction">loading...</span><br>
+							
+							<center><h5>মরিচ আবাদ(হেঃ)<hr/></h5></center>
+							<span>অর্জন:  </span><span style="color:blue" id="pfchiliAchieve">loading...</span><br>
+							<span>কর্তন:  </span><span style="color:blue" id="pfchiliHarvest">loading...</span><br>
+							<span>ফলন:  </span><span style="color:blue" id="pfchiliProduction">loading...</span><br>
+							
+							
+							<center><h5>মুগ আবাদ(হেঃ)<hr/></h5></center>
+							<span>অর্জন:  </span><span style="color:blue" id="pfmugAchieve">loading...</span><br>
+							
+							
+							<center><h5>আঁখ আবাদ(হেঃ)<hr/></h5></center>
+							<span>অর্জন:  </span><span style="color:blue" id="pfsugarcaneAchieve">loading...</span><br>
+							
+                            <div class="col-lg-12 col-md-12 text-center">
+                                <button type="button" class="btn btn-primary btn-block text-uppercase mb-3" onclick="showEditProfileForm()">
+                                Edit<small><i class="fas fa-pencil-alt ml-2"></i></small></button>
+                                <button type="button" class="btn btn-dark btn-block text-uppercase" onclick="signOut()">
+                                Sign Out<small><i class="fas fa-sign-out-alt ml-2"></i></small></button>
+                            </div>
+                        </div>
+						<div>
+						<br>
+						<button onclick="window.print()">Print info</button>
+						</div> 
+                        <div id="editProfileForm">
+                            <h2 class="h2 text-center text-dark mb-3">তথ্য আপডেট করুন</h2>
+                            <div class="form-group">
+                                <label for="name">ব্লকের নাম</label>
+                                <input type="text" class="form-control" id="blockname" onblur="checkblockname()" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="union">ইউনিয়ন</label>
+                                <input type="text" class="form-control" id="union" onblur="checkunion()" readonly>
+                            </div>
+                            <div class="form-group"><label for="lastupdate">lastupdate<span class="text-danger ml-1">*</span></label><input type="datetime-local" class="form-control" id="lastupdate" onblur="checklastupdate()"></div>
+                           <center><h5>সরিষা(হেঃ)<hr/></h5></center>
+							<div class="form-group"><label for="mustardAchieve">অর্জন<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="mustardAchieve" onblur="checkmustardAchieve()"></div>
+                            <div class="form-group"><label for="mustardHarvest">কর্তন<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="mustardHarvest" onblur="checkwheatHarvest()"></div>
+                            <div class="form-group"><label for="mustardProduction">গড় ফলন<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="mustardProduction" onblur="checkmustardProduction()"></div>
+                            
+							<center><h5>গম(হেঃ)<hr/></h5></center>
+							<div class="form-group"><label for="wheatAchieve">অর্জন<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="wheatAchieve" onblur="checkwheatAchieve()"></div>
+                            <div class="form-group"><label for="wheatHarvest">কর্তন<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="wheatHarvest" onblur="checkwheatHarvest()"></div>
+                            <div class="form-group"><label for="wheatProduction">গড় ফলন<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="wheatProduction" onblur="checkwheatProduction()"></div>
+                            
+							<center><h5>গোল আলু-হেঃ<hr/></h5></center>
+							<div class="form-group"><label for="potatoInbrid">উফশী<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="potatoInbrid" onblur="checkpotatoInbrid()"></div>
+                            <div class="form-group"><label for="potatoLocal">স্থানীয়<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="potatoLocal" onblur="checkpotatoLocal()"></div>
+                            <div class="form-group"><label for="potatoHarvest">কর্তন<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="potatoHarvest" onblur="checkpotatoHarvest()"></div>
+                            <div class="form-group"><label for="potatoProduction">গড় ফলন<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="potatoProduction" onblur="checkpotatoProduction()"></div>
+                            
+							<center><h5>ভুট্টা আবাদ অগ্রগতি(হেঃ)<hr/></h5></center>
+							<div class="form-group"><label for="maizeAchieve">অর্জন<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="maizeAchieve" onblur="checkmaizeAchieve()"></div>
+                            <div class="form-group"><label for="maizeHarvest">কর্তন<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="maizeHarvest" onblur="checkmaizeHarvest()"></div>
+                            <div class="form-group"><label for="maizeProduction">গড় ফলন<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="maizeProduction" onblur="checkmaizeProduction()"></div>
+                            
+							<center><h5>চীনাবাদাম আবাদ(হেঃ)<hr/></h5></center>
+							<div class="form-group"><label for="peanutAchieve">অর্জন<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="peanutAchieve" onblur="checkpeanutAchieve()"></div>
+                            <div class="form-group"><label for="peanutHarvest">কর্তন<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="peanutHarvest" onblur="checkpeanutHarvest()"></div>
+                            <div class="form-group"><label for="peanutProduction">গড় ফলন<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="peanutProduction" onblur="checkpeanutProduction()"></div>
+                            
+							<center><h5>পেঁয়াজ আবাদ(হেঃ)<hr/></h5></center>
+							<div class="form-group"><label for="onionBulb">কন্দ<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="onionBulb" onblur="checkonionBulb()"></div>
+                            <div class="form-group"><label for="onionSeed">বীজ বপন<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="onionSeed" onblur="checkonionSeed()"></div>
+                            <div class="form-group"><label for="onionTotal">মোট<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="onionTotal" onblur="checkonionTotal()"></div>
+                            <div class="form-group"><label for="onionHarvest">কর্তন<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="onionHarvest" onblur="checkonionHarvest()"></div>
+                            <div class="form-group"><label for="onionProduction">ফলন<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="onionProduction" onblur="checkonionProduction()"></div>
+                            
+							<center><h5>রসুন আবাদ(হেঃ)<hr/></h5></center>
+							<div class="form-group"><label for="garlicAchieve">অর্জন<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="garlicAchieve" onblur="checkgarlicAchieve()"></div>
+                            <div class="form-group"><label for="garlicHarvest">কর্তন<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="garlicHarvest" onblur="checkgarlicHarvest()"></div>
+                            <div class="form-group"><label for="garlicProduction">ফলন<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="garlicProduction" onblur="checkgarlicProduction()"></div>
+							
+							  
+							<center><h5>মরিচ আবাদ(হেঃ)<hr/></h5></center>
+							<div class="form-group"><label for="chiliAchieve">অর্জন<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="chiliAchieve" onblur="checkchiliAchieve()"></div>
+                            <div class="form-group"><label for="chiliHarvest">কর্তন<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="chiliHarvest" onblur="checkchiliHarvest()"></div>
+                            <div class="form-group"><label for="chiliProduction">ফলন<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="chiliProduction" onblur="checkchiliProduction()"></div>
+							
+							<center><h5>মুগ আবাদ(হেঃ)<hr/></h5></center>
+							<div class="form-group"><label for="mugAchieve">অর্জন<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="mugAchieve" onblur="checkmugAchieve()"></div>
+                           
+						   <center><h5>আঁখ আবাদ(হেঃ)<hr/></h5></center>
+							<div class="form-group"><label for="sugarcaneAchieve">অর্জন<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="sugarcaneAchieve" onblur="checksugarcaneAchieve()"></div>
+                           
+                            <button type="button" class="btn btn-primary btn-block text-uppercase mb-3" onclick="saveProfile()">Save</button>
+                            <button type="button" class="btn btn-dark btn-block text-uppercase" onclick="hideEditProfileForm()">Cancle</button>
+                        </div>
+						<br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+   
+    
+    <!-- Custom JavaScript -->
+    <script src="../../js/fbinit.js"></script>
+    <script src="../js/app.js"></script>
+
+</body>
+</html>

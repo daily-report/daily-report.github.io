@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width , initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.css">
+		<link rel="stylesheet" type="text/css" href="../css/index.css">
+		<link rel="stylesheet" href="../css/stylenav.css">
+
+  
+  
+  
+    <title>Boro Reports| Daily Basis</title>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+   <script src="../js/fbinit.js"></script>
+   
+   
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+
+
+<body>
+ <br>
+ 
+ <!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">-->
+
+  
+  <h4 style="text-align: center;"><span style="color: #800000;">বোরো আবাদের রিপোর্ট</span></h4> 
+  <div style="overflow-x:auto;">
+    <table border="1" align="center" table rules="all" style="width:100%" id="myTable">
+    <tr id="tr">
+	<th rowspan= "2"  style="text-align:center">ব্লকের <br> নাম</th>
+	<th colspan= "4" style="text-align:center">বোরো আবাদের অগ্রগতি(হেঃ)</th>
+	<th colspan= "10" style="text-align:center">বোরো আবাদের স্তর পরিস্থিতি(%)</th>
+	
+       <tr> 
+	    <th>হাইব্রিড</th>
+        <th>উফশী</th>
+        <th>স্থানীয়</th>
+        <th>মোট</th>
+        
+		<th>রিকভারী</th>
+        <th>টিলারিং</th>
+        <th>গড় পিআই</th>
+		<th>বুটিং</th>
+		<th>ফ্লাওয়ারিং </th>
+        <th>মিল্কি</th>
+        <th>ডাফ</th>
+		<th>রাইপেনিং</th>
+        <th>হারভেস্ট</th>
+        <th>মোট</th>
+ 
+</tr>
+
+      </tr>
+	</table>
+		<div>
+			<br>
+			<button onclick="window.print()">Print info</button>
+		</div> 
+								
+    <script>
+      var database = firebase.database();
+      database.ref('boroReport').orderByChild('union').once('value', function(snapshot) {
+        if (snapshot.exists()) {
+          var content = '';
+          snapshot.forEach(function(data) {
+            var val = data.val();
+            content += '<tr>';
+            content += '<td>' + val.blockname + '<br>' + val.union + '<br>' + val.lastupdate + '</td>';
+            content += '<td>' + val.borohybrid + '</td>';
+            content += '<td>' + val.boroinbrid + '</td>';
+            content += '<td>' + val.borolocal + '</td>';
+            content += '<td>' + val.borototal + '</td>';
+            content += '<td>' + val.bororecovery + '</td>';
+            content += '<td>' + val.borotillering + '</td>';
+            content += '<td>' + val.boropi+ '</td>';
+            content += '<td>' + val.borobooting + '</td>';
+            content += '<td>' + val.boroflowering + '</td>';
+            content += '<td>' + val.boromilking + '</td>';
+            content += '<td>' + val.borodough + '</td>';
+            content += '<td>' + val.bororipening + '</td>';
+            content += '<td>' + val.boroharvest + '</td>';
+            content += '<td>' + val.borototlapercent + '</td>';
+
+            content += '</tr>';
+          });
+          $('#myTable').append(content);
+        }
+      });
+    </script>
+	
+	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+		
+		<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+	</body>
+	
+</html>
+	
+	
+	
+	
+	
+	

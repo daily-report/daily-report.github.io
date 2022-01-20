@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/sweetalert2.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
+    <title>Sign Up | 34th BCS Forum</title>
+</head>
+<body class="bg-light">
+    <div class="container-fluid">
+        <div class="row mx-1">
+            <div class="col-lg-10 col-md-10 offset-lg-1 offset-md-1 text-center mt-5 pb-4 text-warning">
+                <h1 class="h4">Registration to 34th BCS Forum</h1>
+            </div>
+            <div class="col-lg-10 col-md-10 offset-lg-1 offset-md-1 bg-white shadow mb-5 border border-warning">
+                <div class="row">
+                    
+                    <div class="col-lg-6 col-md-6 p-lg-5 p-md-5 px-3 py-4">
+                        <div id="signUpForm">
+                            <h2 class="h2 text-center text-dark mb-3">Sign Up</h2>
+                            
+							<div class="form-group">
+                                <label for="union">Union<span class="text-danger ml-1">*</span></label><br>
+								<input list="batch" name="union" id="union" placeholder="Select Union">
+										
+							</div>
+                            <div class="form-group"><label for="lastupdate">lastupdate<span class="text-danger ml-1">*</span></label><input type="datetime-local" class="form-control" id="lastupdate" onblur="checklastupdate()"></div>
+							
+							<div class="form-group">
+                                <label for="word">Dealer Name:<span class="text-danger ml-1">*</span></label><br>
+								<input type="text" name="dealername" id="dealername">
+										
+							</div>
+							<div class="form-group"><label for="ureaallocated">ureaallocated<span class="text-danger ml-1">*</span></label><input type="text" class="form-control" id="ureaallocated" onblur="checkureaallocated()"></div>
+                            <div class="form-group"><label for="ureadrawn">ureadrawn<span class="text-danger ml-1">*</span></label><input type="text" class="form-control" id="ureadrawn" onblur="checkureadrawn()"></div>
+                            <div class="form-group"><label for="ureastore">ureastore<span class="text-danger ml-1">*</span></label><input type="text" class="form-control" id="ureastore" onblur="checkureastore()"></div>
+                            <div class="form-group"><label for="dapallocated">dapallocated<span class="text-danger ml-1">*</span></label><input type="text" class="form-control" id="dapallocated" onblur="checkdapallocated()"></div>
+                            <div class="form-group"><label for="dapdrawn">dapdrawn<span class="text-danger ml-1">*</span></label><input type="text" class="form-control" id="dapdrawn" onblur="checkdapdrawn()"></div>
+                            <div class="form-group"><label for="dapstore">dapstore<span class="text-danger ml-1">*</span></label><input type="text" class="form-control" id="dapstore" onblur="checkdapstore()"></div>
+                            <div class="form-group"><label for="tspallocated">tspallocated<span class="text-danger ml-1">*</span></label><input type="text" class="form-control" id="tspallocated" onblur="checktspallocated()"></div>
+                            <div class="form-group"><label for="tspdrawn">tspdrawn<span class="text-danger ml-1">*</span></label><input type="text" class="form-control" id="tspdrawn" onblur="checktspdrawn()"></div>
+                            <div class="form-group"><label for="tspstore">tspstore<span class="text-danger ml-1">*</span></label><input type="text" class="form-control" id="tspstore" onblur="checktspstore()"></div>
+                            <div class="form-group"><label for="mopallocated">mopallocated<span class="text-danger ml-1">*</span></label><input type="text" class="form-control" id="mopallocated" onblur="checkmopallocated()"></div>
+                            <div class="form-group"><label for="mopdrawn">mopdrawn<span class="text-danger ml-1">*</span></label><input type="text" class="form-control" id="mopdrawn" onblur="checkmopdrawn()"></div>
+                            <div class="form-group"><label for="mopstore">mopstore<span class="text-danger ml-1">*</span></label><input type="text" class="form-control" id="mopstore" onblur="checkmopstore()"></div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email address<span class="text-danger ml-1">*</span></label>
+                                <input type="email" class="form-control" id="email" onblur="checkemail()" placeholder="name@example.com">
+                                <!--small id="emailError" class="form-text text-danger">Please enter a valid email.</small-->
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password<span class="text-danger ml-1">*</span></label>
+                                <input type="password" class="form-control" id="password" onblur="checkpassword()" placeholder="Password">
+                                <small id="passwordError" class="form-text text-danger">Use 6 or more characters.</small>
+                            </div>
+                            <button type="button" class="btn btn-primary text-uppercase mb-3" onclick="signUp()">Sign Up</button>
+                            <p>Already have an account? Click here: <a href="../index.html"><strong class="text-warning text-uppercase showSignInForm">Sign In</strong></a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	
+	<!--list for selection-->
+	
+								<datalist id="batch">
+										<option value="Union-1"> 
+										<option value="Union-2"> 
+										<option value="Union-3"> 
+										<option value="Union-4"> 
+										<option value="Union-5"> 
+										<option value="Union-6"> 
+										<option value="Union-7"> 
+										<option value="Union-8"> 
+										<option value="Union-9"> 
+										<option value="Union-10"> 
+										<option value="Union-11"> 
+										<option value="Union-12"> 
+
+										</datalist>
+								<datalist id="dist">
+									  <option value="Word-1">
+									  <option value="Word-2">
+									  <option value="Word-3">
+									  <option value="Word-4">
+									  <option value="Word-5">
+									  <option value="Word-6">
+									  <option value="Word-7">
+									  <option value="Word-8">
+									  <option value="Word-9">
+
+										</datalist>
+										
+										
+										
+										<!--ends data list-->
+	
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script>
+        var config = {
+            var config = {
+            apiKey: "AIzaSyAvxFcODpGUh5hqLHKiv9w_038zrAYFxt8",
+			authDomain: "phonebook-8bcb2.firebaseapp.com",
+			databaseURL: "https://phonebook-8bcb2.firebaseio.com",
+			projectId: "phonebook-8bcb2",
+			storageBucket: "phonebook-8bcb2.appspot.com",
+			messagingSenderId: "962677419165",
+			appId: "1:962677419165:web:1566bd9745edfa7fe4f874"
+        };
+        firebase.initializeApp(config);
+        var database = firebase.database();
+    </script>
+    
+    <script src="../js/app.js"></script>
+
+</body>
+</html>

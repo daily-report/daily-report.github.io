@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/stylenav.css">
+    <!-- Sweet Alert JavaScript -->
+    <script src="../../js/sweetalert2.js"></script>
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <!-- Nunito Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
+    <title>Market Price | Hatibandha</title>
+</head>
+<body class="bg-light">
+
+    <div>
+        <div class="row mx-1">
+            <div class="col-lg-10 col-md-10 offset-lg-1 offset-md-1 bg-white shadow my-5 border border-warning">
+                <div>
+                    <div>
+                        <div id="profileSection">
+						<br>
+						<div class="col-12 col-12 mb-4 text-center">
+                                <span class="h4" style="color:#00b903">প্রধান প্রধান শস্যের বাজারদর</span>
+                            </div>
+							<hr/>
+							
+                            <div class="col-12 col-12 mb-3 text-center">
+                                <img style="border-radius: 50%" id="userAvatar" src="../../images/maize.jpg" alt="avatar icon" >
+                            </div>
+                             <div class="col-12 col-12 mb-4 text-center">
+                                <span class="h4" style="color:#FF007F" id="pfblockname">please wait...</span><br>
+                                <span class="h4" style="color:#FF007F" id="pfunion"></span><br>
+								<span>Update Time:  </span><span style="color:blue" id="pflastupdate">loading...</span>
+                            </div>
+							<hr/>
+							<span style="color:violet">প্রধান প্রধান শস্যের বাজারদর</span>
+							<hr/>
+							<center><h5>ধান(টাকা/মন)<hr/></h5></center>
+							<span>মোটা:  </span><span style="color:blue" id="pfborohybrid">loading...</span><br>
+							<span>মাঝারী:  </span><span style="color:blue" id="pfboroinbrid">loading...</span><br>
+							<span>চিকন:   </span><span style="color:blue" id="pfborolocal">loading...</span><br>
+							
+							<center><h5>চাল (টাকা/মন)<hr/></h5></center>
+							<span>মোটা:  </span><span style="color:blue" id="pfborototal">loading...</span><br>
+							<span>মাঝারী:  </span><span style="color:blue" id="pfbororecovery">loading...</span><br>
+							<span>চিকন:   </span><span style="color:blue" id="pfborotillering">loading...</span><br>
+							
+							<center><h5>পাট (টাকা/মন)<hr/></h5></center>
+
+							<span> দেশি:  </span><span style="color:blue" id="pfboropi">loading...</span><br>
+							<span>তোষা:  </span><span style="color:blue" id="pfborobooting">loading...</span><br>
+							<span>গম (টাকা/মন):  </span><span style="color:blue" id="pfboroflowering">loading...</span><br>
+							<span>আটা(টাকা/মন):  </span><span style="color:blue" id="pfboromilking">loading...</span><br>
+							<span>ভুট্টা (টাকা/মন):  </span><span style="color:blue" id="pfborodough">loading...</span><br>
+							<span>আলু (টাকা/কেজি):  </span><span style="color:blue" id="pfbororipening">loading...</span><br>
+							<span>পেঁয়াজ(টাকা/কেজি):  </span><span style="color:blue" id="pfboroharvest">loading...</span><br>
+							<span>মরিচ(টাকা/কেজি):  </span><span style="color:blue" id="pfborototlapercent">loading...</span><br>
+							
+                            <div class="col-lg-12 col-md-12 text-center">
+                                <button type="button" class="btn btn-primary btn-block text-uppercase mb-3" onclick="showEditProfileForm()">
+                                Edit<small><i class="fas fa-pencil-alt ml-2"></i></small></button>
+                                <button type="button" class="btn btn-dark btn-block text-uppercase" onclick="signOut()">
+                                Sign Out<small><i class="fas fa-sign-out-alt ml-2"></i></small></button>
+                            </div>
+                        </div>
+						<div>
+						<br>
+						<button onclick="window.print()">Print info</button>
+						</div> 
+                        <div id="editProfileForm">
+                            <h2 class="h2 text-center text-dark mb-3">তথ্য আপডেট করুন</h2>
+                            <div class="form-group">
+                                <label for="name">Block Name</label>
+                                <input type="text" class="form-control" id="blockname" onblur="checkblockname()" readonly>
+                            </div>
+							<div class="form-group">
+                                <label for="union">ইউনিয়ন</label>
+                                <input type="text" class="form-control" id="union" onblur="checkunion()" readonly>
+                            </div>
+                           <div class="form-group"><label for="lastupdate">lastupdate<span class="text-danger ml-1">*</span></label><input type="datetime-local" class="form-control" id="lastupdate" onblur="checklastupdate()"></div>
+                           <center><h5>ধান(টাকা/মন)<hr/></h5></center>
+							<div class="form-group"><label for="borohybrid">মোটা<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="borohybrid" onblur="checkborohybrid()"></div>
+                            <div class="form-group"><label for="boroinbrid">মাঝারী<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="boroinbrid" onblur="checkbororecovery()"></div>
+                            <div class="form-group"><label for="borolocal">চিকন<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="borolocal" onblur="checkborolocal()"></div>
+							
+							<center><h5>চাল(টাকা/মন)<hr/></h5></center>
+							<div class="form-group"><label for="borototal">মোটা<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="borototal" onblur="checkborototal()"></div>
+               				<div class="form-group"><label for="bororecovery">মাঝারী<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="bororecovery" onblur="checkbororecovery()"></div>
+                            <div class="form-group"><label for="borotillering">চিকন<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="borotillering" onblur="checkborotillering()"></div>
+							
+							<center><h5>পাট(টাকা/মন)<hr/></h5></center>
+                     		
+							<div class="form-group"><label for="boropi">দেশি<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="boropi" onblur="checkboropi()"></div>
+                            <div class="form-group"><label for="borobooting">তোষা<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="borobooting" onblur="checkborobooting()"></div>
+							<center><h5>অন্যান্য<hr/></h5></center>
+                            
+							<div class="form-group"><label for="boroflowering">গম(টাকা/মন)<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="boroflowering" onblur="checkboroflowering()"></div>
+                            <div class="form-group"><label for="boromilking">আটা(টাকা/কেজি)<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="boromilking" onblur="checkboromilking()"></div>
+                            
+							<div class="form-group"><label for="borodough">ভুট্টা(টাকা/মন)<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="borodough" onblur="checkborodough()"></div>
+                            <div class="form-group"><label for="bororipening">আলু(টাকা/কেজি)<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="bororipening" onblur="checkbororipening()"></div>
+                            <div class="form-group"><label for="boroharvest">পেঁয়াজ(টাকা/কেজি)<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="boroharvest" onblur="checkboroharvest()"></div>
+                            <div class="form-group"><label for="borototlapercent">মরিচ(টাকা/কেজি)<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="borototlapercent" onblur="checkborototlapercent()"></div>
+                            
+                            <button type="button" class="btn btn-primary btn-block text-uppercase mb-3" onclick="saveProfile()">Save</button>
+                            <button type="button" class="btn btn-dark btn-block text-uppercase" onclick="hideEditProfileForm()">Cancle</button>
+                        </div>
+						<br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+   
+    
+    <!-- Custom JavaScript -->
+    <script src="../../js/fbinit.js"></script>
+    <script src="../js/appmarketprice.js"></script>
+
+</body>
+</html>
