@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fertilize | Storage Info</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/fontawesome.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/all.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/animate.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../style.css" type="text/css" media="all">
+
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/wow.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/custom.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+</head>
+
+<body>
+    <header class="header-area">
+        <div class="container">
+            <div class="logo">
+                <a href="./index.html"><img src="../images/urea.png"" alt="Logo" style="width: 50px" "height:50px"><b style= "color: Blue">  Fertilize | Storage Info</b></a>
+            </div>
+            <div class="header-menu-bar">
+                <a href="./app.html"><img src="../images/dev.jpg"" alt="Logo" style="width: 20px" "height:20px"></a>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="content-area">
+        <div class="container">
+
+            <div class="row">
+              <div class="col-md-12 col-12 p-1 rcorners2">
+                <a href="./feedback.html">
+                    <div class="content-item">
+			<img src="../images/feedback.png" alt="icon">
+                      <h2>মতামত প্রদান করুন</h2>
+                    </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12 col-12 p-1 rcorners2">
+                <a href="./loader.html">
+                    <div class="content-item">
+			<img src="../images/feedback.png" alt="icon">
+                      <h2>মতামতসমূহ দেখুন</h2>
+                    </div>
+                </a>
+              </div>
+            </div>
+
+<!-- linking javascript -->
+</body>
+
+     <footer>
+        <div class="container">
+            <div class="footer">
+                <small><center>Copyright &copy; 2019 <i>by</i><a href="https://34thbcs.github.io"> gentle touch </a>  All right reserved</small></center>
+            </div>
+        </div>
+    </footer>
+
+<script>const shareData = {
+    title: '34th BCS Forum',
+    text: 'A community app to develop communication',
+    url: 'https://play.google.com/store/apps/details?id=com.dae.gentletouch.mydaeapp2'
+  }
+
+  const btn = document.querySelector('share');
+  const resultPara = document.querySelector('.result');
+
+  // Share must be triggered by "user activation"
+  btn.addEventListener('click', async () => {
+    try {
+      await navigator.share(shareData)
+      resultPara.textContent = ''
+    } catch(err) {
+      resultPara.textContent = 'Error: ' + err
+    }
+  });
+</script>
+</html>
