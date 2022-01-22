@@ -978,3 +978,12 @@ margin-right: 10px;
   width: 200px;
   height: 150px;  
 }
+#rcorners1 {
+  border-radius: 50%;
+  background: #73AD21;
+  padding-top: 10px; 
+  text-align: center;
+  width: 75px;
+  line-height: 50px;
+  height: 60px;  
+}
