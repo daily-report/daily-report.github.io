@@ -4533,8 +4533,6 @@ function saveProfile(){
         return checkamanfarmer6mobile();
     }else if(amanfarmer6comment === ""){
         return checkamanfarmer6comment();
-    }else if(wheatfarmer2comment === ""){
-        return checkwheatfarmer2comment();
     }else{
         let user = firebase.auth().currentUser;
         let uid;
