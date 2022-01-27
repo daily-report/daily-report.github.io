@@ -9,6 +9,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/stylenav.css">
+<link rel="stylesheet" href="../../css/collapse.css">
+
     <!-- Sweet Alert JavaScript -->
     <script src="../../js/sweetalert2.js"></script>
     <!-- Fontawesome CSS -->
@@ -42,7 +44,9 @@
 							<hr/>
 							<span style="color:violet">প্রদর্শনী তথ্য(প্রকল্প)</span>
 							<hr/>
-							<center><h5>রাডারডিপি প্রকল্পের প্রদর্শনী<hr/></h5></center>
+							
+							<button type="button" class="collapsible">রাডারডিপি প্রকল্পের প্রদর্শনী</button>
+							<div class="content">
 							<hr/><h5>প্রদর্শনী-১<hr/></h5>
 							<span>কৃষকের নাম:  </span><span style="color:blue" id="pfmaizefarmer1">loading...</span><br>
 							<span>ঠিকানা:  </span><span style="color:blue" id="pfmaizefarmer1address">loading...</span><br>
@@ -93,7 +97,9 @@
 							<span>প্রদর্শনীর অবস্থা/ মন্তব্য:   </span><span style="color:blue" id="pfmaizefarmer6comment">loading...</span><br>
 							
 							
-							<hr/><center><h5>পরিবেশ বান্ধব প্রকল্পের প্রদর্শনী<hr/></h5></center>
+							</div>
+							<button type="button" class="collapsible">পরিবেশ বান্ধব প্রকল্পের প্রদর্শনী</button>
+							<div class="content">
 							<h5>প্রদর্শনী-১<hr/></h5>
 							<span>কৃষকের নাম:  </span><span style="color:blue" id="pfmustardfarmer1">loading...</span><br>
 							<span>ঠিকানা:  </span><span style="color:blue" id="pfmustardfarmer1address">loading...</span><br>
@@ -119,7 +125,9 @@
 							<span>স্থাপনের তারিখ:   </span><span style="color:blue" id="pfmustardfarmer3date">loading...</span><br>
 							<span>প্রদর্শনীর অবস্থা/ মন্তব্য:   </span><span style="color:blue" id="pfmustardfarmer3comment">loading...</span><br>
 														
-							<hr/><center><h5>ডাল, তেল ও মসলা(এসএমই) প্রকল্পের প্রদর্শনী<hr/></h5></center>
+							</div>	
+							<button type="button" class="collapsible">ডাল, তেল ও মসলা(এসএমই) প্রকল্পের প্রদর্শনী</button>
+							<div class="content">							
 							<h5>প্রদর্শনী-১<hr/></h5>
 							<span>কৃষকের নাম:  </span><span style="color:blue" id="pfmustardfarmer4">loading...</span><br>
 							<span>ঠিকানা:  </span><span style="color:blue" id="pfmustardfarmer4address">loading...</span><br>
@@ -137,8 +145,9 @@
 							<span>স্থাপনের তারিখ:   </span><span style="color:blue" id="pfmustardfarmer5date">loading...</span><br>
 							<span>প্রদর্শনীর অবস্থা/ মন্তব্য:   </span><span style="color:blue" id="pfmustardfarmer5comment">loading...</span><br>
 														
-														
-							<hr/><center><h5>ধান, গম ও পাট বীজ প্রকল্পের প্রদর্শনী<hr/></h5></center>
+							</div>							
+							<button type="button" class="collapsible">ধান, গম ও পাট বীজ প্রকল্পের প্রদর্শনী</button>
+							<div class="content">														
 							<hr/><h5>প্রদর্শনী-১<hr/></h5>
 							<span>কৃষকের নাম:  </span><span style="color:blue" id="pfmustardfarmer6">loading...</span><br>
 							<span>ঠিকানা:  </span><span style="color:blue" id="pfmustardfarmer6address">loading...</span><br>
@@ -156,9 +165,9 @@
 							<span>ফসল ও জাতের নাম:   </span><span style="color:blue" id="pfborofarmer1variety">loading...</span><br>
 							<span>স্থাপনের তারিখ:   </span><span style="color:blue" id="pfborofarmer1date">loading...</span><br>
 							<span>প্রদর্শনীর অবস্থা/ মন্তব্য:   </span><span style="color:blue" id="pfborofarmer1comment">loading...</span><br>
-							
-							
-							<hr/><center><h5>তেল জাতীয় প্রকল্পের প্রদর্শনী<hr/></h5></center>
+							</div>
+							<button type="button" class="collapsible">তেল জাতীয় প্রকল্পের প্রদর্শনী</button>
+							<div class="content">
 							<hr/><h5>প্রদর্শনী-১<hr/></h5>
 							<span>কৃষকের নাম:  </span><span style="color:blue" id="pfborofarmer2">loading...</span><br>
 							<span>ঠিকানা:  </span><span style="color:blue" id="pfborofarmer2address">loading...</span><br>
@@ -186,7 +195,9 @@
 							<span>স্থাপনের তারিখ:   </span><span style="color:blue" id="pfborofarmer4date">loading...</span><br>
 							<span>প্রদর্শনীর অবস্থা/ মন্তব্য:   </span><span style="color:blue" id="pfborofarmer4comment">loading...</span><br>
 							
-							<hr/><center><h5>কন্দাল ফসল প্রকল্প প্রদর্শনী<hr/></h5></center>
+							</div>
+							<button type="button" class="collapsible">কন্দাল ফসল প্রকল্প প্রদর্শনী</button>
+							<div class="content">
 							<hr/><h5>প্রদর্শনী-১<hr/></h5>
 							<span>কৃষকের নাম:  </span><span style="color:blue" id="pfborofarmer5">loading...</span><br>
 							<span>ঠিকানা:  </span><span style="color:blue" id="pfborofarmer5address">loading...</span><br>
@@ -223,7 +234,9 @@
 							<span>স্থাপনের তারিখ:   </span><span style="color:blue" id="pfamanfarmer2date">loading...</span><br>
 							<span>প্রদর্শনীর অবস্থা/ মন্তব্য:   </span><span style="color:blue" id="pfamanfarmer2comment">loading...</span><br>
 							
-							<hr/><center><h5>অনাবাদী পতিত প্রদর্শনী<hr/></h5></center>
+							</div>
+							<button type="button" class="collapsible">অনাবাদী পতিত প্রদর্শনী</button>
+							<div class="content">
 							<hr/><h5>প্রদর্শনী-১<hr/></h5>
 							<span>কৃষকের নাম:  </span><span style="color:blue" id="pfamanfarmer3">loading...</span><br>
 							<span>ঠিকানা:  </span><span style="color:blue" id="pfamanfarmer3address">loading...</span><br>
@@ -256,7 +269,9 @@
 							<span>ফসল ও জাতের নাম:   </span><span style="color:blue" id="pfamanfarmer6variety">loading...</span><br>
 							<span>স্থাপনের তারিখ:   </span><span style="color:blue" id="pfamanfarmer6date">loading...</span><br>
 							<span>প্রদর্শনীর অবস্থা/ মন্তব্য:   </span><span style="color:blue" id="pfamanfarmer6comment">loading...</span><br>
-							<!--
+							</div><br><br>
+				
+				<!--
 							<center><h5>পেঁয়াজ-প্রদর্শনী-১<hr/></h5></center>
 							<span>কৃষকের নাম:  </span><span style="color:blue" id="pfonionfarmer1">loading...</span><br>
 							<span>ঠিকানা:  </span><span style="color:blue" id="pfonionfarmer1address">loading...</span><br>
@@ -316,8 +331,10 @@
                                 <input type="text" class="form-control" id="union" onblur="checkunion()" readonly>
                             </div>
                            <div class="form-group"><label for="lastupdate">lastupdate<span class="text-danger ml-1">*</span></label><input type="datetime-local" class="form-control" id="lastupdate" onblur="checklastupdate()"></div>
-                           <hr/><center><h5>রাডারডিপি  প্রদর্শনী<hr/></h5></center>
-						   <center><h5>প্রদর্শনী-১<hr/></h5></center>
+                           			
+							<button type="button" class="collapsible">রাডারডিপি প্রকল্পের প্রদর্শনী</button>
+							<div class="content">
+							<center><h5>প্রদর্শনী-১<hr/></h5></center>
 							<div class="form-group"><label for="maizefarmer1">কৃষকের নাম: <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="maizefarmer1" onblur="checkmaizefarmer1()"></div>
 							<div class="form-group"><label for="maizefarmer1address">ঠিকানা: <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="maizefarmer1address" onblur="checkmaizefarmer1address()"></div>
 							<div class="form-group"><label for="maizefarmer1mobile">মোবাইল নং:  <span class="text-danger ml-1">*</span></label><input type="phone" class="form-control"id="maizefarmer1mobile" onblur="checkmaizefarmer1mobile()"></div>
@@ -366,7 +383,11 @@
 							<div class="form-group"><label for="maizefarmer6variety">ফসল ও জাতের নাম:  <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="maizefarmer6variety" onblur="checkmaizefarmer6variety()"></div>
 							<div class="form-group"><label for="maizefarmer6date">স্থাপনের তারিখ:  <span class="text-danger ml-1">*</span></label><input type="date" class="form-control"id="maizefarmer6date" onblur="checkmaizefarmer6date()"></div>
 							<div class="form-group"><label for="maizefarmer6comment">প্রদর্শনীর অবস্থা/ মন্তব্য:  <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="maizefarmer6comment" onblur="checkmaizefarmer6comment()"></div>
-								                           <hr/><center><h5>পরিবেশ বান্ধব প্রকল্পের প্রদর্শনী<hr/></h5></center>
+							</div>
+				
+							<button type="button" class="collapsible">পরিবেশ বান্ধব প্রকল্পের প্রদর্শনী</button>
+							<div class="content">
+							<center><h5>প্রদর্শনী-১<hr/></h5></center>
 							<div class="form-group"><label for="mustardfarmer1">কৃষকের নাম: <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="mustardfarmer1" onblur="checkmustardfarmer1()"></div>
 							<div class="form-group"><label for="mustardfarmer1address">ঠিকানা: <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="mustardfarmer1address" onblur="checkmustardfarmer1address()"></div>
 							<div class="form-group"><label for="mustardfarmer1mobile">মোবাইল নং:  <span class="text-danger ml-1">*</span></label><input type="phone" class="form-control"id="mustardfarmer1mobile" onblur="checkmustardfarmer1mobile()"></div>
@@ -391,10 +412,12 @@
 							<div class="form-group"><label for="mustardfarmer3variety">ফসল ও জাতের নাম:  <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="mustardfarmer3variety" onblur="checkmustardfarmer3variety()"></div>
 							<div class="form-group"><label for="mustardfarmer3date">স্থাপনের তারিখ:  <span class="text-danger ml-1">*</span></label><input type="date" class="form-control"id="mustardfarmer3date" onblur="checkmustardfarmer3date()"></div>
 							<div class="form-group"><label for="mustardfarmer3comment">প্রদর্শনীর অবস্থা/ মন্তব্য:  <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="mustardfarmer3comment" onblur="checkmustardfarmer3comment()"></div>
-								
-								<hr/><center><h5>ডাল, তেল ও মসলা(এসএমই) প্রকল্পের প্রদর্শনী<hr/></h5></center>								
+								</div>
+				
+							<button type="button" class="collapsible">ডাল, তেল ও মসলা(এসএমই) প্রকল্পের প্রদর্শনী</button>
+							<div class="content">
+							
 								<center><h5>প্রদর্শনী-১<hr/></h5></center>
-
 							<div class="form-group"><label for="mustardfarmer4">কৃষকের নাম: <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="mustardfarmer4" onblur="checkmustardfarmer4()"></div>
 							<div class="form-group"><label for="mustardfarmer4address">ঠিকানা: <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="mustardfarmer4address" onblur="checkmustardfarmer4address()"></div>
 							<div class="form-group"><label for="mustardfarmer4mobile">মোবাইল নং:  <span class="text-danger ml-1">*</span></label><input type="phone" class="form-control"id="mustardfarmer4mobile" onblur="checkmustardfarmer4mobile()"></div>
@@ -410,8 +433,12 @@
 							<div class="form-group"><label for="mustardfarmer5variety">ফসল ও জাতের নাম:  <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="mustardfarmer5variety" onblur="checkmustardfarmer5variety()"></div>
 							<div class="form-group"><label for="mustardfarmer5date">স্থাপনের তারিখ:  <span class="text-danger ml-1">*</span></label><input type="date" class="form-control"id="mustardfarmer5date" onblur="checkmustardfarmer5date()"></div>
 							<div class="form-group"><label for="mustardfarmer5comment">প্রদর্শনীর অবস্থা/ মন্তব্য:  <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="mustardfarmer5comment" onblur="checkmustardfarmer5comment()"></div>
-														<hr/><center><h5>ধান, গম ও পাট (এসএমই) প্রকল্পের প্রদর্শনী<hr/></h5></center>								
-								<center><h5>প্রদর্শনী-১<hr/></h5></center>
+													
+								</div>
+				
+							<button type="button" class="collapsible">ধান, গম ও পাট (এসএমই) প্রকল্পের প্রদর্শন</button>
+							<div class="content">
+							<center><h5>প্রদর্শনী-১<hr/></h5></center>
 							<div class="form-group"><label for="mustardfarmer6">কৃষকের নাম: <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="mustardfarmer6" onblur="checkmustardfarmer6()"></div>
 							<div class="form-group"><label for="mustardfarmer6address">ঠিকানা: <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="mustardfarmer6address" onblur="checkmustardfarmer6address()"></div>
 							<div class="form-group"><label for="mustardfarmer6mobile">মোবাইল নং:  <span class="text-danger ml-1">*</span></label><input type="phone" class="form-control"id="mustardfarmer6mobile" onblur="checkmustardfarmer6mobile()"></div>
@@ -427,8 +454,10 @@
 							<div class="form-group"><label for="borofarmer1variety">ফসল ও জাতের নাম:  <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="borofarmer1variety" onblur="checkborofarmer1variety()"></div>
 							<div class="form-group"><label for="borofarmer1date">স্থাপনের তারিখ:  <span class="text-danger ml-1">*</span></label><input type="date" class="form-control"id="borofarmer1date" onblur="checkborofarmer1date()"></div>
 							<div class="form-group"><label for="borofarmer1comment">প্রদর্শনীর অবস্থা/ মন্তব্য:  <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="borofarmer1comment" onblur="checkborofarmer1comment()"></div>
-
-							<center><h5>তেল জাতীয় প্রকল্পের প্রদর্শনী<hr/></h5></center>
+							</div>
+				
+							<button type="button" class="collapsible">তেল জাতীয় প্রকল্পের প্রদর্শনী</button>
+							<div class="content">
 							<center><h5>প্রদর্শনী-১<hr/></h5></center>
 							<div class="form-group"><label for="borofarmer2">কৃষকের নাম: <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="borofarmer2" onblur="checkborofarmer2()"></div>
 							<div class="form-group"><label for="borofarmer2address">ঠিকানা: <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="borofarmer2address" onblur="checkborofarmer2address()"></div>
@@ -453,7 +482,12 @@
 							<div class="form-group"><label for="borofarmer4variety">ফসল ও জাতের নাম:  <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="borofarmer4variety" onblur="checkborofarmer4variety()"></div>
 							<div class="form-group"><label for="borofarmer4date">স্থাপনের তারিখ:  <span class="text-danger ml-1">*</span></label><input type="date" class="form-control"id="borofarmer4date" onblur="checkborofarmer4date()"></div>
 							<div class="form-group"><label for="borofarmer4comment">প্রদর্শনীর অবস্থা/ মন্তব্য:  <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="borofarmer4comment" onblur="checkborofarmer4comment()"></div>
-												<center><h5>কন্দাল ফসল প্রকল্প প্রদর্শনী<hr/></h5></center>
+												
+								</div>
+				
+							<button type="button" class="collapsible">কন্দাল ফসল প্রকল্প প্রদর্শনী</button>
+							<div class="content">
+							
 								<center><h5>প্রদর্শনী-১<hr/></h5></center>
 							<div class="form-group"><label for="borofarmer5">কৃষকের নাম: <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="borofarmer5" onblur="checkborofarmer5()"></div>
 							<div class="form-group"><label for="borofarmer5address">ঠিকানা: <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="borofarmer5address" onblur="checkborofarmer5address()"></div>
@@ -487,8 +521,12 @@
 							<div class="form-group"><label for="amanfarmer2variety">ফসল ও জাতের নাম:  <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="amanfarmer2variety" onblur="checkamanfarmer2variety()"></div>
 							<div class="form-group"><label for="amanfarmer2date">স্থাপনের তারিখ:  <span class="text-danger ml-1">*</span></label><input type="date" class="form-control"id="amanfarmer2date" onblur="checkamanfarmer2date()"></div>
 							<div class="form-group"><label for="amanfarmer2comment">প্রদর্শনীর অবস্থা/ মন্তব্য:  <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="amanfarmer2comment" onblur="checkamanfarmer2comment()"></div>
-															<center><h5>অনাবাদী পতিত প্রদর্শনী<hr/></h5></center>
-										<center><h5>প্রদর্শনী-১<hr/></h5></center>
+															
+									</div>
+				
+							<button type="button" class="collapsible">অনাবাদী পতিত প্রদর্শনী</button>
+							<div class="content">
+								<center><h5>প্রদর্শনী-১<hr/></h5></center>
 							<div class="form-group"><label for="amanfarmer3">কৃষকের নাম: <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="amanfarmer3" onblur="checkamanfarmer3()"></div>
 							<div class="form-group"><label for="amanfarmer3address">ঠিকানা: <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="amanfarmer3address" onblur="checkamanfarmer3address()"></div>
 							<div class="form-group"><label for="amanfarmer3mobile">মোবাইল নং:  <span class="text-danger ml-1">*</span></label><input type="phone" class="form-control"id="amanfarmer3mobile" onblur="checkamanfarmer3mobile()"></div>
@@ -520,7 +558,7 @@
 							<div class="form-group"><label for="amanfarmer6variety">ফসল ও জাতের নাম:  <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="amanfarmer6variety" onblur="checkamanfarmer6variety()"></div>
 							<div class="form-group"><label for="amanfarmer6date">স্থাপনের তারিখ:  <span class="text-danger ml-1">*</span></label><input type="date" class="form-control"id="amanfarmer6date" onblur="checkamanfarmer6date()"></div>
 							<div class="form-group"><label for="amanfarmer6comment">প্রদর্শনীর অবস্থা/ মন্তব্য:  <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="amanfarmer6comment" onblur="checkamanfarmer6comment()"></div>
-					
+							</div><br>
 					<!--                        <center><h5>পেঁয়াজ-প্রদর্শনী-১<hr/></h5></center>
 							<div class="form-group"><label for="onionfarmer1">কৃষকের নাম: <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="onionfarmer1" onblur="checkonionfarmer1()"></div>
 							<div class="form-group"><label for="onionfarmer1address">ঠিকানা: <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="onionfarmer1address" onblur="checkonionfarmer1address()"></div>
@@ -582,6 +620,23 @@
     <!-- Custom JavaScript -->
     <script src="../../js/fbinit.js"></script>
     <script src="../js/appprojectdemo.js"></script>
+
+	<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
 
 </body>
 </html>
