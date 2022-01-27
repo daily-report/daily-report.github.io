@@ -9,6 +9,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/stylenav.css">
+    <link rel="stylesheet" href="../../css/collapse.css">
+
     <!-- Sweet Alert JavaScript -->
     <script src="../../js/sweetalert2.js"></script>
     <!-- Fontawesome CSS -->
@@ -42,6 +44,8 @@
 							<hr/>
 							<span style="color:violet">প্রদর্শনী তথ্য(রাজস্ব)</span>
 							<hr/>
+							<button type="button" class="collapsible">ভূট্টা-প্রদর্শনী</button>
+							<div class="content">
 							<center><h5>ভূট্টা-প্রদর্শনী-১<hr/></h5></center>
 							<span>কৃষকের নাম:  </span><span style="color:blue" id="pfmaizefarmer1">loading...</span><br>
 							<span>ঠিকানা:  </span><span style="color:blue" id="pfmaizefarmer1address">loading...</span><br>
@@ -90,8 +94,10 @@
 							<span>জাতের নাম:   </span><span style="color:blue" id="pfmaizefarmer6variety">loading...</span><br>
 							<span>স্থাপনের তারিখ:   </span><span style="color:blue" id="pfmaizefarmer6date">loading...</span><br>
 							<span>প্রদর্শনীর অবস্থা/ মন্তব্য:   </span><span style="color:blue" id="pfmaizefarmer6comment">loading...</span><br>
+							</div>
 							
-							
+							<button type="button" class="collapsible">সরিষা-প্রদর্শনী</button>
+							<div class="content">
 							<hr/><center><h5>সরিষা-প্রদর্শনী-১<hr/></h5></center>
 							<span>কৃষকের নাম:  </span><span style="color:blue" id="pfmustardfarmer1">loading...</span><br>
 							<span>ঠিকানা:  </span><span style="color:blue" id="pfmustardfarmer1address">loading...</span><br>
@@ -140,6 +146,10 @@
 							<span>জাতের নাম:   </span><span style="color:blue" id="pfmustardfarmer6variety">loading...</span><br>
 							<span>স্থাপনের তারিখ:   </span><span style="color:blue" id="pfmustardfarmer6date">loading...</span><br>
 							<span>প্রদর্শনীর অবস্থা/ মন্তব্য:   </span><span style="color:blue" id="pfmustardfarmer6comment">loading...</span><br>
+							</div>
+							
+							<button type="button" class="collapsible">বোরো-প্রদর্শনী</button>
+							<div class="content">
 							
 							
 							<hr/><center><h5>বোরো-প্রদর্শনী-১<hr/></h5></center>
@@ -191,6 +201,11 @@
 							<span>স্থাপনের তারিখ:   </span><span style="color:blue" id="pfborofarmer6date">loading...</span><br>
 							<span>প্রদর্শনীর অবস্থা/ মন্তব্য:   </span><span style="color:blue" id="pfborofarmer6comment">loading...</span><br>
 							
+							</div>
+							
+							<button type="button" class="collapsible">আমন-প্রদর্শনী</button>
+							<div class="content">
+							
 							
 							<hr/><center><h5>আমন-প্রদর্শনী-১<hr/></h5></center>
 							<span>কৃষকের নাম:  </span><span style="color:blue" id="pfamanfarmer1">loading...</span><br>
@@ -240,6 +255,11 @@
 							<span>জাতের নাম:   </span><span style="color:blue" id="pfamanfarmer6variety">loading...</span><br>
 							<span>স্থাপনের তারিখ:   </span><span style="color:blue" id="pfamanfarmer6date">loading...</span><br>
 							<span>প্রদর্শনীর অবস্থা/ মন্তব্য:   </span><span style="color:blue" id="pfamanfarmer6comment">loading...</span><br>
+							</div>
+							
+							<button type="button" class="collapsible">পেঁয়াজ-প্রদর্শনী</button>
+							<div class="content">
+							
 							
 							<hr/><center><h5>পেঁয়াজ-প্রদর্শনী-১<hr/></h5></center>
 							<span>কৃষকের নাম:  </span><span style="color:blue" id="pfonionfarmer1">loading...</span><br>
@@ -258,7 +278,10 @@
 							<span>স্থাপনের তারিখ:   </span><span style="color:blue" id="pfonionfarmer2date">loading...</span><br>
 							<span>প্রদর্শনীর অবস্থা/ মন্তব্য:   </span><span style="color:blue" id="pfonionfarmer2comment">loading...</span><br>
 							
+							</div>
 							
+							<button type="button" class="collapsible">গম-প্রদর্শনী</button>
+							<div class="content">
 							<hr/><center><h5>গম-প্রদর্শনী-১<hr/></h5></center>
 							<span>কৃষকের নাম:  </span><span style="color:blue" id="pfwheatfarmer1">loading...</span><br>
 							<span>ঠিকানা:  </span><span style="color:blue" id="pfwheatfarmer1address">loading...</span><br>
@@ -275,7 +298,7 @@
 							<span>জাতের নাম:   </span><span style="color:blue" id="pfwheatfarmer2variety">loading...</span><br>
 							<span>স্থাপনের তারিখ:   </span><span style="color:blue" id="pfwheatfarmer2date">loading...</span><br>
 							<span>প্রদর্শনীর অবস্থা/ মন্তব্য:   </span><span style="color:blue" id="pfwheatfarmer2comment">loading...</span><br>
-							
+							</div><br>
                             <div class="col-lg-12 col-md-12 text-center">
                                 <button type="button" class="btn btn-primary btn-block text-uppercase mb-3" onclick="showEditProfileForm()">
                                 Edit<small><i class="fas fa-pencil-alt ml-2"></i></small></button>
@@ -298,7 +321,10 @@
                                 <input type="text" class="form-control" id="union" onblur="checkunion()" readonly>
                             </div>
                            <div class="form-group"><label for="lastupdate">lastupdate<span class="text-danger ml-1">*</span></label><input type="datetime-local" class="form-control" id="lastupdate" onblur="checklastupdate()"></div>
-                           <hr/><center><h5>ভূট্টা-প্রদর্শনী-১<hr/></h5></center>
+							
+							<button type="button" class="collapsible">ভূট্টা-প্রদর্শনী</button>
+							<div class="content">
+							<hr/><center><h5>ভূট্টা-প্রদর্শনী-১<hr/></h5></center>
 							<div class="form-group"><label for="maizefarmer1">কৃষকের নাম: <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="maizefarmer1" onblur="checkmaizefarmer1()"></div>
 							<div class="form-group"><label for="maizefarmer1address">ঠিকানা: <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="maizefarmer1address" onblur="checkmaizefarmer1address()"></div>
 							<div class="form-group"><label for="maizefarmer1mobile">মোবাইল নং:  <span class="text-danger ml-1">*</span></label><input type="phone" class="form-control"id="maizefarmer1mobile" onblur="checkmaizefarmer1mobile()"></div>
@@ -347,7 +373,10 @@
 							<div class="form-group"><label for="maizefarmer6variety">জাতের নাম:  <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="maizefarmer6variety" onblur="checkmaizefarmer6variety()"></div>
 							<div class="form-group"><label for="maizefarmer6date">স্থাপনের তারিখ:  <span class="text-danger ml-1">*</span></label><input type="date" class="form-control"id="maizefarmer6date" onblur="checkmaizefarmer6date()"></div>
 							<div class="form-group"><label for="maizefarmer6comment">প্রদর্শনীর অবস্থা/ মন্তব্য:  <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="maizefarmer6comment" onblur="checkmaizefarmer6comment()"></div>
-								                           <hr/><center><h5>সরিষা-প্রদর্শনী-১<hr/></h5></center>
+							</div>
+							<button type="button" class="collapsible">সরিষা-প্রদর্শনী</button>
+							<div class="content">
+							<hr/><center><h5>সরিষা-প্রদর্শনী-১<hr/></h5></center>
 							<div class="form-group"><label for="mustardfarmer1">কৃষকের নাম: <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="mustardfarmer1" onblur="checkmustardfarmer1()"></div>
 							<div class="form-group"><label for="mustardfarmer1address">ঠিকানা: <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="mustardfarmer1address" onblur="checkmustardfarmer1address()"></div>
 							<div class="form-group"><label for="mustardfarmer1mobile">মোবাইল নং:  <span class="text-danger ml-1">*</span></label><input type="phone" class="form-control"id="mustardfarmer1mobile" onblur="checkmustardfarmer1mobile()"></div>
@@ -396,7 +425,10 @@
 							<div class="form-group"><label for="mustardfarmer6variety">জাতের নাম:  <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="mustardfarmer6variety" onblur="checkmustardfarmer6variety()"></div>
 							<div class="form-group"><label for="mustardfarmer6date">স্থাপনের তারিখ:  <span class="text-danger ml-1">*</span></label><input type="date" class="form-control"id="mustardfarmer6date" onblur="checkmustardfarmer6date()"></div>
 							<div class="form-group"><label for="mustardfarmer6comment">প্রদর্শনীর অবস্থা/ মন্তব্য:  <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="mustardfarmer6comment" onblur="checkmustardfarmer6comment()"></div>
-						                           <hr/><center><h5>বোরো-প্রদর্শনী-১<hr/></h5></center>
+						                           </div>
+							<button type="button" class="collapsible">বোরো-প্রদর্শনী</button>
+							<div class="content">
+							<hr/><center><h5>বোরো-প্রদর্শনী-১<hr/></h5></center>
 							<div class="form-group"><label for="borofarmer1">কৃষকের নাম: <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="borofarmer1" onblur="checkborofarmer1()"></div>
 							<div class="form-group"><label for="borofarmer1address">ঠিকানা: <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="borofarmer1address" onblur="checkborofarmer1address()"></div>
 							<div class="form-group"><label for="borofarmer1mobile">মোবাইল নং:  <span class="text-danger ml-1">*</span></label><input type="phone" class="form-control"id="borofarmer1mobile" onblur="checkborofarmer1mobile()"></div>
@@ -445,7 +477,11 @@
 							<div class="form-group"><label for="borofarmer6variety">জাতের নাম:  <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="borofarmer6variety" onblur="checkborofarmer6variety()"></div>
 							<div class="form-group"><label for="borofarmer6date">স্থাপনের তারিখ:  <span class="text-danger ml-1">*</span></label><input type="date" class="form-control"id="borofarmer6date" onblur="checkborofarmer6date()"></div>
 							<div class="form-group"><label for="borofarmer6comment">প্রদর্শনীর অবস্থা/ মন্তব্য:  <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="borofarmer6comment" onblur="checkborofarmer6comment()"></div>
-						                           <hr/><center><h5>আমন-প্রদর্শনী-১<hr/></h5></center>
+						                           
+								</div>
+							<button type="button" class="collapsible">আমন-প্রদর্শনী</button>
+							<div class="content">
+							<hr/><center><h5>আমন-প্রদর্শনী-১<hr/></h5></center>
 							<div class="form-group"><label for="amanfarmer1">কৃষকের নাম: <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="amanfarmer1" onblur="checkamanfarmer1()"></div>
 							<div class="form-group"><label for="amanfarmer1address">ঠিকানা: <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="amanfarmer1address" onblur="checkamanfarmer1address()"></div>
 							<div class="form-group"><label for="amanfarmer1mobile">মোবাইল নং:  <span class="text-danger ml-1">*</span></label><input type="phone" class="form-control"id="amanfarmer1mobile" onblur="checkamanfarmer1mobile()"></div>
@@ -494,7 +530,11 @@
 							<div class="form-group"><label for="amanfarmer6variety">জাতের নাম:  <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="amanfarmer6variety" onblur="checkamanfarmer6variety()"></div>
 							<div class="form-group"><label for="amanfarmer6date">স্থাপনের তারিখ:  <span class="text-danger ml-1">*</span></label><input type="date" class="form-control"id="amanfarmer6date" onblur="checkamanfarmer6date()"></div>
 							<div class="form-group"><label for="amanfarmer6comment">প্রদর্শনীর অবস্থা/ মন্তব্য:  <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="amanfarmer6comment" onblur="checkamanfarmer6comment()"></div>
-						                           <hr/><center><h5>পেঁয়াজ-প্রদর্শনী-১<hr/></h5></center>
+						                           
+								</div>
+							<button type="button" class="collapsible">পেঁয়াজ-প্রদর্শনী</button>
+							<div class="content">
+							<hr/><center><h5>পেঁয়াজ-প্রদর্শনী-১<hr/></h5></center>
 							<div class="form-group"><label for="onionfarmer1">কৃষকের নাম: <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="onionfarmer1" onblur="checkonionfarmer1()"></div>
 							<div class="form-group"><label for="onionfarmer1address">ঠিকানা: <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="onionfarmer1address" onblur="checkonionfarmer1address()"></div>
 							<div class="form-group"><label for="onionfarmer1mobile">মোবাইল নং:  <span class="text-danger ml-1">*</span></label><input type="phone" class="form-control"id="onionfarmer1mobile" onblur="checkonionfarmer1mobile()"></div>
@@ -512,6 +552,9 @@
 							<div class="form-group"><label for="onionfarmer2date">স্থাপনের তারিখ:  <span class="text-danger ml-1">*</span></label><input type="date" class="form-control"id="onionfarmer2date" onblur="checkonionfarmer2date()"></div>
 							<div class="form-group"><label for="onionfarmer2comment">প্রদর্শনীর অবস্থা/ মন্তব্য:  <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="onionfarmer2comment" onblur="checkonionfarmer2comment()"></div>
 								   
+							</div>
+							<button type="button" class="collapsible">গম-প্রদর্শনী</button>
+							<div class="content">
 							<hr/><center><h5>গম-প্রদর্শনী-১<hr/></h5></center>
 							<div class="form-group"><label for="wheatfarmer1">কৃষকের নাম: <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="wheatfarmer1" onblur="checkwheatfarmer1()"></div>
 							<div class="form-group"><label for="wheatfarmer1address">ঠিকানা: <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="wheatfarmer1address" onblur="checkwheatfarmer1address()"></div>
@@ -529,12 +572,12 @@
 							<div class="form-group"><label for="wheatfarmer2variety">জাতের নাম:  <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="wheatfarmer2variety" onblur="checkwheatfarmer2variety()"></div>
 							<div class="form-group"><label for="wheatfarmer2date">স্থাপনের তারিখ:  <span class="text-danger ml-1">*</span></label><input type="date" class="form-control"id="wheatfarmer2date" onblur="checkwheatfarmer2date()"></div>
 							<div class="form-group"><label for="wheatfarmer2comment">প্রদর্শনীর অবস্থা/ মন্তব্য:  <span class="text-danger ml-1">*</span></label><input type="text" class="form-control"id="wheatfarmer2comment" onblur="checkwheatfarmer2comment()"></div>
-								   
+							</div><br>	   
 								   
                             <button type="button" class="btn btn-primary btn-block text-uppercase mb-3" onclick="saveProfile()">Save</button>
                             <button type="button" class="btn btn-dark btn-block text-uppercase" onclick="hideEditProfileForm()">Cancle</button>
                         </div>
-						<br>
+			<br>
                     </div>
                 </div>
             </div>
