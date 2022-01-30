@@ -37,6 +37,8 @@
                                 <img style="border-radius: 50%" id="userAvatar" src="../../images/maize.jpg" alt="avatar icon" >
                             </div>
                              <div class="col-12 col-12 mb-4 text-center">
+                                <span class="h4" style="color:#22ef44" id="pfsaaoname">please wait...</span><br>
+                                <span class="h4" style="color:#22ef44" id="pfsaaophone">please wait...</span><br>
                                 <span class="h4" style="color:#FF007F" id="pfblockname">please wait...</span><br>
                                 <span class="h4" style="color:#FF007F" id="pfunion"></span><br>
 								<span>Update Time:  </span><span style="color:blue" id="pflastupdate">loading...</span>
@@ -326,9 +328,17 @@
                                 <label for="name">Block Name</label>
                                 <input type="text" class="form-control" id="blockname" onblur="checkblockname()" readonly>
                             </div>
-							<div class="form-group">
+			<div class="form-group">
                                 <label for="union">ইউনিয়ন</label>
                                 <input type="text" class="form-control" id="union" onblur="checkunion()" readonly>
+                            </div>
+                          <div class="form-group">
+                                <label for="saaoname">কর্মকর্তার নাম</label>
+                                <input type="text" class="form-control" id="saaoname" onblur="checksaaoname()">
+                            </div>
+                          <div class="form-group">
+                                <label for="saaophone">মোবাইল নাম্বার</label>
+                                <input type="text" class="form-control" id="saaophone" onblur="checksaaophone()">
                             </div>
                            <div class="form-group"><label for="lastupdate">lastupdate<span class="text-danger ml-1">*</span></label><input type="datetime-local" class="form-control" id="lastupdate" onblur="checklastupdate()"></div>
                            			
