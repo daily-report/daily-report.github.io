@@ -15,6 +15,38 @@ function checkblockname(){
         document.getElementById("blocknameError").style.display = "none";
     }
 }
+// xxxxxxxxxx Full saaoname Validation xxxxxxxxxx
+function checksaaoname(){
+    var saaoname = document.getElementById("saaoname");
+    var saaonameFormate = /^([A-Za-z.\s_-]).{5,}$/;
+    var flag;
+    if(saaoname.value.match(saaonameFormate)){
+        flag = false;
+    }else{
+        flag = true;
+    }
+    if(flag){
+        document.getElementById("saaonameError").style.display = "block";
+    }else{
+        document.getElementById("saaonameError").style.display = "none";
+    }
+}
+// xxxxxxxxxx Full saaophone Validation xxxxxxxxxx
+function checksaaophone(){
+    var saaophone = document.getElementById("saaophone");
+    var saaophoneFormate = /^([A-Za-z.\s_-]).{5,}$/;
+    var flag;
+    if(saaophone.value.match(saaophoneFormate)){
+        flag = false;
+    }else{
+        flag = true;
+    }
+    if(flag){
+        document.getElementById("saaophoneError").style.display = "block";
+    }else{
+        document.getElementById("saaophoneError").style.display = "none";
+    }
+}
 // xxxxxxxxxx Full union Validation xxxxxxxxxx
 function checkunion(){
     var union = document.getElementById("union");
@@ -3229,6 +3261,8 @@ function checkUserBio(){
 // xxxxxxxxxx Submitting and Creating new user in firebase authentication xxxxxxxxxx
 function signUp(){
     var blockname = document.getElementById("blockname").value;
+    var saaoname = document.getElementById("saaoname").value;
+    var saaophone = document.getElementById("saaophone").value;
 	var union = document.getElementById("union").value;
 	var lastupdate = document.getElementById("lastupdate").value;
 	
@@ -3442,6 +3476,10 @@ function signUp(){
         return checkblockname();
     }else if(union === ""){
         return checkunion();
+    }else if(saaoname === ""){
+        return checksaaoname();
+    }else if(saaophone === ""){
+        return checksaaophone();
     }else if(lastupdate === ""){
         return checklastupdate();
     }else if(maizefarmer1variety === ""){
@@ -3990,6 +4028,8 @@ firebase.auth().onAuthStateChanged((user)=>{
         firebaseRefKey.on('value', (dataSnapShot)=>{
             document.getElementById("pfblockname").innerHTML = dataSnapShot.val().blockname;
             document.getElementById("pfunion").innerHTML = dataSnapShot.val().union;
+            document.getElementById("pfsaaoname").innerHTML = dataSnapShot.val().saaoname;
+            document.getElementById("pfsaaophone").innerHTML = dataSnapShot.val().saaophone;
             document.getElementById("pflastupdate").innerHTML = dataSnapShot.val().lastupdate;
             document.getElementById("pfmaizefarmer1variety").innerHTML = dataSnapShot.val().maizefarmer1variety;
 			document.getElementById("pfmaizefarmer1nid").innerHTML = dataSnapShot.val().maizefarmer1nid;
@@ -4201,7 +4241,9 @@ function showEditProfileForm(){
     document.getElementById("profileSection").style.display = "none"
     document.getElementById("editProfileForm").style.display = "block"
     var pfblockname = document.getElementById("pfblockname").innerHTML; 
-	var pfunion = document.getElementById("pfunion").innerHTML;
+	var pfunion = document.getElementById("pfunion").innerHTML;;
+	var pfsaaoname = document.getElementById("pfsaaoname").innerHTML;
+	var pfsaaophone = document.getElementById("pfsaaophone").innerHTML;
     var pflastupdate = document.getElementById("pflastupdate").innerHTML;
     var pfmaizefarmer1variety = document.getElementById("pfmaizefarmer1variety").innerHTML;
 	var pfmaizefarmer1nid = document.getElementById("pfmaizefarmer1nid").innerHTML;
@@ -4402,7 +4444,9 @@ function showEditProfileForm(){
     
 
     document.getElementById("blockname").value = pfblockname; 
-    document.getElementById("union").value = pfunion; 
+    document.getElementById("union").value = pfunion;
+    document.getElementById("saaoname").value = pfsaaoname; 
+    document.getElementById("saaophone").value = pfsaaophone; 
     document.getElementById("lastupdate").value = pflastupdate; 
     document.getElementById("maizefarmer1variety").value = pfmaizefarmer1variety;
 	document.getElementById("maizefarmer1nid").value = pfmaizefarmer1nid; 
@@ -4610,6 +4654,8 @@ function hideEditProfileForm(){
 function saveProfile(){
     let blockname = document.getElementById("blockname").value 
     let union = document.getElementById("union").value     
+    let saaoname = document.getElementById("saaoname").value     
+    let saaophone = document.getElementById("saaophone").value     
     let lastupdate = document.getElementById("lastupdate").value
     let maizefarmer1variety = document.getElementById("maizefarmer1variety").value
 	let maizefarmer1nid = document.getElementById("maizefarmer1nid").value  
@@ -4842,6 +4888,10 @@ function saveProfile(){
     var checkblocknameValid = blockname.match(blocknameFormate);
     if(blockname == null){
         return checkblockname();
+    }else if(saaoname === ""){
+        return checksaaoname();
+    }else if(saaophone === ""){
+        return checksaaophone();
     }else if(lastupdate === ""){
         return checklastupdate();
     }else if(maizefarmer1variety === ""){
@@ -5246,6 +5296,8 @@ function saveProfile(){
         var userData = {
             blockname: blockname,
             union: union,
+            saaoname: saaoname,
+            saaophone: saaophone,
             lastupdate: lastupdate,
 			
 			
