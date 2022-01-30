@@ -2782,6 +2782,8 @@ function checkUserBio(){
 // xxxxxxxxxx Submitting and Creating new user in firebase authentication xxxxxxxxxx
 function signUp(){
     var blockname = document.getElementById("blockname").value;
+	var saaoname = document.getElementById("saaoname").value;
+    var saaophone = document.getElementById("saaophone").value;
 	var union = document.getElementById("union").value;
 	var lastupdate = document.getElementById("lastupdate").value;
 	
@@ -2967,6 +2969,10 @@ function signUp(){
         return checkblockname();
     }else if(union === ""){
         return checkunion();
+    }else if(saaoname === ""){
+        return checksaaoname();
+    }else if(saaophone === ""){
+        return checksaaophone();
     }else if(lastupdate === ""){
         return checklastupdate();
     }else if(maizefarmer1variety === ""){
@@ -3459,6 +3465,8 @@ firebase.auth().onAuthStateChanged((user)=>{
         firebaseRefKey.on('value', (dataSnapShot)=>{
             document.getElementById("pfblockname").innerHTML = dataSnapShot.val().blockname;
             document.getElementById("pfunion").innerHTML = dataSnapShot.val().union;
+            document.getElementById("pfsaaoname").innerHTML = dataSnapShot.val().saaoname;
+            document.getElementById("pfsaaophone").innerHTML = dataSnapShot.val().saaophone;
             document.getElementById("pflastupdate").innerHTML = dataSnapShot.val().lastupdate;
             document.getElementById("pfmaizefarmer1variety").innerHTML = dataSnapShot.val().maizefarmer1variety;
 			document.getElementById("pfmaizefarmer1nid").innerHTML = dataSnapShot.val().maizefarmer1nid;
@@ -3643,6 +3651,8 @@ function showEditProfileForm(){
     document.getElementById("editProfileForm").style.display = "block"
     var pfblockname = document.getElementById("pfblockname").innerHTML; 
 	var pfunion = document.getElementById("pfunion").innerHTML;
+	var pfsaaoname = document.getElementById("pfsaaoname").innerHTML;
+	var pfsaaophone = document.getElementById("pfsaaophone").innerHTML;
     var pflastupdate = document.getElementById("pflastupdate").innerHTML;
     var pfmaizefarmer1variety = document.getElementById("pfmaizefarmer1variety").innerHTML;
 	var pfmaizefarmer1nid = document.getElementById("pfmaizefarmer1nid").innerHTML;
@@ -3816,6 +3826,8 @@ function showEditProfileForm(){
 
     document.getElementById("blockname").value = pfblockname; 
     document.getElementById("union").value = pfunion; 
+    document.getElementById("saaoname").value = pfsaaoname; 
+    document.getElementById("saaophone").value = pfsaaophone; 
     document.getElementById("lastupdate").value = pflastupdate; 
     document.getElementById("maizefarmer1variety").value = pfmaizefarmer1variety;
 	document.getElementById("maizefarmer1nid").value = pfmaizefarmer1nid; 
@@ -3994,7 +4006,9 @@ function hideEditProfileForm(){
 // xxxxxxxxxx Save profile and update database xxxxxxxxxx
 function saveProfile(){
     let blockname = document.getElementById("blockname").value 
-    let union = document.getElementById("union").value     
+    let union = document.getElementById("union").value       
+    let saaoname = document.getElementById("saaoname").value     
+    let saaophone = document.getElementById("saaophone").value   
     let lastupdate = document.getElementById("lastupdate").value
     let maizefarmer1variety = document.getElementById("maizefarmer1variety").value
 	let maizefarmer1nid = document.getElementById("maizefarmer1nid").value  
@@ -4197,6 +4211,10 @@ function saveProfile(){
         return checkblockname();
     }else if(lastupdate === ""){
         return checklastupdate();
+    }else if(saaoname === ""){
+        return checksaaoname();
+    }else if(saaophone === ""){
+        return checksaaophone();
     }else if(maizefarmer1variety === ""){
         return checkmaizefarmer1variety();
     }else if(maizefarmer1nid === ""){
@@ -4543,6 +4561,8 @@ function saveProfile(){
         var userData = {
             blockname: blockname,
             union: union,
+            saaoname: saaoname,
+            saaophone: saaophone,
             lastupdate: lastupdate,
 			
 			
