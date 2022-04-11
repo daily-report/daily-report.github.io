@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDYc9XFwVqKzbVFl6qp-65_2btGGA5c2Bw",
+		authDomain: "blockreport-fc82c.firebaseapp.com",
+		databaseURL: "https://blockreport-fc82c-default-rtdb.firebaseio.com",
+		projectId: "blockreport-fc82c",
+		storageBucket: "blockreport-fc82c.appspot.com",
+		messagingSenderId: "745182379010",
+		appId: "1:745182379010:web:75230cc51c69417bf07b1b",
+		measurementId: "G-TZT2J6LBGS"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Message</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="brand"><span>গম </span>চাষির তথ্য</h1>
+        <div class="wrapper animated bounceInLeft">
+            
+            <div class="contact">
+                <div class="alert">ধন্যবাদ ! তথ্য সংরক্ষিত হয়েছে।</div>
+                <form id="contactForm">
+                    <p class="full">
+                        <label>কৃষকের নাম<span style="color: #ff0000;">*</span></label>
+                        <input type="text" name="name" id="name" required>
+                    </p>
+                    <p class="full">
+                        <label>পিতার নাম</label>
+                        <input type="text" name="father" id="father">
+                    </p>
+                    <p class="full">
+                        <label>গ্রাম<span style="color: #ff0000;">*</span></label>
+                        <input type="text" name="vill" id="vill" required>
+                    </p>
+                   <p class="full">
+                        <label>ইউনিয়ন<span style="color: #ff0000;">*</span></label>
+                        <input list="unionList" name="union" id="union" required>
+                    </p>
+                    <p class="full">
+                        <label>ফোন/মোবাইল নম্বর</label>
+                        <input type="text" name="phone" id="phone">
+                    </p>
+                    <p class="full">
+                        <label>NID<span style="color: #ff0000;">*</span></label>
+                        <input type="number"name="nid" id="nid" required></input>
+                    </p>
+                  <p class="full">
+                        <label>আবাদকৃত গমের জমি(বিঘা)<span style="color: #ff0000;">*</span></label>
+                        <input type="number"name="land" id="land" required></input>
+                    </p>
+                    <p class="full">
+                        <button type="submit">সংরক্ষণ করুন</button>
+                    </p>
+                </form>
+				
+				
+                    
+            </div>
+        </div>
+    </div>
+	<br/>
+	<br/>
+	<br/>	<br/>
+	<br/>
+	<br/>
+		<datalist id="unionList">
+			<option value="Barakhata"> 
+			<option value="Goddimari"> 
+			<option value="Singimari"> 
+			<option value="Tonvanga"> 
+			<option value="Sindurna"> 
+			<option value="Patikapara"> 
+			<option value="Nowdabas"> 
+			<option value="Gotamari"> 
+			<option value="Velaguri"> 
+			<option value="Dawabari"> 
+			<option value="Shaniajan"> 
+			<option value="Fakirpara"> 
+		</datalist>
+    <div id="myContacts">
+
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="feedback.js"></script>
+</body>
+
+</html>
