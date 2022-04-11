@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seed/Fertilizer Calculator</title>
+
+    <meta charset="utf-8">
+
+  <link rel="stylesheet" href="w3.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="example.js"></script>
+
+
+
+
+    <style>
+    body{
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    }
+    </style>
+
+
+
+
+
+
+    <script>
+
+function lengthConverter(source,valNum) {
+  valNum = parseFloat(valNum);
+  var inputFeet = document.getElementById("inputFeet");
+  var inputMeters = document.getElementById("inputMeters");
+  var inputInches = document.getElementById("inputInches");
+  var inputcm = document.getElementById("inputcm");
+  var inputYards = document.getElementById("inputYards");
+  var inputKilometers = document.getElementById("inputKilometers");
+  var inputMiles = document.getElementById("inputMiles");
+  if (source=="inputFeet") {
+    inputMeters.value=(valNum*33).toFixed(2);
+    inputInches.value=(valNum*100).toFixed(2);
+    inputcm.value=(valNum*247).toFixed(2);
+    
+  }
+  if (source=="inputMeters") {
+    inputFeet.value=(valNum/33).toFixed(2);
+    inputInches.value=(valNum*3.0303).toFixed(2);
+    inputcm.value=(valNum*7.4848).toFixed(2);
+    
+  }
+  if (source=="inputInches") {
+    inputFeet.value=(valNum*0.01).toFixed(3);
+    inputMeters.value=(valNum*.33).toFixed(3);
+    inputcm.value=(valNum*2.47).toFixed(2);
+    
+  }
+  if (source=="inputcm") {
+    inputFeet.value=(valNum/247).toFixed(3);
+    inputMeters.value=(valNum*.133605).toFixed(3);
+    inputInches.value=(valNum*.40486).toFixed(2);
+  }
+  
+}</script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+</head>
+
+
+
+
+<body>
+<!--
+<div class="scrollmenu">
+
+
+    <a href="cropdc.html">Yield</a>
+    <a href="plantPopulation.html">Plant Population</a>
+    <a href="seed-fertilizer-calculator.html">Seed-Fertilizer</a>
+    <a href="nutrient-calculation.html">Nutrient Calculation</a>
+    <a href="unit.html">Unit Converter</a>
+    <a href="calculatorHome2.html">Calculator</a>
+
+</div>
+-->
+
+<html> 
+ <h3 style="text-align: center;"><span style="color: #800000;">Seed/Fertilizer Calculator</span></h3>
+<h4 style="text-align: center;"><span style="color: #800000;">Input any of the following parameter</span></h4>
+</div>
+
+<div class="w3-row-padding" style="margin:0 -16px">
+  <div class="w3-half w3-margin-top">
+    <label>kg/decimal</label>
+    <input id="inputFeet" class="w3-input w3-border" type="number" placeholder="kg/decimal" oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+  </div>
+  <div class="w3-half w3-margin-top">
+    <label>kg/bigha(33 decimal)</label>
+    <input id="inputMeters" class="w3-input w3-border" type="number" placeholder="kg/bigha" oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+  </div>
+  <div class="w3-half w3-margin-top">
+    <label>kg/acre</label>
+    <input id="inputInches" class="w3-input w3-border" type="number" placeholder="kg/acre" oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+  </div>
+  <div class="w3-half w3-margin-top">
+    <label>kg/hectare</label>
+    <input id="inputcm" class="w3-input w3-border" type="number" placeholder="kg/hectare" oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+  </div>
+ 
+</div>
+[Note: It can be used as plant population calculation if you have the number of plants pen unit area of any parameter. Just input the number of plants in any parameter you have and get the numbers of plants of other parameters.]
+
+</html>
+
+
+
+
+
+
+

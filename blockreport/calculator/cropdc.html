@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="style.css">  
+	<script src="script2.js"></script>
+
+    <style>
+input
+{
+  background: #ede3db;
+  border: 2px solid black;
+  border-radius: 15px;
+  height: 30px;
+  text-align: center;
+
+}
+frame{
+border:1px solid red;
+border-radius: 25px;
+}
+body{
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    }
+</style>
+    <meta charset="utf-8" />
+    <title>Crop Yield Calculation</title>
+</head>
+
+<body>
+
+
+<br><h3 style="text-align: center;"><span style="color: #800000;">Crop Yield Calculator</span></h3>
+<form id="yield" action="">
+    <fieldset class=center>
+        <div class=frame>
+            <legend><h3 style="text-align: center;"><span style="text-decoration: underline;"><span style="color: #800000;"><strong>In Hectare</strong></span></span></h3></legend>
+            <p>
+                <label for="im">Initial Moisture(%)</label><br>
+                <input id="im" name="im" step= "0.01" type="number" />
+            </p>
+            <p>
+                <label for="fm">Expected Moisture(%)</label><br>
+                <input id="fm" name="fm" step= "0.01" type="number" />
+            </p>
+            <p>
+                <label for="wt">Weight(kg) for 20m<sup>2</sup> area</label><br>
+                <input id="wt" name="wt" step="0.01" type="number" />
+            </p>
+            <p>
+                <input type="submit" value="Calculate weight" />
+
+                <input type="reset" value="Reset" />
+            </p>
+            <p>
+                <label for="weight">Yield (mTon/ha):</label><br>
+                <input id="weight"  name="weight" type="number" oninput="yieldConversion(this.id,this.value)" />
+            </p>
+
+ 
+
+        </div>
+    </fieldset>
+</form>
+
+<script>
+(function () {
+	function calculateYield(im, fm, wt) {
+		im = parseFloat(im);
+		fm = parseFloat(fm);
+		wt = parseFloat(wt);
+		return ( wt * (100-im) / ((100-fm)*2) );
+	}
+
+	var yield = document.getElementById("yield");
+	if (yield) {
+		yield.onsubmit = function () {
+			this.weight.value = calculateYield(this.im.value, this.fm.value, this.wt.value);
+			return false;
+		};
+	}
+}());
+</script>
+
+</body>
+</html>
+
+<br><br>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<body>
+<form id="yield3" action="">
+    <fieldset class=center>
+        <div class=frame>
+            <legend><h3 style="text-align: center;"><span style="text-decoration: underline;"><span style="color: #800000;"><strong>In Acre</strong></span></span></h3></legend>
+            <p>
+                <label for="im">Initial Moisture(%)</label><br>
+                <input id="im" name="im" step= "0.01" type="number" />
+            </p>
+            <p>
+                <label for="fm">Expected Moisture(%)</label><br>
+                <input id="fm" name="fm" step= "0.01" type="number" />
+            </p>
+            <p>
+                <label for="wt">Weight(kg) for 20m<sup>2</sup> area</label><br>
+                <input id="wt" name="wt" step="0.01" type="number" />
+            </p>
+            <p>
+                <input type="submit" value="Calculate weight" />
+
+                <input type="reset" value="Reset" />
+            </p>
+            <p>
+                <label for="weight">Yield (mon/acre):</label><br>
+                <input id="weight" name="weight" type="number" />
+            </p>
+
+
+
+        </div>
+    </fieldset>
+</form>
+
+<script>
+(function () {
+	function calculateYield(im, fm, wt) {
+		im = parseFloat(im);
+		fm = parseFloat(fm);
+		wt = parseFloat(wt);
+		return ( (wt * 5.06) * (100-im) / (100-fm) );
+	}
+
+	var yield3 = document.getElementById("yield3");
+	if (yield3) {
+		yield3.onsubmit = function () {
+			this.weight.value = calculateYield(this.im.value, this.fm.value, this.wt.value);
+			return false;
+		};
+	}
+}());
+
+
+</script>
+</body>
+</html><BR><BR>
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<body>
+<form id="yield2" action="">
+    <fieldset class=center>
+        <div class=frame>
+            <legend><h3 style="text-align: center;"><span style="text-decoration: underline;"><span style="color: #800000;"><strong>In Bigha(33 decimal)</strong></span></span></h3></legend>
+            <p>
+                <label for="im">Initial Moisture(%)</label><br>
+                <input id="im" name="im" step= "0.01" type="number" />
+            </p>
+            <p>
+                <label for="fm">Expected Moisture(%)</label><br>
+                <input id="fm" name="fm" step= "0.01" type="number" />
+            </p>
+            <p>
+                <label for="wt">Weight(kg) for 20m<sup>2</sup> area</label><br>
+                <input id="wt" name="wt" step="0.01" type="number" />
+            </p>
+            <p>
+                <input type="submit" value="Calculate weight" />
+
+                <input type="reset" value="Reset" />
+            </p>
+            <p>
+                <label for="weight">Yield (mon/bigha):</label><br>
+                <input id="weight" name="weight" type="number" />
+            </p>
+
+
+
+        </div>
+    </fieldset>
+</form>
+
+<script>
+(function () {
+	function calculateYield(im, fm, wt) {
+		im = parseFloat(im);
+		fm = parseFloat(fm);
+		wt = parseFloat(wt);
+		return ( (wt * 1.67) * (100-im) / (100-fm) );
+	}
+
+	var yield2 = document.getElementById("yield2");
+	if (yield2) {
+		yield2.onsubmit = function () {
+			this.weight.value = calculateYield(this.im.value, this.fm.value, this.wt.value);
+			return false;
+		};
+	}
+}());
+
+
+</script>
+</body>
+</html>
+
+
+<h5 style="text-align: center;">Copyright &copy;&nbsp;2019 <a href="https://reading-roombd.blogspot.com/" target="_blank">gentletouch</a>&nbsp;All Right Reserved&nbsp;</h5><br><br>

@@ -1,0 +1,177 @@
+<head>
+<script>function findSum() {
+  var hour = 6.6;
+  var shift = 3.0;
+
+
+  document.getElementById('capacity').value = Math.round(hour * shift);
+}
+
+
+function calc() {
+  //I want to add the variable of `earnHour`, `people` and `earnDays` here
+  let arr = document.getElementsByName('qty');
+  let tot = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+
+    let radios = document.getElementsByName("group" + (i + 1));
+
+    for (let j = 0; j < radios.length; j++) {
+      let radio = radios[j];
+
+      if (radio.value == "Yes" && radio.checked) {
+        tot += parseInt(arr[i].value);
+      }
+
+    }
+
+  }
+
+  document.getElementById('total').value = Math.round(tot);
+  var stdHour = (numHeadCount * (100-numTables) / ((100-numDays)*2));
+  document.getElementById('stdHour').value = stdHour;
+  var earnHour = ((tot * 1.15) / 60) * document.getElementById('numTables').value;
+  document.getElementById('earnHour').value = earnHour;
+  document.getElementById('hc').value = (earnHour / 6.6) * document.getElementById('numDays').value;
+  
+  // Calculated earnDays, but unaware where you want this value to go.
+  var earnDays = (document.getElementById('numTables').value / (document.getElementById('numHeadCount').value /stdHour));
+  
+  console.log(earnDays);
+ 
+}</script>
+<style><!--Table designing-->
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 40%;
+  text-align: center;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 2px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+input {
+  text-align: center;
+}
+
+#button {
+  width: 200px margin: auto;
+  text-align: center;
+  margin: 10px;
+}</style>
+</head>
+
+<body>
+
+  <div id="showdata" align="center"></div>
+  <br/>
+  <br/>
+  <br/>
+
+  <form id="radioForm" align="center">
+
+    <td align="center">Initial Moisture : <input type="text" id="numTables"><br></td>
+    <td align="center">Final Moisture : <input type="text" id="numDays"><br></td>
+    <td align="center">Weight for 20m<sup>2</sup> area : <input type="text" id="numHeadCount"><br></td>
+
+    <table style="width:70%" align="center">
+
+
+      <!--Attributes of table. Colspan used to insert sub-title for the main title.-->
+      <tr>
+        <th>Food</th>
+        <th colspan="4">Cycle-Time</th>
+      </tr>
+
+      <tr>
+        <td></td>
+        <td>Edit</td>
+        <td>Yes</td>
+        <td>No</td>
+      </tr>
+
+      <tr>
+        <label id="group1"> <!--label is used to control the respective group of radio buttons-->
+          <td>On Arrival</td>
+        <!--The input box in the 'Edit' column is set as below-->
+          <td><input type="text" value="20" align="center" name="qty" id="qty1" maxlength="4" size="4"/></td>
+        <!--The check boxes of 'Yes' and 'No' is created as below-->
+          <td><input type="radio" name="group1" value="Yes"></td>
+          <td><input type="radio" name="group1" value="No"></td>
+        </label>
+      </tr>
+
+      <tr>
+        <label id="group2">
+          <td>Food Test</td>
+          <td><input type="number" value="60" align="center" name="qty" id="qty2" maxlength="4" size="4"/></td>
+          <td><input type="radio" name="group2" value="Yes"></td>
+          <td><input type="radio" name="group2" value="No"></td>
+        </label>
+      </tr>
+
+      <tr>
+        <label id="group3">
+          <td>Cleaniness</td>
+          <td><input type="number" value="60" align="center" name="qty" id="qty3" maxlength="4" size="4"/></td>
+          <td><input type="radio" name="group3" value="Yes"></td>
+          <td><input type="radio" name="group3" value="No"></td>
+        </label>
+      </tr>
+
+      <tr>
+        <label id="group4">
+          <td>Stock</td>
+          <td><input type="number" value="60" align="center" name="qty" id="qty4" maxlength="4" size="4"/></td>
+          <td><input type="radio" name="group4" value="Yes"></td>
+          <td><input type="radio" name="group4" value="No"></td>
+        </label>
+      </tr>
+
+      <tr>
+        <td>Total (seconds)</td>
+        <td><input type="number" name="total" id="total" /></td>
+      </tr>
+
+      <tr>
+        <td>Standard Hour</td>
+        <td><input type="number" name="stdHour" id="stdHour" /></td>
+      </tr>
+
+      <tr>
+        <td>Earn Hour</td>
+        <td><input type="number" name="earnHour" id="earnHour" /></td>
+      </tr>
+
+      <tr>
+        <td>Capacity</td>
+        <td><input type="number" name="capacity" id="capacity" /></td>
+      </tr>
+
+      <tr>
+        <td>People</td>
+        <td><input type="number" name="hc" id="hc" /></td>
+      </tr>
+
+      <tr>
+        <td>Number of Days</td>
+        <td><input type="number" name="days" id="days" /></td>
+      </tr>
+
+    </table>
+  </form>
+  <!--End of Form-->
+  </br>
+  <div id="button" align="center"><button type="button" align="center" onClick="calc(),findSum()">Calculate</button></div>
+
+</body>

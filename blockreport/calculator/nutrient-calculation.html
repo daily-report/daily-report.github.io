@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nutrient Calculator</title>
+
+    <meta charset="utf-8">
+
+  <link rel="stylesheet" href="w3.css">
+  <link rel="stylesheet" href="style.css">
+  <!--script src="example.js"></script-->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script>
+
+function lengthConverter(source,valNum) {
+  valNum = parseFloat(valNum);
+  var inputFeet = document.getElementById("inputFeet");
+  var inputMeters = document.getElementById("inputMeters");
+  var inputInches = document.getElementById("inputInches");
+  var inputcm = document.getElementById("inputcm");
+  var inputYards = document.getElementById("inputYards");
+  var inputKilometers = document.getElementById("inputKilometers");
+  var inputMiles = document.getElementById("inputMiles");
+  if (source=="inputFeet") {
+    inputMeters.value=(valNum/.46).toFixed(2);
+    inputInches.value=(valNum*100).toFixed(2);
+    inputcm.value=(valNum*247).toFixed(2);
+    
+  }
+  if (source=="inputMeters") {
+    inputFeet.value=(valNum*.46).toFixed(2);
+    
+    
+  }
+  
+  if (source=="inputP") {
+    inputTSP.value=(valNum/.46).toFixed(2);
+    
+    
+  }
+  if (source=="inputTSP") {
+    inputP.value=(valNum*.46).toFixed(2);
+   
+    
+  }
+  
+  
+  if (source=="inputK") {
+    inputMOP.value=(valNum/.5).toFixed(2);
+    
+    
+  }
+  if (source=="inputMOP") {
+    inputK.value=(valNum*.5).toFixed(2);
+     
+  }
+  if (source=="inputN") {
+    inputP2.value=(valNum*1.1111).toFixed(3);
+    inputP2O5.value=(valNum/.39).toFixed(3);
+    inputDAP.value=(valNum*5.5556).toFixed(2);
+    
+  }
+  
+  if (source=="inputP2") {
+    inputN.value=(valNum*0.9).toFixed(3);
+    inputP2O5.value=(valNum*2.3).toFixed(3);
+    inputDAP.value=(valNum*5).toFixed(2);
+    
+  }
+  
+  if (source=="inputP2O5") {
+    inputN.value=(valNum*0.393).toFixed(3);
+    inputP2.value=(valNum*.435).toFixed(3);
+    inputDAP.value=(valNum*2.174).toFixed(2);
+    
+  }
+  if (source=="inputDAP") {
+    inputN.value=(valNum*0.18).toFixed(3);
+    inputP2O5.value=(valNum*.46).toFixed(3);
+    inputP2.value=(valNum*.20).toFixed(2);
+    
+  }
+  
+ 
+}</script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+</head>
+
+
+
+
+<body>
+<!--
+<div class="scrollmenu">
+
+
+    <a href="cropdc.html">Yield</a>
+    <a href="plantPopulation.html">Plant Population</a>
+    <a href="seed-fertilizer-calculator.html">Seed-Fertilizer</a>
+    <a href="nutrient-calculation.html">Nutrient Calculation</a>
+    <a href="unit.html">Unit Converter</a>
+    <a href="calculatorHome2.html">Calculator</a>
+
+</div>
+-->
+<html> 
+ <h3 style="text-align: center;"><span style="color: #800000;">Nutrient Calculation</span></h3>
+<h4 style="text-align: center;"><span style="color: #800000;">Urea: NH<sub>2</sub>CONH<sub>2</sub></span></h4>
+</div>
+
+<div class="w3-row-padding" style="margin:20 -16px">
+  <div class="w3-half w3-margin-top">
+    <label>Nitrogen(kg)</label>
+    <input id="inputFeet" class="w3-input w3-border" type="number" placeholder="নাইট্রোজেনের পরিমাণ" oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+  </div>
+    
+</div>
+
+<div class="w3-row-padding" style="margin:20 -16px">
+<div class="w3-half w3-margin-top">
+    <label>Urea(kg)</label>
+    <input id="inputMeters" class="w3-input w3-border" type="number" placeholder="ইউরিয়ার পরিমাণ" oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+  </div></div>
+  &nbsp;&nbsp;&nbsp;[Note: 46% নাইট্রোজেন হিসেবে। ]
+<hr/>
+</html>
+<br><br>
+<html> 
+ <h3 style="text-align: center;"><span style="color: #800000;">Nutrient Calculation</span></h3>
+<h4 style="text-align: center;"><span style="color: #800000;">TSP: Ca(H<sub>2</sub>PO<sub>4</sub>)<sub>2</sub>.H<sub>2</sub>O</span></h4>
+</div>
+
+<div class="w3-row-padding" style="margin:20 -16px">
+  <div class="w3-half w3-margin-top">
+    <label>P<sub>2</sub>O<sub>5</sub>(kg)</label>
+    <input id="inputP" class="w3-input w3-border" type="number" placeholder="পরিমাণ" oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+  </div>
+    
+</div>
+
+<div class="w3-row-padding" style="margin:20 -16px">
+<div class="w3-half w3-margin-top">
+    <label>TSP(kg)</label>
+    <input id="inputTSP" class="w3-input w3-border" type="number" placeholder="টিএসপি এর পরিমাণ" oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+  </div></div>
+    &nbsp;&nbsp;&nbsp;[Note: 46% P<sub>2</sub>O<sub>5</sub> হিসেবে। ]
+
+
+</html>
+<hr/>
+
+
+
+
+
+<br><br>
+
+<html> 
+ <h3 style="text-align: center;"><span style="color: #800000;">Nutrient Calculation</span></h3>
+<h4 style="text-align: center;"><span style="color: #800000;">MOP: KCl</span></h4>
+</div>
+
+<div class="w3-row-padding" style="margin:20 -16px">
+  <div class="w3-half w3-margin-top">
+    <label>K (পটাশিয়াম)(kg)</label>
+    <input id="inputK" class="w3-input w3-border" type="number" placeholder="পটাশিয়াম এর পরিমাণ" oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+  </div>
+    
+</div>
+
+<div class="w3-row-padding" style="margin:20 -16px">
+<div class="w3-half w3-margin-top">
+    <label>MOP(kg)</label>
+    <input id="inputMOP" class="w3-input w3-border" type="number" placeholder="MOP এর পরিমাণ" oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+  </div></div>
+    &nbsp;&nbsp;&nbsp;[Note: 50% K হিসেবে। ]
+
+
+</html>
+
+<hr/>
+
+
+
+<br><br>
+
+<html> 
+ <h3 style="text-align: center;"><span style="color: #800000;">Nutrient Calculation</span></h3>
+<h4 style="text-align: center;"><span style="color: #800000;">DAP: (NH<sub>4</sub>)<sub>2</sub>HPO<sub>4</sub></span></h4>
+</div>
+
+<div class="w3-row-padding" style="margin:20 -16px">
+  <div class="w3-half w3-margin-top">
+    <label>N(নাইট্রোজেন)(kg)</label>
+    <input id="inputN" class="w3-input w3-border" type="number" placeholder="নাইট্রোজেনের পরিমাণ" oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+  </div>
+    
+</div>
+<div class="w3-row-padding" style="margin:20 -16px">
+  <div class="w3-half w3-margin-top">
+    <label>P(ফসফরাস)(kg)</label>
+    <input id="inputP2" class="w3-input w3-border" type="number" placeholder="ফসফরাস এর পরিমাণ" oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+  </div>
+    
+</div>
+
+
+<div class="w3-row-padding" style="margin:20 -16px">
+  <div class="w3-half w3-margin-top">
+    <label>P<sub>2</sub>O<sub>5</sub>(kg)</label>
+    <input id="inputP2O5" class="w3-input w3-border" type="number" placeholder="পরিমাণ" oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+  </div>
+    
+</div>
+
+<div class="w3-row-padding" style="margin:20 -16px">
+<div class="w3-half w3-margin-top">
+    <label>DAP(kg)</label>
+    <input id="inputDAP" class="w3-input w3-border" type="number" placeholder="DAP এর পরিমাণ" oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+  </div></div>
+    &nbsp;&nbsp;&nbsp;[Note: ]
+
+
+</html>
+<hr/>
+
+<br><br><br><br><br>
+
+
+

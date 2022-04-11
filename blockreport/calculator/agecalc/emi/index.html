@@ -1,0 +1,65 @@
+<head>
+  <meta charset="UTF-8">
+  <title>Form</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 col-sm-offset-2 col-sm-8 col-xs-12">
+        <form class="credit">
+          <div class="form-group">
+            <label for="amount">Initial moisture</label>
+            <div class="input-group">
+              <div class="input-group-addon">%</div>
+              <input type="number" step="0.001" class="form-control validate" id="amount" value= "24" placeholder="Enter amount" required>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="spinner hide">
+              <div class="bounce1"></div>
+              <div class="bounce2"></div>
+              <div class="bounce3"></div>
+            </div>
+            <strong class="convert-dollar text-warning"></strong>
+            <strong class="convert-euro text-warning pull-right"></strong>&nbsp;&nbsp;
+          </div>
+          <div class="form-group">
+            <label for="percent">Final Moisture</label>
+            <div class="input-group">
+              <div class="input-group-addon">%</div>
+              <input type="number" step="0.001" class="form-control validate" id="percent" placeholder="Percent" value="14" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="weight">Weight for 20m<sup>2</sup> area</label>
+            <div class="input-group">
+              <div class="input-group-addon">kg</div>
+              <input type="number" step="0.001" class="form-control validate" id="weight" placeholder="weight" value="12" required>
+            </div>
+          </div>
+        <!--  <div class="form-group">
+            <label><span class="rangevalue">12</span> Kg</label>
+            <input class="slider" type="range" min="1" max="240" value="12">
+
+          </div>-->
+          <button type="submit" class="btn btn-primary btn-block">Calculate</button>
+
+        </form>
+        <h3 class="results">Month payment: <span class="month-pay"></span><br>
+          <small>Total payment: <span class="pay"></span></small></h3>
+
+        <form class="form-inline">
+          <div class="form-group">
+            <input type="email" class="form-control validate" id="email" placeholder="Your email">
+          </div>
+          <button type="submit" class="btn btn-default">Send</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</body>

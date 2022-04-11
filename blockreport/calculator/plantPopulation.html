@@ -1,0 +1,242 @@
+
+<html ng-app='My-RML'>
+<head>
+<title>Plant Population Calculator</title>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+<script  src="jquery.min.js"></script>
+<link rel='stylesheet' href='pp.css'>
+<link rel='stylesheet' href='w3.css'>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	addLibTranslationFile(changeTranslations);
+	initRatingWidget();
+	fetchArticleRating();
+	postAnalyticsEvent(document.title, true, 'Plant Population Calculator');
+});
+function changeTranslations(){
+	changeLabels();
+	var state = getParameterByName('state');
+	loadConversionUnits(state);
+}
+function loadConversionUnits(stateCode) {
+	var units = getConversionUnitsByState(stateCode);
+	var options = '';
+	for (i = 0; i < units.length; i++) {
+		options += "<option value='"+units[i]['conversion_factor']+"'>"
+				+ getTranslatedLable(units[i]['unit']) + "</option>";
+	}
+	$('#area-unit').html(options);
+	$('#no-of-plants-per-unit').html(options);
+}
+
+
+    var total = 0;
+    var count_total = 0;
+    var textValue1 = 0;
+    var textValue2 = 0;
+    var final_area_in_hector = 0;
+    var isChecked = false;
+    //Globals
+    var g_UseAreaInHec = false;
+    var g_UsePlantDensityInHec = false;
+    var g_TotalArea = 0;
+    var g_PlantPerHec =0;
+    var g_TotalPlants = 0;
+    var g_RowCount = 'NA';
+    var g_PlantsPerRow = 'NA';
+    var g_PlantsPerUnit=0;
+    var gAcreToHecterConversionFactor=0.404686;
+    var gHectarToAcreConversionFactor=2.47105;
+            
+     function isNumberKey(evt)
+      {
+         var charCode = (evt.which) ? evt.which : event.keyCode
+         if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+             alert("Please Enter Only Numeric Value:");
+             return false;
+         }
+ 
+         return true;
+      }
+    
+    $(function() {
+    $('input[name="area_type"]').on('click', function() {
+      
+              document.getElementById("areanm").value ='';
+            g_UseAreaInHec = false;
+            
+        
+    });
+});
+    
+
+    
+    function onCalculate() {
+        clearResults();
+        calcArea();
+        calcPlantsPerHectare();
+        calcTotalPlants();
+        showResults();
+    }
+    function calcArea(){ 
+        	var area=document.getElementById("areanm").value;
+            var areaUnit=document.getElementById("area-unit").value;
+            console.log("area"+area+"areaUnit"+areaUnit);
+        	g_TotalArea =area*areaUnit;
+    }
+    function calcPlantsPerHectare(){
+            rowWidth = document.getElementById('row-width').value;
+            rowWidthUnit = document.getElementById('row-width-unit').value;
+            plantingDistanceUnit = document.getElementById('plant-distance-unit').value;
+            plantingDistance = document.getElementById('planting-distance').value;
+            console.log((rowWidth*rowWidthUnit) * (plantingDistance*plantingDistanceUnit));
+             g_PlantPerHec = 10000/((rowWidth*rowWidthUnit) * (plantingDistance*plantingDistanceUnit));
+      
+             var areaUnit=document.getElementById("area-unit").value;
+            g_PlantsPerUnit=g_PlantPerHec*gAcreToHecterConversionFactor*areaUnit;
+    }    
+    
+    function calcTotalPlants(){
+    	console.log("plants per unit"+g_PlantsPerUnit+" area"+g_TotalArea);
+        g_TotalPlants = g_PlantPerHec *g_TotalArea*gAcreToHecterConversionFactor;
+    }
+        
+    function showResults() {
+        tltPlant.innerHTML = parseInt(g_TotalPlants);
+        PlantsPer.innerHTML = parseInt(g_PlantsPerUnit);
+		var text = $('#area-unit option:selected').text();
+		var html= getTranslatedLable("Plants_Per");
+		$('#plant-per').html(html+" "+text);
+    }
+    function clearResults() {
+        tltPlant.innerHTML = '';
+        PlantsPer.innerHTML = '';
+     
+     g_TotalArea = 0;
+     g_PlantPerHec =0;
+     g_TotalPlants = 0;       
+    }    
+        
+    </script>
+	<!--
+    <div class="scrollmenu">
+
+
+        <a href="cropdc.html">Yield</a>
+        <a href="plantPopulation.html">Plant Population</a>
+        <a href="seed-fertilizer-calculator.html">Seed-Fertilizer</a>
+        <a href="nutrient-calculation.html">Nutrient Calculation</a>
+        <a href="unit.html">Unit Converter</a>
+        <a href="calculatorHome2.html">Calculator</a>
+
+    </div>
+    -->
+
+<br><br><h3 style="text-align: center;"><span style="color: #800000;">Plant Population Calculator</span></h3>
+
+</head>
+
+<body ng-controller='changeLanguage'>
+
+	<div id='calculator' class='calculator'>
+		<div class='pop_title'>
+		
+
+		</div>
+	</div>
+	<div class='calculator-container'>
+
+		<form id="form1" class='div-color-2'>
+			<h3 class='label-translator'>Area</h3>
+
+
+
+			<div id="area_text_div" class="post sizeboxes size-in-area">
+				<label class='label-translator'>Enter Area</label> <input type="text"
+					name="area_1" class="text_box" id="areanm"
+					onkeypress="return isNumberKey(event)"><select
+					id="area-unit">
+                   <option  value='2.4707'>Hectare</option>
+                   <option selected="selected" value='1'>acre</option>
+                   <option value='.33'>Bigha</option>
+                   <option value='.01'>decimal</option>
+                   <option value='.0248'>katha</option>
+
+					</select>
+			</div>
+		</form>
+
+		<form class='div-color-2'>
+			<h3 class='label-translator'>Enter Following Parameter</h3>
+			<div>
+
+
+				<div id="row_width_plan_dist_div"
+					class="post plant-specification sizeboxes ">
+					<div>
+						<label class='label-translator'>Row-Row Distance</label><input
+							type="text" class="text_box" name="row" id="row-width" value=""
+							onkeypress="return isNumberKey(event)"><select
+							id='row-width-unit'>
+							<option class='label-translator' value='0.01'>cm</option>
+							<option class='label-translator' value='0.0254'>inch</option>
+							<option class='label-translator' value='0.3048'>foot</option>
+							<option class='label-translator' selected="selected" value='1'>meter</option>
+						</select>
+					</div>
+					<div>
+						<label class='label-translator'>Plant-Plant Distance</label> <input
+							type="text" class="text_box" name="plant" id="planting-distance"
+							onkeypress="return isNumberKey(event)"><select
+							id='plant-distance-unit'>
+							<option class='label-translator' value='0.01'>cm</option>
+							<option class='label-translator' value='0.0254'>inch</option>
+							<option class='label-translator' value='0.3048'>foot</option>
+							<option class='label-translator' selected="selected" value='1'>meter</option>
+
+						</select>
+					</div>
+				</div>
+			</div>
+
+		</form>
+		<div>
+			<input type="button" class="buttonCalculate label-translator"
+				name="calc" value="Calculate" onclick="javascript:onCalculate();" />
+		</div>
+
+		<div class='div-color-1 result-table'>
+			<h3 class='label-translator'>Result</h3>
+			<table id="table1" border="1">
+				<thead>
+					<tr>
+						<th class="label-translator">Planting Details</th>
+						<th class='label-translator'>Result</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class='label-translator'>Total Plant</td>
+						<td align="right" class="totPlant" id="tltPlant"></td>
+					</tr>
+					<tr>
+						<td id="plant-per" class='label-translator'>Plant Per Unit area</td>
+						<td align="right" id="PlantsPer"></td>
+					</tr>
+
+				</tbody>
+				
+			</table>
+		</div>
+	</div>
+
+	
+
+</body>
+
+<h6 style="text-align: center;">Copyright &copy;&nbsp;2019 <a href="https://reading-roombd.blogspot.com/" target="_blank">gentletouch</a>&nbsp;All Right Reserved&nbsp;</h6><br><br>
+</html>

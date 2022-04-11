@@ -1,0 +1,250 @@
+body {
+	background: #F3F3F3;
+}
+
+.hide {
+	display: none;
+}
+
+h2 {
+	font-weight: normal;
+	font-size: 20px;
+	color: #f4ae00;
+}
+
+.container {
+	margin: 4%;
+	float: left;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	width: 92%;
+}
+
+.pop_content_table {
+	width: 100%;
+	border-collapse: collapse;
+	border: 1px solid #CCC;
+}
+
+.pop_content_table  tr th, .pop_content_table tr td {
+	border: 1px solid #CCC;
+
+}
+
+.pop_category_wrapper {
+	float: left;
+	width: 100%;
+	border-bottom: 4px solid #F3F3F3;
+	border-radius: 5px;
+	background: #FFFFFF;
+}
+
+.pop_title {
+	width: 92%;
+	cursor: pointer;
+	font-size: 24px;
+	float: left;
+	margin-left: 4%;
+}
+
+.pop_footer {
+	width: 92%;
+	cursor: pointer;
+	font-size: 12px;
+	float: left;
+	margin-top: 20px;
+	margin-left: 4%;
+}
+
+
+#news-container {
+	border: none !important;
+}
+
+#news-container div.div-color-1, .div-color-2 {
+	margin-bottom: 10px;
+	padding: 16px;
+	border-radius: 7px;
+	padding-bottom: 20px;
+	word-break: break-word;
+}
+
+.div-color-1, .div-color-2 {
+	background: #FFFFFF;
+}
+
+
+.crops-container .slider .left-arrow {
+	background: url(../images/left_arrow.png);
+	height: 24px;
+	width: 24px;
+	float: left;
+	position: relative;
+	position: absolute;
+	top: 175px;
+}
+
+.crops-container .slider .right-arrow {
+	background: url(../images/right_arrow.png);
+	height: 24px;
+	width: 24px;
+	float: left;
+	position: absolute;
+	right: 4%;
+	top: 175px;
+}
+
+.slider .container_tile {
+	margin-left: 0;
+	float: left;
+	margin-top: 3px;
+	width: 85%;
+	overflow: hidden;
+}
+
+.slider .container_tile .inner-div {
+	width: 1000px;
+}
+
+p.lock {
+	float: right;
+	background: url(../images/lock.png) no-repeat center bottom;
+	height: 34px;
+	width: 36px;
+	margin: 0px;
+	margin-top: 6px;
+}
+
+.green-button {
+	float: right;
+	background: url(../images/page_save.png) no-repeat center bottom;
+	height: 34px;
+	width: 36px;
+}
+
+.favorite-button {
+	float: right;
+	background: url(../images/Favorites.png) no-repeat center bottom;
+	height: 45px;
+	width: 36px;
+}
+
+.calculator .text-title {
+	font-size: 18px;
+}
+
+.calculator .title-image {
+	width: 100%;
+}
+
+.calculator-container, .msp-container {
+	margin: 4%;
+	float: left;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	width: 92%;
+}
+
+.calculator-container form, .calculator-container div.length_width_div,
+	.result-table {
+	border-radius: 7px;
+	padding: 12px 10px 6px;
+	float: left;
+	width: 94%;
+}
+
+.calculator-container div table {
+	width: 100%;
+}
+
+#unit-list div div {
+	float: left;
+	width: 86px;
+	margin-bottom: 19px;
+	text-align: center;
+	border-radius: 7px;
+	height: 31px;
+	margin-left: 19px;
+	background: #F3F3F3;
+	line-height: 34px;
+}
+
+.calculator-container select {
+	width: 68px;
+	height: 31px;
+	border-radius: 7px;
+	border: 1px solid #ccc
+}
+
+.msp-container select {
+	width: 150px;
+	height: 31px;
+	border-radius: 7px;
+	border: 1px solid #ccc;
+	margin-right: 8px;
+}
+
+.calculator .head {
+	width: 65%;
+}
+
+.calculator-container input[type='text'] {
+	width: 300px;
+	height: 30px;
+	margin-left: 3px;
+	margin-right: 6px;
+	border-radius: 7px;
+	border: 1px solid #ccc;
+	text-align: center;
+}
+
+.buttonCalculate {
+	height: 39px;
+	width: 118px;
+	border-radius: 8px;
+	position: relative;
+	box-shadow: none;
+	margin-bottom: 14px;
+	left: 15%;
+	background: #E56A1A;
+	color: #FFFFFF;
+	border: none;
+}
+
+
+.calculator-container div table, .calculator-container div td {
+	border: 1px, solid black;
+	border-collapse: collapse;
+}
+
+
+.sizeboxes {
+	position: relative;
+	left: 7px;
+}
+
+.sizeboxes div {
+	clear: both;
+	margin-top: 5px;
+	float: left;
+	width: 100%;
+}
+
+.plant-specification.sizeboxes label {
+	width: 92px;
+}
+
+.sizeboxes label {
+	float: left;
+	width: 54px;
+	line-height: 26px;
+}
+
+#plants_per_hec_div {
+	position: relative;
+	left: 9px;
+}
+
+.size-in-area {
+	margin-top: 6px;
+}
