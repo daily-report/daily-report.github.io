@@ -553,6 +553,10 @@ firebase.auth().onAuthStateChanged((user)=>{
             document.getElementById("pfbororipening").innerHTML = dataSnapShot.val().bororipening;
             document.getElementById("pfboroharvest").innerHTML = dataSnapShot.val().boroharvest;
             document.getElementById("pfborototlapercent").innerHTML = dataSnapShot.val().borototlapercent;
+			document.getElementById("pfdivision").innerHTML = dataSnapShot.val().division;
+			document.getElementById("pfdistrict").innerHTML = dataSnapShot.val().district;
+            document.getElementById("pfupazila").innerHTML = dataSnapShot.val().upazila;
+
 			
         })
     } else {
@@ -580,6 +584,9 @@ function showEditProfileForm(){
     var pfbororipening = document.getElementById("pfbororipening").innerHTML;
     var pfboroharvest = document.getElementById("pfboroharvest").innerHTML;
     var pfborototlapercent = document.getElementById("pfborototlapercent").innerHTML;
+    var pfupazila = document.getElementById("pfupazila").innerHTML;
+    var pfdistrict = document.getElementById("pfdistrict").innerHTML;
+    var pfdivision = document.getElementById("pfdivision").innerHTML;
     
     document.getElementById("blockname").value = pfblockname; 
     document.getElementById("union").value = pfunion; 
@@ -597,6 +604,9 @@ function showEditProfileForm(){
     document.getElementById("bororipening").value = pfbororipening; 
     document.getElementById("boroharvest").value = pfboroharvest; 
     document.getElementById("borototlapercent").value = pfborototlapercent; 
+    document.getElementById("upazila").value = pfupazila; 
+    document.getElementById("district").value = pfdistrict; 
+    document.getElementById("division").value = pfdivision; 
 }
 // xxxxxxxxxx Hide edit profile form xxxxxxxxxx
 function hideEditProfileForm(){
@@ -622,6 +632,9 @@ function saveProfile(){
     let bororipening = document.getElementById("bororipening").value  
     let boroharvest = document.getElementById("boroharvest").value  
     let borototlapercent = document.getElementById("borototlapercent").value 
+    let division = document.getElementById("division").value 
+    let district = document.getElementById("district").value 
+    let upazila = document.getElementById("upazila").value 
     
     var blocknameFormate = /^([A-Za-z.\s_-]).{5,}$/; 
     var checkblocknameValid = blockname.match(blocknameFormate);
@@ -657,6 +670,12 @@ function saveProfile(){
         return checkboroharvest();
     }else if(borototlapercent === ""){
         return checkborototlapercent();
+    }else if(upazila === ""){
+        return checkupazila();
+    }else if(district === ""){
+        return checkdistrict();
+    }else if(division === ""){
+        return checkdivision();
     }else{
         let user = firebase.auth().currentUser;
         let uid;
@@ -682,6 +701,9 @@ function saveProfile(){
             bororipening: bororipening,
             boroharvest: boroharvest,
             borototlapercent: borototlapercent,
+            division: division,
+            district: district,
+            upazila: upazila,
         }
         firebaseRef.child(uid).set(userData);
         swal({
@@ -705,7 +727,7 @@ function signOut(){
             title: 'Successfully Signed Out', 
         }).then((value) => {
             setTimeout(function(){
-                window.location.replace("../index.html");
+                window.location.replace("../../index.html");
             }, 1000)
         });
     }).catch(function(error) {

@@ -3636,6 +3636,9 @@ firebase.auth().onAuthStateChanged((user)=>{
 			document.getElementById("pfamanfarmer6").innerHTML = dataSnapShot.val().amanfarmer6;
             document.getElementById("pfamanfarmer6mobile").innerHTML = dataSnapShot.val().amanfarmer6mobile;
             document.getElementById("pfamanfarmer6comment").innerHTML = dataSnapShot.val().amanfarmer6comment;
+			document.getElementById("pfdivision").innerHTML = dataSnapShot.val().division;
+			document.getElementById("pfdistrict").innerHTML = dataSnapShot.val().district;
+            document.getElementById("pfupazila").innerHTML = dataSnapShot.val().upazila;
 			
             
 			
@@ -3822,6 +3825,9 @@ function showEditProfileForm(){
 	var pfamanfarmer6 = document.getElementById("pfamanfarmer6").innerHTML;
     var pfamanfarmer6mobile = document.getElementById("pfamanfarmer6mobile").innerHTML;
     var pfamanfarmer6comment = document.getElementById("pfamanfarmer6comment").innerHTML;
+    var pfupazila = document.getElementById("pfupazila").innerHTML;
+    var pfdistrict = document.getElementById("pfdistrict").innerHTML;
+    var pfdivision = document.getElementById("pfdivision").innerHTML;
     
 
     document.getElementById("blockname").value = pfblockname; 
@@ -3996,7 +4002,10 @@ function showEditProfileForm(){
     document.getElementById("amanfarmer6address").value = pfamanfarmer6address;
 	document.getElementById("amanfarmer6").value = pfamanfarmer6; 
     document.getElementById("amanfarmer6mobile").value = pfamanfarmer6mobile; 
-    document.getElementById("amanfarmer6comment").value = pfamanfarmer6comment;    	
+    document.getElementById("amanfarmer6comment").value = pfamanfarmer6comment;
+    document.getElementById("upazila").value = pfupazila; 
+    document.getElementById("district").value = pfdistrict; 
+    document.getElementById("division").value = pfdivision;     	
 }
 // xxxxxxxxxx Hide edit profile form xxxxxxxxxx
 function hideEditProfileForm(){
@@ -4201,7 +4210,10 @@ function saveProfile(){
     let amanfarmer6address = document.getElementById("amanfarmer6address").value
 	let amanfarmer6 = document.getElementById("amanfarmer6").value  
     let amanfarmer6mobile = document.getElementById("amanfarmer6mobile").value  
-    let amanfarmer6comment = document.getElementById("amanfarmer6comment").value 
+    let amanfarmer6comment = document.getElementById("amanfarmer6comment").value  
+    let division = document.getElementById("division").value 
+    let district = document.getElementById("district").value 
+    let upazila = document.getElementById("upazila").value 
  
  
  
@@ -4551,6 +4563,12 @@ function saveProfile(){
         return checkamanfarmer6mobile();
     }else if(amanfarmer6comment === ""){
         return checkamanfarmer6comment();
+    }else if(upazila === ""){
+        return checkupazila();
+    }else if(district === ""){
+        return checkdistrict();
+    }else if(division === ""){
+        return checkdivision();
     }else{
         let user = firebase.auth().currentUser;
         let uid;
@@ -4733,7 +4751,10 @@ function saveProfile(){
             amanfarmer6address: amanfarmer6address,
 			amanfarmer6: amanfarmer6,
             amanfarmer6mobile: amanfarmer6mobile,
-            amanfarmer6comment: amanfarmer6comment
+            amanfarmer6comment: amanfarmer6comment,
+            division: division,
+            district: district,
+            upazila: upazila
 			
         }
         firebaseRef.child(uid).set(userData);
