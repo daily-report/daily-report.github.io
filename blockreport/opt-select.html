@@ -1,0 +1,58 @@
+<form action="javascript:void(0);" id="questionForm">
+    <select name="Q1">
+        <option selected disabled>----</option>
+        <option value= "Chittogram">Chattagram-div</option>
+        <option>Barishal-div</option>
+        <option>Khulna-div</option>
+        <option>Dhaka-div</option>
+        <option>Mymensingh-div</option>
+        <option>Sylhet-div</option>
+        <option>Rajshahi-div</option>
+        <option>Rangpur-div</option>
+    </select>
+</form>
+
+<script>
+function insertAfter(referenceNode, newNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}
+
+var furtherSelects = {
+    'Rajshahi-div': ['Rajshahi', 'Naogaon', 'Natore', 'Chapainawabganj', 'Pabna', 'Sirajganj', 'Joypurhat', 'Bogra'],
+    'Rangpur-div': ['Panchagarh', 'Thakurgaon', 'Dinajpur', 'Nilphamari', 'Lalmonirhat', 'Rangpur', 'Kurigram', 'Gaibandha'],
+    'Rangpur': ['Gangachara', 'Rangpur-sadar', 'Pirgacha', 'Kaunia', 'Taraganj', 'Badarganj', 'Mithapukur', 'Pirganj-Rangpur'],
+    
+}
+
+function checkField(){
+    addSelects = furtherSelects[this.value];
+    
+    var sel = document.createElement('select');
+    var Q_num = parseInt(this.name.substr(1))+1;
+    var siblingSelects = this.parentNode.getElementsByTagName('select');
+    for (var i=siblingSelects.length-1;i>=0;i--) {
+        if (parseInt(siblingSelects[i].name.substr(1)) >= Q_num) {
+            siblingSelects[i].remove();
+        }
+    }
+    var submitButton = document.getElementById('submitQuestionForm');
+    if (submitButton) submitButton.remove();
+    sel.setAttribute('name', 'Q'+Q_num);
+    sel.addEventListener('change', checkField); //Make each extra element have another checkField
+    var option = document.createElement('option');
+    option.innerHTML = '----';
+    option.disabled = true;
+    option.selected = true;
+    sel.appendChild(option); //Add the default option first
+    for (var i=0;i<addSelects.length;i++) {
+        option = document.createElement('option');
+        option.innerHTML = addSelects[i];
+        sel.appendChild(option);
+    }
+    insertAfter(this, sel);
+}
+addEventListener('load', function() {
+    document.getElementById('questionForm')
+            .getElementsByTagName('select')[0]
+            .addEventListener('change', checkField);
+});</script>

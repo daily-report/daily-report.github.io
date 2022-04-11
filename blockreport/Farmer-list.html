@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer List | Hatibandha</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="./css/fontawesome.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="./css/all.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="./css/animate.css" type="text/css" media="all">
+    <link rel="stylesheet" href="./style.css" type="text/css" media="all">
+
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./js/wow.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/custom.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+</head>
+
+<body>
+    <header class="header-area">
+        <div class="container">
+            <div class="logo">
+                <a href="./index.html"><b style= "color: Blue">  Farmer List | Hatibandha</b></a>
+            </div>
+            <div class="header-menu-bar">
+                <a href="./profile-card.html"> <i class="fas fa-home"></i> </a>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="content-area">
+        <div class="container">
+
+  	      		
+            <div class="row">
+              <div class="col-md-12 col-12 p-1">
+                    <a href="./boroFarmer/index.html">
+			<div class="content-item">
+                      <center><p id="rcorners1">Boro</p></center>
+				<h2>বোরো কৃষক তালিকা</h2>
+                    </div>
+                </a>
+              </div>
+</div>
+	      		
+            <div class="row">
+              <div class="col-md-12 col-12 p-1">
+                    <a href="./wheatFarmer/index.html">
+			<div class="content-item">
+                      <center><p id="rcorners1">Wheat</p></center>
+				<h2> কৃষক তালিকা(গম)</h2>
+                    </div>
+                </a>
+              </div>
+</div>
+
+        </div>
+    </div>
+<br>
+<br>
+<!-- linking javascript -->
+</body>
+
+     <footer>
+        <div class="container">
+            <div class="footer">
+                <small><center>Copyright &copy; 2019 <i>by</i><a href="https://fertilizerreport.github.io"> gentle touch </a>  All right reserved</small></center>
+            </div>
+        </div>
+    </footer>
+
+<script>const shareData = {
+    title: 'Fertilizer Report',
+    text: 'Fertilizer Report from dealer',
+    url: 'https://play.google.com/store/apps/details?id=com.gentletouch.fertilizerreport'
+  }
+
+  const btn = document.querySelector('share');
+  const resultPara = document.querySelector('.result');
+
+  // Share must be triggered by "user activation"
+  btn.addEventListener('click', async () => {
+    try {
+      await navigator.share(shareData)
+      resultPara.textContent = ''
+    } catch(err) {
+      resultPara.textContent = 'Error: ' + err
+    }
+  });
+</script>
+</html>
