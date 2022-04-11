@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./topbar.css">
+<link rel="stylesheet" type="text/css" href="./index.css">
+		<link rel="stylesheet" href="./style.css">
+
+  
+  
+  
+    <title>Boro | Farmer List</title>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+   <script src="./fbinit.js"></script>
+   
+</head>
+<body>
+
+<div class="navbar">
+  <a href="./index.html">All Union</a>  <div class="dropdown">    <button class="dropbtn">Select Union 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="./Barakhata.html">Barakhata</a>
+      <a href="./Goddimari.html">Goddimari</a>
+      <a href="./Singimari.html">Singimari</a>
+      <a href="./Tonvanga.html">Tonvanga</a>
+      <a href="./Sindurna.html">Sindurna</a>
+      <a href="./Patikapara.html">Patikapara</a>
+      <a href="./Nowdabas.html">Nowdabas</a>
+      <a href="./Gotamari.html">Gotamari</a>
+      <a href="./Velaguri.html">Velaguri</a>
+      <a href="./Dawabari.html">Dawabari</a>
+      <a href="./Shaniajan.html">Shaniajan</a>
+      <a href="./Fakirpara.html">Fakirpara</a>
+    </div>
+  </div> 
+</div>
+ 
+  <h4 style="text-align: center;"><span style="color: #800000;">বোরো চাষির তথ্য</span></h4> 
+  <div style="overflow-x:auto;">
+    <table border="1" align="center" table rules="all" style="width:100%" id="myTable">
+
+        
+        <th>নাম </th><th>পিতার নাম </th><th>গ্রাম ও ইউনিয়ন</th><th>মোবাইল নং</th><th>এনআইডি</th><th>জমির পরিমাণ</th>
+		
+        
+		
+		
+        
+        
+		
+        
+        
+ 
+</tr>
+
+      </tr>
+	</table>
+		<div>
+			<br>
+			<button onclick="window.print()">Print info</button>
+		</div> 
+			<button onclick="exportTableToExcel('myTable')">Export Table Data To Excel File</button>
+					
+    <script>
+      var database = firebase.database();
+      database.ref('boro-farmer').orderByChild('union').once('value', function(snapshot) {
+        if (snapshot.exists()) {
+          var content = '';
+          snapshot.forEach(function(data) {
+            var val = data.val();
+            content += '<tr>';
+            content += '<td>' + val.name + '</td>';
+            content += '<td>' + val.father + '</td>';
+            content += '<td>' + val.vill + '<br>' + val.union + '</td>';
+            content += '<td>' + val.phone + '</td>';
+            content += '<td>' + val.nid + '</td>';
+            content += '<td>' + val.land + '</td>';
+            content += '</tr>';
+          });
+          $('#myTable').append(content);
+        }
+      });
+    </script>
+	
+	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+		
+		<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+<script>function exportTableToExcel(myTable, filename = ''){
+    var downloadLink;
+    var dataType = 'application/vnd.ms-excel';
+    var tableSelect = document.getElementById(myTable);
+    var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+    
+    // Specify file name
+    filename = filename?filename+'.xls':'excel_data.xls';
+    
+    // Create download link element
+    downloadLink = document.createElement("a");
+    
+    document.body.appendChild(downloadLink);
+    
+    if(navigator.msSaveOrOpenBlob){
+        var blob = new Blob(['\ufeff', tableHTML], {
+            type: dataType
+        });
+        navigator.msSaveOrOpenBlob( blob, filename);
+    }else{
+        // Create a link to the file
+        downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+    
+        // Setting the file name
+        downloadLink.download = filename;
+        
+        //triggering the function
+        downloadLink.click();
+    }
+}
+</script>
+
+</body>
+</html>
