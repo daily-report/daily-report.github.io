@@ -35,55 +35,11 @@
     <table border="1" align="center" table rules="all" style="width:100%" id="myTable">
     <tr id="tr">
 	<th rowspan= "2"  style="text-align:center">ব্লকের <br> নাম</th>
-	<th colspan= "3" style="text-align:center">সরিষা(হেঃ)</th>
-	<th colspan= "3" style="text-align:center">গম(হেঃ)</th>
-	<th colspan= "4" style="text-align:center">গোল আলু-হেঃ</th>
-	<th colspan= "3" style="text-align:center">ভুট্টা আবাদ অগ্রগতি(হেঃ)</th>
-	<th colspan= "3" style="text-align:center">চীনাবাদাম আবাদ(হেঃ)</th>
-	<th colspan= "5" style="text-align:center">পেঁয়াজ আবাদ(হেঃ)</th>
-	<th colspan= "3" style="text-align:center">রসুন আবাদ(হেঃ)</th>
-	<th colspan= "3" style="text-align:center">মরিচ আবাদ(হেঃ)</th>
-	<th colspan= "1" style="text-align:center">মুগ (হেঃ)</th>
-	<th colspan= "1" style="text-align:center">আঁখ (হেঃ)</th>
+	<th colspan= "3" style="text-align:center">সরিষা(হেঃ)</th><th colspan= "3" style="text-align:center">গম(হেঃ)</th><th colspan= "4" style="text-align:center">গোল আলু-হেঃ</th><th colspan= "3" style="text-align:center">ভুট্টা আবাদ অগ্রগতি(হেঃ)</th><th colspan= "3" style="text-align:center">চীনাবাদাম আবাদ(হেঃ)</th><th colspan= "5" style="text-align:center">পেঁয়াজ আবাদ(হেঃ)</th>
+	<th colspan= "3" style="text-align:center">রসুন আবাদ(হেঃ)</th><th colspan= "3" style="text-align:center">মরিচ আবাদ(হেঃ)</th><th colspan= "1" style="text-align:center">মুগ (হেঃ)</th><th colspan= "1" style="text-align:center">আঁখ (হেঃ)</th>
        <tr> 
-	    <th>অর্জন</th>
-        <th>কর্তন</th>
-        <th>গড় ফলন</th>
-        
-		<th>অর্জন</th>
-        <th>কর্তন</th>
-        <th>গড় ফলন</th>
-        
-		<th>উফশী </th>
-		<th>স্থানীয় </th>
-        <th>কর্তন </th>
-        <th>গড় ফলন </th>
-
-		<th>অর্জন</th>
-        <th>কর্তন</th>
-        <th>গড় ফলন</th>
- 
-		<th>অর্জন</th>
-        <th>কর্তন</th>
-        <th>গড় ফলন</th>
- 
-		<th>কন্দ বপন</th>
-        <th>বীজ বপন</th>
-        <th>মোট</th>
-        <th>কর্তন</th>
-        <th>গড় ফলন</th>
-		
-        <th>অর্জন</th>
-        <th>কর্তন</th>
-        <th>ফলন</th>
-		
-        <th>অর্জন</th>
-        <th>কর্তন</th>
-        <th>ফলন</th>
-		
-		<th>অর্জন</th>
-		
-        <th>অর্জন</th>
+	    <th>অর্জন</th><th>কর্তন</th><th>গড় ফলন</th><th>অর্জন</th><th>কর্তন</th><th>গড় ফলন</th><th>উফশী </th><th>স্থানীয় </th><th>কর্তন </th><th>গড় ফলন </th><th>অর্জন</th><th>কর্তন</th><th>গড় ফলন</th><th>অর্জন</th><th>কর্তন</th>
+		<th>গড় ফলন</th><th>কন্দ বপন</th><th>বীজ বপন</th><th>মোট</th><th>কর্তন</th><th>গড় ফলন</th><th>অর্জন</th><th>কর্তন</th><th>ফলন</th><th>অর্জন</th><th>কর্তন</th><th>ফলন</th><th>অর্জন</th><th>অর্জন</th>
 </tr>
 
       </tr>
@@ -102,35 +58,13 @@
             var val = data.val();
             content += '<tr>';
             content += '<td>' + val.blockname + '<br>' + val.union + '<br>' + val.lastupdate + '</td>';
-            content += '<td>' + val.mustardAchieve + '</td>';
-            content += '<td>' + val.mustardHarvest + '</td>';
-            content += '<td>' + val.mustardProduction + '</td>';
-            content += '<td>' + val.wheatAchieve + '</td>';
-            content += '<td>' + val.wheatHarvest + '</td>';
-            content += '<td>' + val.wheatProduction + '</td>';
-            content += '<td>' + val.potatoInbrid + '</td>';
-            content += '<td>' + val.potatoLocal + '</td>';
-            content += '<td>' + val.potatoHarvest + '</td>';
-            content += '<td>' + val.potatoProduction + '</td>';
-            content += '<td>' + val.maizeAchieve + '</td>';
-            content += '<td>' + val.maizeHarvest + '</td>';
-            content += '<td>' + val.maizeProduction + '</td>';
-            content += '<td>' + val.peanutAchieve + '</td>';
-            content += '<td>' + val.peanutHarvest + '</td>';
-            content += '<td>' + val.peanutProduction + '</td>';
-            content += '<td>' + val.onionBulb + '</td>';
-            content += '<td>' + val.onionSeed + '</td>';
-            content += '<td>' + val.onionTotal + '</td>';
-            content += '<td>' + val.onionHarvest + '</td>';
-            content += '<td>' + val.onionProduction + '</td>';
-            content += '<td>' + val.garlicAchieve + '</td>';
-            content += '<td>' + val.garlicHarvest + '</td>';
-            content += '<td>' + val.garlicProduction + '</td>';
-            content += '<td>' + val.chiliAchieve + '</td>';
-            content += '<td>' + val.chiliHarvest + '</td>';
-            content += '<td>' + val.chiliProduction + '</td>';
-			content += '<td>' + val.mugAchieve + '</td>';
-            content += '<td>' + val.sugarcaneAchieve + '</td>';
+            content += '<td>' + val.mustardAchieve + '</td>'; content += '<td>' + val.mustardHarvest + '</td>'; content += '<td>' + val.mustardProduction + '</td>'; content += '<td>' + val.wheatAchieve + '</td>';
+            content += '<td>' + val.wheatHarvest + '</td>'; content += '<td>' + val.wheatProduction + '</td>'; content += '<td>' + val.potatoInbrid + '</td>'; content += '<td>' + val.potatoLocal + '</td>';
+            content += '<td>' + val.potatoHarvest + '</td>'; content += '<td>' + val.potatoProduction + '</td>'; content += '<td>' + val.maizeAchieve + '</td>'; content += '<td>' + val.maizeHarvest + '</td>';
+            content += '<td>' + val.maizeProduction + '</td>'; content += '<td>' + val.peanutAchieve + '</td>'; content += '<td>' + val.peanutHarvest + '</td>'; content += '<td>' + val.peanutProduction + '</td>';
+            content += '<td>' + val.onionBulb + '</td>'; content += '<td>' + val.onionSeed + '</td>'; content += '<td>' + val.onionTotal + '</td>'; content += '<td>' + val.onionHarvest + '</td>';
+            content += '<td>' + val.onionProduction + '</td>'; content += '<td>' + val.garlicAchieve + '</td>'; content += '<td>' + val.garlicHarvest + '</td>'; content += '<td>' + val.garlicProduction + '</td>';
+            content += '<td>' + val.chiliAchieve + '</td>'; content += '<td>' + val.chiliHarvest + '</td>';content += '<td>' + val.chiliProduction + '</td>'; content += '<td>' + val.mugAchieve + '</td>'; content += '<td>' + val.sugarcaneAchieve + '</td>';
 
             content += '</tr>';
           });

@@ -35,31 +35,11 @@
     <table border="1" align="center" table rules="all" style="width:100%" id="myTable">
     <tr id="tr">
 	<th rowspan= "2"  style="text-align:center">ব্লকের <br> নাম</th>
-	<th colspan= "6" style="text-align:center"> প্রদর্শনী-১</th>
-	<th colspan= "6" style="text-align:center"> প্রদর্শনী-২</th>
-	<th colspan= "6" style="text-align:center"> প্রদর্শনী-৩</th>
+	<th colspan= "6" style="text-align:center"> প্রদর্শনী-১</th><th colspan= "6" style="text-align:center"> প্রদর্শনী-২</th><th colspan= "6" style="text-align:center"> প্রদর্শনী-৩</th>
+	<th colspan= "6" style="text-align:center"> প্রদর্শনী-৪</th><th colspan= "6" style="text-align:center"> প্রদর্শনী-৫</th><th colspan= "6" style="text-align:center"> প্রদর্শনী-৬</th>
 	
        <tr> 
-	    <th>নাম </th>
-	    <th>ঠিকানা </th>
-	    <th>এনআইডি ও মোবাইল নং</th>
-	    <th>জাত</th>
-	    <th>স্থপনের তারিখ</th>
-	    <th>অবস্থা/মন্তব্য</th>
- 	    
-		<th>নাম </th>
-	    <th>ঠিকানা </th>
-	    <th>এনআইডি ও মোবাইল নং</th>
-	    <th>জাত</th>
-	    <th>স্থপনের তারিখ</th>
-	    <th>অবস্থা/মন্তব্য</th>
- 	    
-		<th>নাম </th>
-	    <th>ঠিকানা </th>
-	    <th>এনআইডি ও মোবাইল নং</th>
-	    <th>জাত</th>
-	    <th>স্থপনের তারিখ</th>
-	    <th>অবস্থা/মন্তব্য</th>
+	    <th>নাম </th><th>ঠিকানা </th><th>এনআইডি ও মোবাইল নং</th><th>জাত</th><th>স্থপনের তারিখ</th><th>অবস্থা/মন্তব্য</th><th>নাম </th><th>ঠিকানা </th><th>এনআইডি ও মোবাইল নং</th><th>জাত</th><th>স্থপনের তারিখ</th><th>অবস্থা/মন্তব্য</th><th>নাম </th><th>ঠিকানা </th><th>এনআইডি ও মোবাইল নং</th><th>জাত</th><th>স্থপনের তারিখ</th><th>অবস্থা/মন্তব্য</th><th>নাম </th><th>ঠিকানা </th><th>এনআইডি ও মোবাইল নং</th><th>জাত</th><th>স্থপনের তারিখ</th><th>অবস্থা/মন্তব্য</th><th>নাম </th><th>ঠিকানা </th><th>এনআইডি ও মোবাইল নং</th><th>জাত</th><th>স্থপনের তারিখ</th><th>অবস্থা/মন্তব্য</th><th>নাম </th><th>ঠিকানা </th><th>এনআইডি ও মোবাইল নং</th><th>জাত</th><th>স্থপনের তারিখ</th><th>অবস্থা/মন্তব্য</th>
  	    
 </tr>
 
@@ -72,35 +52,21 @@
 								
     <script>
       var database = firebase.database();
-      database.ref('projectdemo').orderByChild('union').once('value', function(snapshot) {
+      database.ref('projectdemo-environfriend').orderByChild('union').once('value', function(snapshot) {
         if (snapshot.exists()) {
           var content = '';
           snapshot.forEach(function(data) {
             var val = data.val();
             content += '<tr>';
             content += '<td>' + val.blockname + '<br>' + val.union + '<br>' + val.lastupdate + '</td>';
-            content += '<td>' + val.mustardfarmer1 + '</td>';
-            content += '<td>' + val.mustardfarmer1address + '<br>' + '</td>';
-            content += '<td>' + val.mustardfarmer1nid + '<br>'  + val.mustardfarmer1mobile + '</td>';
-            content += '<td>' + val.mustardfarmer1variety + '<br>' + '</td>';
-            content += '<td>' + val.mustardfarmer1date + '<br>' + '</td>';
-            content += '<td>' + val.mustardfarmer1comment + '<br>' + '</td>';
-			
-			content += '<td>' + val.mustardfarmer2 + '</td>';
-            content += '<td>' + val.mustardfarmer2address + '<br>' + '</td>';
-            content += '<td>' + val.mustardfarmer2nid + '<br>'  + val.mustardfarmer2mobile + '</td>';
-            content += '<td>' + val.mustardfarmer2variety + '<br>' + '</td>';
-            content += '<td>' + val.mustardfarmer2date + '<br>' + '</td>';
-            content += '<td>' + val.mustardfarmer2comment + '<br>' + '</td>';
-			
-            content += '<td>' + val.mustardfarmer3 + '</td>';
-            content += '<td>' + val.mustardfarmer3address + '<br>' + '</td>';
-            content += '<td>' + val.mustardfarmer3nid + '<br>'  + val.mustardfarmer3mobile + '</td>';
-            content += '<td>' + val.mustardfarmer3variety + '<br>' + '</td>';
-            content += '<td>' + val.mustardfarmer3date + '<br>' + '</td>';
-            content += '<td>' + val.mustardfarmer3comment + '<br>' + '</td>';
-			
-			
+            
+			content += '<td>' + val.environfriendfarmer1 + '</td>';content += '<td>' + val.environfriendfarmer1address + '<br>' + '</td>';content += '<td>' + val.environfriendfarmer1nid + '<br>'  + val.environfriendfarmer1mobile + '</td>';content += '<td>' + val.environfriendfarmer1variety + '<br>' + '</td>';content += '<td>' + val.environfriendfarmer1date + '<br>' + '</td>';content += '<td>' + val.environfriendfarmer1comment + '<br>' + '</td>';
+			content += '<td>' + val.environfriendfarmer2 + '</td>';content += '<td>' + val.environfriendfarmer2address + '<br>' + '</td>';content += '<td>' + val.environfriendfarmer2nid + '<br>'  + val.environfriendfarmer2mobile + '</td>';content += '<td>' + val.environfriendfarmer2variety + '<br>' + '</td>';content += '<td>' + val.environfriendfarmer2date + '<br>' + '</td>';content += '<td>' + val.environfriendfarmer2comment + '<br>' + '</td>';
+			content += '<td>' + val.environfriendfarmer3 + '</td>';content += '<td>' + val.environfriendfarmer3address + '<br>' + '</td>';content += '<td>' + val.environfriendfarmer3nid + '<br>'  + val.environfriendfarmer3mobile + '</td>';content += '<td>' + val.environfriendfarmer3variety + '<br>' + '</td>';content += '<td>' + val.environfriendfarmer3date + '<br>' + '</td>';content += '<td>' + val.environfriendfarmer3comment + '<br>' + '</td>';
+			content += '<td>' + val.environfriendfarmer4 + '</td>';content += '<td>' + val.environfriendfarmer4address + '<br>' + '</td>';content += '<td>' + val.environfriendfarmer4nid + '<br>'  + val.environfriendfarmer4mobile + '</td>';content += '<td>' + val.environfriendfarmer4variety + '<br>' + '</td>';content += '<td>' + val.environfriendfarmer4date + '<br>' + '</td>';content += '<td>' + val.environfriendfarmer4comment + '<br>' + '</td>';
+			content += '<td>' + val.environfriendfarmer5 + '</td>';content += '<td>' + val.environfriendfarmer5address + '<br>' + '</td>';content += '<td>' + val.environfriendfarmer5nid + '<br>'  + val.environfriendfarmer5mobile + '</td>';content += '<td>' + val.environfriendfarmer5variety + '<br>' + '</td>';content += '<td>' + val.environfriendfarmer5date + '<br>' + '</td>';content += '<td>' + val.environfriendfarmer5comment + '<br>' + '</td>';
+			content += '<td>' + val.environfriendfarmer6 + '</td>';content += '<td>' + val.environfriendfarmer6address + '<br>' + '</td>';content += '<td>' + val.environfriendfarmer6nid + '<br>'  + val.environfriendfarmer6mobile + '</td>';content += '<td>' + val.environfriendfarmer6variety + '<br>' + '</td>';content += '<td>' + val.environfriendfarmer6date + '<br>' + '</td>';content += '<td>' + val.environfriendfarmer6comment + '<br>' + '</td>';
+
 			
             content += '</tr>';
           });
