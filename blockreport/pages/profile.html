@@ -1,148 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/stylenav.css">
-    <!-- Sweet Alert JavaScript -->
-    <script src="../js/sweetalert2.js"></script>
-    <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-    <!-- Nunito Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
-    <title>Boro Report | Hatibandha</title>
-</head>
-<body class="bg-light">
-
-    <div>
-        <div class="row mx-1">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="../css/style.css">
+      <link rel="stylesheet" href="../css/stylenav.css">
+      <!-- Sweet Alert JavaScript -->
+      <script src="../js/sweetalert2.js"></script>
+      <!-- Fontawesome CSS -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+      <!-- Nunito Google Font -->
+      <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
+      <title>User Profile | 34th BCS Forum</title>
+   </head>
+   <body class="bg-light">
+    <!--  <div class="topnav">
+         <a class="active" href="../index2.html">Home</a>
+         <a href="../member34.html">Members info</a>
+         <a href="../cadreinfo.html">View by cadre</a>
+         <a href="../District/all-district.html">View by Posting District</a>
+      </div>-->
+      <div>
+         <div class="row mx-1">
             <div class="col-lg-10 col-md-10 offset-lg-1 offset-md-1 bg-white shadow my-5 border border-warning">
-                <div>
-                    <div>
-                        <div id="profileSection">
-						<br>
-						<div class="col-12 col-12 mb-4 text-center">
-                                <span class="h4" style="color:#00b903">বোরো আবাদের অগ্রগতি(হেঃ)</span>
-                            </div>
-							<hr/>
-							
-                            <div class="col-12 col-12 mb-3 text-center">
-                                <img style="border-radius: 50%" id="userAvatar" src="../images/boro.jpg" alt="avatar icon" >
-                            </div>
-                             <div class="col-12 col-12 mb-4 text-center">
-                                <span class="h4" style="color:#FF007F" id="pfblockname">please wait...</span><br>
-                                <span class="h4" style="color:#FF007F" id="pfunion"></span><br>
-								<span>Update Time:  </span><span style="color:blue" id="pflastupdate">_______</span>
-                            </div>
-							<hr/>
-							<span style="color:violet">বোরো আবাদের অগ্রগতি(হেঃ)</span>
-							<hr/>
-							<center><h5>বোরো বীজতলা(জাত অনুযায়ী)-হেঃ<hr/></h5></center>
-							<span>হাইব্রিড:  </span><span style="color:blue" id="pfseedbedhybrid">_______</span><br>
-							<span>উফশি:  </span><span style="color:blue" id="pfseedbedinbrid">_______</span><br>
-							<span>স্থানীয়:  </span><span style="color:blue" id="pfseedbedlocal">_______</span><br>
-							
-							<center><h5>বোরো বীজতলা(ধরণ অনুযায়ী)-হেঃ<hr/></h5></center>
-							<span>আদর্শ:  </span><span style="color:blue" id="pfseedbedstandard">_______</span><br>
-							<span>শুকনা:  </span><span style="color:blue" id="pfseedbeddrought">_______</span><br>
-							<span>সাধারণ:  </span><span style="color:blue" id="pfseedbedgeneral">_______</span><br>
-							
-							<center><h5>বোরো আবাদ অগ্রগতি(হেঃ)<hr/></h5></center>
-							<span>হাইব্রিড:  </span><span style="color:blue" id="pfachivehybrid">_______</span><br>
-							<span>উফশি:  </span><span style="color:blue" id="pfachiveinbrid">_______</span><br>
-							<span>স্থানীয়:  </span><span style="color:blue" id="pfachivelocal">_______</span><br>
-							
-							<center><h5>বোরো ফসলের স্তর পরিস্থিতি(হেঃ)<hr/></h5></center>
-							<span>রিকোভারী:  </span><span style="color:blue" id="pfstage1">_______</span><br>
-							<span>টিলারিং:  </span><span style="color:blue" id="pfstage2">_______</span><br>
-							<span>পিআই:  </span><span style="color:blue" id="pfstage3">_______</span><br>
-							<span>বুটিং:  </span><span style="color:blue" id="pfstage4">_______</span><br>
-							<span>ফ্লাওয়ারিং:  </span><span style="color:blue" id="pfstage5">_______</span><br>
-							<span>মিল্কি:  </span><span style="color:blue" id="pfstage6">_______</span><br>
-							<span>ডাফ:  </span><span style="color:blue" id="pfstage7">_______</span><br>
-							<span>রাইপেনিং:  </span><span style="color:blue" id="pfstage8">_______</span><br>
-							<span>হারভেস্ট:  </span><span style="color:blue" id="pfstage9">_______</span><br>
-							<span>মোট:  </span><span style="color:blue" id="pfstageTotal">_______</span><br>
-							
-							
-                            <div class="col-lg-12 col-md-12 text-center">
-                                <button type="button" class="btn btn-primary btn-block text-uppercase mb-3" onclick="showEditProfileForm()">
-                                Edit<small><i class="fas fa-pencil-alt ml-2"></i></small></button>
-                                <button type="button" class="btn btn-dark btn-block text-uppercase" onclick="signOut()">
-                                Sign Out<small><i class="fas fa-sign-out-alt ml-2"></i></small></button>
-                            </div>
+               <div>
+                  <div>
+                     <div id="profileSection">
+                        <br>
+                        <div class="col-12 col-12 mb-4 text-center">
+                           <span class="h4" style="color:#00b903">My Information</span>
                         </div>
-						<div>
-						<br>
-						<button onclick="window.print()">Print info</button>
-						</div> 
-                        <div id="editProfileForm">
-                            <h2 class="h2 text-center text-dark mb-3">তথ্য আপডেট করুন</h2>
-                            <div class="form-group">
-                                <label for="name">ডিলারের নাম</label>
-                                <input type="text" class="form-control" id="blockname" onblur="checkblockname()" readonly>
-                            </div>
-                            <div class="form-group">
-                                <label for="union">ইউনিয়ন</label>
-                                <input type="text" class="form-control" id="union" onblur="checkunion()" readonly>
-                            </div>
-                            <div class="form-group"><label for="lastupdate">lastupdate<span class="text-danger ml-1">*</span></label><input type="datetime-local" class="form-control" id="lastupdate" onblur="checklastupdate()"></div>
-                           <center><h5>বোরো বীজতলা(জাত অনুযায়ী)-হেঃ<hr/></h5></center>
-							<div class="form-group"><label for="seedbedhybrid">হাইব্রিড<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="seedbedhybrid" onblur="checkseedbedhybrid()"></div>
-                            <div class="form-group"><label for="seedbedinbrid">উফশি<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="seedbedinbrid" onblur="checkseedbedinbrid()"></div>
-                            <div class="form-group"><label for="seedbedlocal">স্থানীয়<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="seedbedlocal" onblur="checkseedbedlocal()"></div>
-                            
-							<center><h5>বোরো বীজতলা(ধরণ অনুযায়ী)-হেঃ<hr/></h5></center>
-							<div class="form-group"><label for="seedbedstandard">আদর্শ<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="seedbedstandard" onblur="checkseedbedstandard()"></div>
-                            <div class="form-group"><label for="seedbeddrought">শুকনা<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="seedbeddrought" onblur="checkseedbeddrought()"></div>
-                            <div class="form-group"><label for="seedbedgeneral">সাধারণ<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="seedbedgeneral" onblur="checkseedbedgeneral()"></div>
-                            
-							<center><h5>বোরো আবাদ অগ্রগতি(হেঃ)<hr/></h5></center>
-							<div class="form-group"><label for="achivehybrid">হাইব্রিড<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="achivehybrid" onblur="checkachivehybrid()"></div>
-                            <div class="form-group"><label for="achiveinbrid">উফশি<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="achiveinbrid" onblur="checkachiveinbrid()"></div>
-                            <div class="form-group"><label for="achivelocal">স্থানীয়<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="achivelocal" onblur="checkachivelocal()"></div>
-                            
-							<center><h5>বোরো ফসলের স্তর পরিস্থিতি(হেঃ)<hr/></h5></center>
-							<div class="form-group"><label for="stage1">রিকোভারী<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="stage1" onblur="checkstage1()"></div>
-                            <div class="form-group"><label for="stage2">টিলারিং<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="stage2" onblur="checkstage2()"></div>
-                            <div class="form-group"><label for="stage3">পিআই<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="stage3" onblur="checkstage3()"></div>
-                            <div class="form-group"><label for="stage4">বুটিং<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="stage4" onblur="checkstage4()"></div>
-                            <div class="form-group"><label for="stage5">ফ্লাওয়ারিং<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="stage5" onblur="checkstage5()"></div>
-                            <div class="form-group"><label for="stage6">মিল্কি<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="stage6" onblur="checkstage6()"></div>
-                            <div class="form-group"><label for="stage7">ডাফ<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="stage7" onblur="checkstage7()"></div>
-                            <div class="form-group"><label for="stage8">রাইপেনিং<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="stage8" onblur="checkstage8()"></div>
-                            <div class="form-group"><label for="stage9">হারভেস্ট<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="stage9" onblur="checkstage9()"></div>
-                            <div class="form-group"><label for="stageTotal">মোট<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="stageTotal" onblur="checkstageTotal()"></div>
-							
-                            <button type="button" class="btn btn-primary btn-block text-uppercase mb-3" onclick="saveProfile()">Save</button>
-                            <button type="button" class="btn btn-dark btn-block text-uppercase" onclick="hideEditProfileForm()">Cancle</button>
+                        <hr/>
+                        <div class="col-12 col-12 mb-3 text-center">
+                           <img style="border-radius: 50%" id="userAvatar" src="../images/avatar.jpg" alt="avatar icon" >
                         </div>
-						<br>
-                    </div>
-                </div>
+                        <div class="col-12 col-12 mb-4 text-center">
+                           <span class="h4" style="color:#FF007F" id="pfname">please wait...</span><span style="color:#FF007F" class="h5">(</span><span style="color:#FF007F" class="h5" id="pfcadreid"></span><span style="color:#FF007F" class="h5">)</span><br>
+                           <span class="h5" style="color:blue" id="pfdesignation"></span><br>
+                           <span id="pfupazila"></span>,
+                           <span id="pfdistrict" ></span>,
+                           <span id="pfdivision" ></span>
+                        </div>
+                        <hr/>
+                        <span style="color:violet">Personal Information</span>
+                        <hr/>
+                        <div class="col-12 col-12 mb-4 ">
+                           <span>Email:</span>
+                           <span style="color:blue" id="pfemail">loading...</span>
+                           <br>
+                           <span>Mobile Number:</span>
+                           <span style="color:blue" id="pfphone">loading...</span>
+                           <br>
+                           <span>Permanent Address:</span>
+                           <span id="pfaddress">Loading...</span>
+                           <br>
+                           <span>Emergency Contact:</span>
+                           <span style="color:blue" id="pfecontact">Loading...</span>
+                           <br>
+                           <span>Date of Birth:</span>
+                           <span id="pfdob">Loading...</span><br>
+                           <span style="color:#D1001C">Blood Group:</span>
+                           <span style="color:#D1001C" id="pfbloodgroup">Loading...</span><span style="color:#D1001C">(</span><span style="color:#D1001C">ve</span><span style="color:#D1001C">)</span>
+                        </div>
+                        
+                        <hr/>
+
+                     </div>
+                     <div class="col-lg-12 col-md-12 text-center">
+                        <button type="button" class="btn btn-primary btn-block text-uppercase mb-3" onclick="showEditProfileForm()">
+                        Edit<small><i class="fas fa-pencil-alt ml-2"></i></small></button>
+                        <button type="button" class="btn btn-dark btn-block text-uppercase" onclick="signOut()">
+                        Sign Out<small><i class="fas fa-sign-out-alt ml-2"></i></small></button>
+                     </div>
+                  </div>
+                  <div>
+                     <br>
+                     <button onclick="window.print()">Print info</button>
+                  </div>
+                  <div id="editProfileForm">
+                     <h2 class="h2 text-center text-dark mb-3">Edit Profile</h2>
+                     <div class="form-group">
+                        <label for="name">Full name<span class="text-danger ml-1">*</span></label>
+                        <input type="text" class="form-control" id="name" onblur="checkname()" placeholder="নাম লিখুন....">
+                     </div>
+                     <div class="form-group">
+                        <label for="cadreid">Service Id<span class="text-danger ml-1">*</span></label>
+                        <input type="text" class="form-control" id="cadreid" onblur="checkcadreid()" placeholder="ক্যাডার আইডি নম্বর">
+                     </div>
+                     <div class="form-group">
+                        <label for="email">Email<span class="text-danger ml-1">*</span></label>
+                        <input type="email" class="form-control" id="email" onblur="checkemail()" placeholder="member@example.com" readonly>
+                     </div>
+                     <div class="form-group">
+                        <label for="phone">Mobile Number<span class="text-danger ml-1">*</span></label>
+                        <input type="number" class="form-control" id="phone" onblur="checkphone()" placeholder="01770007177">
+                     </div>
+                     <div class="form-group">
+                        <label for="econtact">Emergency Contact<span class="text-danger ml-1">*</span></label>
+                        <input type="number" class="form-control" id="econtact" onblur="checkecontact()" placeholder="01770007177">
+                     </div>
+                     <div class="form-group">
+                        <label for="address">Permanent Address<span class="text-danger ml-1">*</span></label>
+                        <input type="text" class="form-control" id="address" onblur="checkaddress()" placeholder="California, USA">
+                     </div>
+                     <div class="form-group">
+                        <label for="designation">Designation<span class="text-danger ml-1">*</span></label>
+                        <input type="text" class="form-control" id="designation" onblur="checkdesignation()" placeholder="Designation">
+                     </div>
+                     <div class="form-group">
+                        <label for="bloodgroup">Blood Group<span class="text-danger ml-1">*</span></label><br>
+                        <input list="bgro" name="bgro" id="bloodgroup" onblur="checkbloodgroup()" placeholder="">
+                     </div>
+                     <div class="form-group">
+                        <label for="division">Posting Division<span class="text-danger ml-1">*</span></label><br>
+                        <input list="div" name="div" id="division" onblur="checkdivision()">
+                     </div>
+                     <div class="form-group">
+                        <label for="district">Posting District<span class="text-danger ml-1">*</span></label><br>
+                        <input list="dist" name="dist" id="district" onblur="checkdistrict()">
+                     </div>
+                     <div class="form-group">
+                        <label for="upazila">Posting Upazila<span class="text-danger ml-1">*</span></label><br>
+                        <input list="upaz" name="upaz" id="upazila" onblur="checkupazila()">
+                     </div>
+                     <div class="form-group">
+                        <label for="dob">Date of Birth<span class="text-danger ml-1">*</span></label><br>
+                        <input type="text" class="form-control" id="dob" onblur="checkdob()" placeholder="">
+                     </div>
+                     <button type="button" class="btn btn-primary btn-block text-uppercase mb-3" onclick="saveProfile()">Save</button>
+                     <button type="button" class="btn btn-dark btn-block text-uppercase" onclick="hideEditProfileForm()">Cancle</button>
+                  </div>
+                  <br>
+               </div>
             </div>
-        </div>
-    </div>
-	
-	
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
-   
-    
-    <!-- Custom JavaScript -->
-    <script src="../js/fbinit.js"></script>
-    <script src="../js/app.js"></script>
-
-</body>
+         </div>
+      </div>
+      <!--list for selection-->
+      <datalist id="dist">
+         <option value="Head Office">
+         <option value="Bagerhat">
+         <option value="Barguna">
+         <option value="Bandarban">
+         <option value="Barishal">
+         <option value="Bhola">
+         <option value="Bogura">
+         <option value="Brahmanbaria">
+         <option value="Chandpur">
+         <option value="Chapainawabganj">
+         <option value="Chattogram">
+         <option value="Chuadanga">
+         <option value="Cox's Bazar">
+         <option value="Cumilla">
+         <option value="Dhaka">
+         <option value="Dinajpur">
+         <option value="Faridpur">
+         <option value="Feni">
+         <option value="Gaibandha">
+         <option value="Gazipur">
+         <option value="Gopalganj">
+         <option value="Habiganj">
+         <option value="Jamalpur">
+         <option value="Jashore">
+         <option value="Jhalokati">
+         <option value="Jhenaidah">
+         <option value="Joypurhat">
+         <option value="Khagrachhari">
+         <option value="Khulna">
+         <option value="Kishoreganj">
+         <option value="Kurigram">
+         <option value="Kushtia">
+         <option value="Lakshmipur">
+         <option value="Lalmonirhat">
+         <option value="Madaripur">
+         <option value="Magura">
+         <option value="Manikganj">
+         <option value="Meherpur">
+         <option value="Moulavibazar">
+         <option value="Munshiganj">
+         <option value="Mymensingh">
+         <option value="Naogaon">
+         <option value="Narail">
+         <option value="Narayanganj">
+         <option value="Narshingdi">
+         <option value="Natore">
+         <option value="Netrokona">
+         <option value="Nilphamari">
+         <option value="Noakhali">
+         <option value="Pabna">
+         <option value="Panchagarh">
+         <option value="Patuakhali">
+         <option value="Pirojpur">
+         <option value="Rajbari">
+         <option value="Rajshahi">
+         <option value="Rangamati">
+         <option value="Rangpur">
+         <option value="Satkhira">
+         <option value="Shariatpur">
+         <option value="Sherpur">
+         <option value="Sirajganj">
+         <option value="Sunamganj">
+         <option value="Sylhet">
+         <option value="Tangail">
+         <option value="Thakurgaon">
+      </datalist>
+      <datalist id="upaz">
+      <option value="Debidwar"> <option value="Barura"> <option value="Brahmanpara"> <option value="Chandina"> <option value="Chauddagram"> <option value="Daudkandi"> <option value="Homna"> <option value="Laksam"> <option value="Muradnagar"> <option value="Nangalkot"> <option value="Cumilla-Sadar"> <option value="South-Sadar(Cumilla)"> <option value="Meghna"> <option value="Monohargonj"> <option value="Sadarsouth"> <option value="Titas"> <option value="Burichang"> <option value="Lalmai">
+      <option value="Chhagalnaiya"> <option value="Feni-Sadar"> <option value="Sonagazi"> <option value="Fulgazi"> <option value="Parshuram"><option value="Daganbhuiyan">
+      <option value="Brahmanbaria-Sadar"><option value="Kasba"><option value="Nasirnagar"><option value="Sarail"><option value="Ashuganj"><option value="Akhaura"><option value="Nabinagar"><option value="Bancharampur"><option value="Bijoynagar">
+      <option value="Rangamati-Sadar"><option value="Kaptai"><option value="Kawkhali"><option value="Baghaichari"><option value="Barkal"><option value="Langadu"><option value="Rajasthali"><option value="Belaichari"><option value="Juraichari"><option value="Naniarchar">
+      <option value="Noakhali-Sadar"><option value="Companiganj"><option value="Begumganj"><option value="Hatia"><option value="Subarnachar"><option value="Kabirhat"><option value="Senbug"><option value="Chatkhil"><option value="Sonaimori">
+      <option value="Haimchar"><option value="Kachua"><option value="Shahrasti"><option value="Chandpur-Sadar"><option value="Matlabsouth"><option value="Hajiganj"><option value="Matlabnorth"><option value="Faridgonj">
+      <option value="Lakshmipur-Sadar"><option value="Kamalnagar"><option value="Raipur"><option value="Ramgati"><option value="Ramganj">
+      <option value="Patenga-Metro"><option value="Chattogram-Sadar"><option value="Rangunia"><option value="Sitakunda"><option value="Mirsharai"><option value="Patiya"><option value="Sandwip"><option value="Banshkhali"><option value="Boalkhali"><option value="Anwara"><option value="Chandanaish"><option value="Satkania"><option value="Lohagara"><option value="Hathazari"><option value="Fatikchhari"><option value="Raozan"><option value="Karnafuli">
+      <option value="Coxsbazar-Sadar"><option value="Chakaria"><option value="Kutubdia"><option value="Ukhiya"><option value="Moheshkhali"><option value="Pekua"><option value="Ramu"><option value="Teknaf">
+      <option value="Khagrachhari-Sadar"><option value="Dighinala"><option value="Panchari"><option value="Laxmichhari"><option value="Mohalchari"><option value="Manikchari"><option value="Ramgarh"><option value="Matiranga"><option value="Guimara">
+      <option value="Bandarban-Sadar"><option value="Alikadam"><option value="Naikhongchhari"><option value="Rowangchhari"><option value="Lama"><option value="Ruma"><option value="Thanchi">
+      <option value="Sirajganj-Sadar"><option value="Belkuchi"><option value="Chauhali"><option value="Kamarkhand"><option value="Kazipur"><option value="Raigonj"><option value="Shahjadpur"><option value="Tarash"><option value="Ullapara">
+      <option value="Sujanagar"><option value="Ishwardi"><option value="Bhangura"><option value="Pabna-Sadar"><option value="Bera"><option value="Atghoria"><option value="Chatmohar"><option value="Santhia"><option value="Faridpur"><option value="Pabna-Sadar">
+      <option value="Kahaloo"><option value="Bogura-Sadar"><option value="Shariakandi"><option value="Shajahanpur"><option value="Dupchanchia"><option value="Adamdighi"><option value="Nondigram"><option value="Sonatala"><option value="Dhunot"><option value="Gabtali"><option value="Sherpur"><option value="Shibganj-Bogura">
+      <option value="Paba"><option value="Durgapur-Rajshahi"><option value="Mohonpur"><option value="Charghat"><option value="Puthia"><option value="Bagha"><option value="Godagari"><option value="Tanore"><option value="Bagmara"><option value="Motihar-Metro"><option value="Boalia-Metro">
+      <option value="Singra"><option value="Baraigram"><option value="Bagatipara"><option value="Lalpur"><option value="Gurudaspur"><option value="Naldanga"><option value="Natore-Sadar">
+      <option value="Akkelpur"><option value="Kalai"><option value="Khetlal"><option value="Panchbibi"><option value="Joypurhat-Sadar">
+      <option value="Chapainawabganj-Sadar"><option value="Gomostapur"><option value="Nachol"><option value="Bholahat"><option value="Shibganj-Chapai">
+      <option value="Mohadevpur"><option value="Badalgachi"><option value="Patnitala"><option value="Dhamoirhat"><option value="Niamatpur"><option value="Manda"><option value="Atrai"><option value="Raninagar"><option value="Naogaon-Sadar"><option value="Porsha"><option value="Sapahar">
+      <option value="Manirampur"><option value="Abhaynagar"><option value="Bagherpara"><option value="Chougachha"><option value="Jhikargacha"><option value="Keshabpur"><option value="Jashore-Sadar"><option value="Sharsha">
+      <option value="Assasuni"><option value="Debhata"><option value="Kalaroa"><option value="Satkhira-Sadar"><option value="Shyamnagar"><option value="Tala"><option value="Kaliganj-Satkhira">
+      <option value="Mujibnagar"><option value="Meherpur-Sadar"><option value="Gangni">
+      <option value="Narail-Sadar"><option value="Lohagara"><option value="Kalia">
+      <option value="Chuadanga-Sadar"><option value="Alamdanga"><option value="Damurhuda"><option value="Jibannagar">
+      <option value="Kushtia-Sadar"><option value="Kumarkhali"><option value="Khoksa"><option value="Mirpur-kushtia"><option value="Daulatpur"><option value="Bheramara">
+      <option value="Shalikha"><option value="Sreepur-Magura"><option value="Magura-Sadar"><option value="Mohammadpur-Magura">
+      <option value="Paikgasa"><option value="Fultola"><option value="Digholia"><option value="Rupsha"><option value="Terokhada"><option value="Dumuria"><option value="Botiaghata"><option value="Dakop"><option value="Koyra"><option value="Khulna-Sadar">
+      <option value="Fakirhat"><option value="Bagerhat-Sadar"><option value="Mollahat"><option value="Sarankhola"><option value="Rampal"><option value="Morrelganj"><option value="Kachua"><option value="Mongla"><option value="Chitalmari">
+      <option value="Jhenaidah-Sadar"><option value="Shailkupa"><option value="Harinakundu"><option value="Kaliganj-Jhenaidah"><option value="Kotchandpur"><option value="Moheshpur">
+      <option value="Jhalakathi-Sadar"><option value="Kathalia"><option value="Nalchity"><option value="Rajapur">
+      <option value="Bauphal"><option value="Patuakhali-Sadar"><option value="Dumki"><option value="Dashmina"><option value="Kalapara"><option value="Mirzaganj"><option value="Galachipa"><option value="Rangabali">
+      <option value="Pirojpur-Sadar"><option value="Nazirpur"><option value="Kawkhali"><option value="Zianagar"><option value="Bhandaria"><option value="Mathbaria"><option value="Nesarabad">
+      <option value="Barishal-Sadar"><option value="Bakerganj"><option value="Babuganj"><option value="Wazirpur"><option value="Banaripara"><option value="Gournadi"><option value="Agailjhara"><option value="Mehendiganj"><option value="Muladi"><option value="Hizla"><option value="Rupatoli-Metro">
+      <option value="Bhola-Sadar"><option value="Borhanuddin"><option value="Charfesson"><option value="Doulatkhan"><option value="Monpura"><option value="Tazumuddin"><option value="Lalmohan">
+      <option value="Amtali"><option value="Barguna-Sadar"><option value="Betagi"><option value="Bamna"><option value="Pathorghata"><option value="Taltali">
+      <option value="Balaganj"><option value="Beanibazar"><option value="Bishwanath"><option value="Companiganj"><option value="Fenchuganj"><option value="Golapganj"><option value="Gowainghat"><option value="Jaintiapur"><option value="Kanaighat"><option value="Sylhet-Sadar"><option value="Zakiganj"><option value="Dakshinsurma"><option value="Osmaninagar"><option value="Amborkhana-Metro">
+      <option value="Barlekha"><option value="Kamolganj"><option value="Kulaura"><option value="Moulvibazar-Sadar"><option value="Rajnagar"><option value="Sreemangal"><option value="Juri">
+      <option value="Nabiganj"><option value="Bahubal"><option value="Ajmiriganj"><option value="Baniachong"><option value="Lakhai"><option value="Chunarughat"><option value="Habiganj-Sadar"><option value="Madhabpur"><option value="Shayestaganj">
+      <option value="Sunamganj-Sadar"><option value="Southsunamganj"><option value="Bishwambarpur"><option value="Chhatak"><option value="Jagannathpur"><option value="Dowarabazar"><option value="Tahirpur"><option value="Dharmapasha"><option value="Jamalganj"><option value="Shalla"><option value="Derai">
+      <option value="Belabo"><option value="Monohardi"><option value="Narsingdi-Sadar"><option value="Palash"><option value="Raipura"><option value="Shibpur">
+      <option value="Kaliganj-Gazipur"><option value="Kaliakair"><option value="Kapasia"><option value="Gazipur-Sadar"><option value="Sreepur-Gazipur">
+      <option value="Shariatpur-Sadar"><option value="Naria"><option value="Zajira"><option value="Gosairhat"><option value="Bhedarganj"><option value="Damudya">
+      <option value="Araihazar"><option value="Bandar"><option value="Narayanganj-Sadar"><option value="Rupganj"><option value="Sonargaon">
+      <option value="Basail"><option value="Bhuapur"><option value="Delduar"><option value="Ghatail"><option value="Gopalpur"><option value="Madhupur"><option value="Mirzapur"><option value="Nagarpur"><option value="Sakhipur"><option value="Tangail-Sadar"><option value="Kalihati"><option value="Dhanbari">
+      <option value="Itna"><option value="Katiadi"><option value="Bhairab"><option value="Tarail"><option value="Hossainpur"><option value="Pakundia"><option value="Kuliarchar"><option value="Kishoreganj-Sadar"><option value="Karimgonj"><option value="Bajitpur"><option value="Austagram"><option value="Mithamoin"><option value="Nikli">
+      <option value="Harirampur"><option value="Saturia"><option value="Manikganj-Sadar"><option value="Gior"><option value="Shibaloy"><option value="Doulatpur"><option value="Singiar">
+      <option value="Savar"><option value="Dhamrai"><option value="Keraniganj"><option value="Nawabganj-Dhaka"><option value="Dohar"><option value="Uttara-Metro"><option value="Gulsan-Metro"><option value="Tejgaon-Metro"><option value="Mirpur-Metro"><option value="Mohammadpur-Metro">
+      <option value="Munshiganj-Sadar"><option value="Sreenagar"><option value="Sirajdikhan"><option value="Louhajanj"><option value="Gajaria"><option value="Tongibari">
+      <option value="Rajbari-Sadar"><option value="Goalanda"><option value="Pangsa"><option value="Baliakandi"><option value="Kalkini">
+      <option value="Madaripur-Sadar"><option value="Shibchar"><option value="Kalukhali"><option value="Rajoir">
+      <option value="Gopalganj-Sadar"><option value="Kashiani"><option value="Tungipara"><option value="Kotalipara"><option value="Muksudpur">
+      <option value="Faridpur-Sadar"><option value="Alfadanga"><option value="Boalmari"><option value="Sadarpur"><option value="Nagarkanda"><option value="Bhanga"><option value="Charbhadrasan"><option value="Madhukhali"><option value="Saltha">
+      <option value="Panchagarh-Sadar"><option value="Debiganj"><option value="Boda"><option value="Atwari"><option value="Tetulia">
+      <option value="Nawabganj-Dinajpur"><option value="Birganj"><option value="Ghoraghat"><option value="Birampur"><option value="Parbatipur"><option value="Bochaganj"><option value="Kaharole"><option value="Fulbari-Dinajpur"><option value="Dinajpur-Sadar"><option value="Hakimpur"><option value="Khansama"><option value="Birol"><option value="Chirirbandar">
+      <option value="Lalmonirhat-Sadar"><option value="Kaliganj-Lalmonirhat"><option value="Hatibandha"><option value="Patgram"><option value="Aditmari">
+      <option value="Syedpur"><option value="Domar"><option value="Dimla"><option value="Jaldhaka"><option value="Kishorganj"><option value="Nilphamari-Sadar">
+      <option value="Sadullapur"><option value="Gaibandha-Sadar"><option value="Palashbari"><option value="Saghata"><option value="Gobindaganj"><option value="Sundarganj"><option value="Phulchari">
+      <option value="Thakurgaon-Sadar"><option value="Pirganj-Thakurgaon"><option value="Ranisankail"><option value="Haripur"><option value="Baliadangi">
+      <option value="Rangpur-Sadar"><option value="Gangachara"><option value="Taragonj"><option value="Badargonj"><option value="Mithapukur"><option value="Pirgonj-Rangpur"><option value="Kaunia"><option value="Pirgacha"><option value="Tajhat-Metro">
+      <option value="Kurigram-Sadar"><option value="Nageshwari"><option value="Bhurungamari"><option value="Phulbari-Kurigram"><option value="Rajarhat"><option value="Ulipur"><option value="Chilmari"><option value="Rowmari"><option value="Charrajibpur">
+      <option value="Sherpur-Sadar"><option value="Nalitabari"><option value="Sreebordi"><option value="Nokla"><option value="Jhenaigati"><option value="Fulbaria"><option value="Trishal"><option value="Bhaluka"><option value="Muktagacha"><option value="Mymensingh-Sadar"><option value="Dhobaura"><option value="Phulpur"><option value="Haluaghat"><option value="Gouripur"><option value="Gafargaon"><option value="Iswarganj"><option value="Nandail"><option value="Tarakanda"><option value="Mymensingh-Metro">
+      <option value="Jamalpur-Sadar"><option value="Melandah"><option value="Islampur"><option value="Dewangonj"><option value="Sarishabari"><option value="Madarganj"><option value="Bokshiganj"><option value="Barhatta"><option value="Durgapur-Netrokona"><option value="Kendua"><option value="Atpara"><option value="Madan"><option value="Khaliajuri"><option value="Kalmakanda"><option value="Mohongonj"><option value="Purbadhala"><option value="Netrokona-Sadar"><option value="Doulatpur-Metro"><option value="Labanchora-Metro"><option value="Metro-Chattogram"><option value="Metro-Rangpur"><option value="Metro-Sylhet"><option value="Metro-Barishal"><option value="Metro-Mymensingh">
+      </datalist>
+      <datalist id="div">
+      <option value="Barishal">
+      <option value="Chattogram">
+      <option value="Dhaka">
+      <option value="Khulna">
+      <option value="Mymensingh">
+      <option value="Rajshahi">
+      <option value="Rangpur">
+      <option value="Sylhet">
+      </datalist>
+      <datalist id="bgro">
+      <option value="A+">
+      <option value="A-">
+      <option value="B+">
+      <option value="B-">
+      <option value="O+">
+      <option value="O-">
+      <option value="AB+">
+      <option value="AB-">
+      </datalist>
+      <!--ends data list-->
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      <!-- Firebase -->
+      <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+      <!-- Custom JavaScript -->
+      <script src="../js/fbinit.js"></script>
+      <script src="../js/editPersonal.js"></script>
+   </body>
 </html>

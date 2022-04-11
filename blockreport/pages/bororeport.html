@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/stylenav.css">
+    <!-- Sweet Alert JavaScript -->
+    <script src="../js/sweetalert2.js"></script>
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <!-- Nunito Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
+    <title>Boro Report | Hatibandha</title>
+</head>
+<body class="bg-light">
+
+    <div>
+        <div class="row mx-1">
+            <div class="col-lg-10 col-md-10 offset-lg-1 offset-md-1 bg-white shadow my-5 border border-warning">
+                <div>
+                    <div>
+                        <div id="profileSection">
+						<br>
+						<div class="col-12 col-12 mb-4 text-center">
+                                <span class="h4" style="color:#00b903">বোরো আবাদের অগ্রগতি(হেঃ)</span>
+                            </div>
+							<hr/>
+
+                            <div class="col-12 col-12 mb-3 text-center">
+                                <img style="border-radius: 50%" id="userAvatar" src="../images/boro.jpg" alt="avatar icon" >
+                            </div>
+                             <div class="col-12 col-12 mb-4 text-center">
+                                <span class="h4" style="color:#FF007F" id="pfname">please wait...</span><br>
+                                <span class="h4" style="color:#FF007F" id="pfunion"></span><br>
+								<span>Update Time:  </span><span style="color:blue" id="pflastupdate">_______</span>
+                            </div>
+							<hr/>
+							<span style="color:violet">বোরো আবাদের অগ্রগতি(হেঃ)</span>
+							<hr/>
+							<center><h5>বোরো বীজতলা(জাত অনুযায়ী)-হেঃ<hr/></h5></center>
+							<span>হাইব্রিড:  </span><span style="color:blue" id="pfseedbedhybrid">_______</span><br>
+							<span>উফশি:  </span><span style="color:blue" id="pfseedbedinbrid">_______</span><br>
+							<span>স্থানীয়:  </span><span style="color:blue" id="pfseedbedlocal">_______</span><br>
+
+							<center><h5>বোরো বীজতলা(ধরণ অনুযায়ী)-হেঃ<hr/></h5></center>
+							<span>আদর্শ:  </span><span style="color:blue" id="pfseedbedstandard">_______</span><br>
+							<span>শুকনা:  </span><span style="color:blue" id="pfseedbeddrought">_______</span><br>
+							<span>সাধারণ:  </span><span style="color:blue" id="pfseedbedgeneral">_______</span><br>
+
+							<center><h5>বোরো আবাদ অগ্রগতি(হেঃ)<hr/></h5></center>
+							<span>হাইব্রিড:  </span><span style="color:blue" id="pfachivehybrid">_______</span><br>
+							<span>উফশি:  </span><span style="color:blue" id="pfachiveinbrid">_______</span><br>
+							<span>স্থানীয়:  </span><span style="color:blue" id="pfachivelocal">_______</span><br>
+
+							<center><h5>বোরো ফসলের স্তর পরিস্থিতি(হেঃ)<hr/></h5></center>
+							<span>রিকোভারী:  </span><span style="color:blue" id="pfstage1">_______</span><br>
+							<span>টিলারিং:  </span><span style="color:blue" id="pfstage2">_______</span><br>
+							<span>পিআই:  </span><span style="color:blue" id="pfstage3">_______</span><br>
+							<span>বুটিং:  </span><span style="color:blue" id="pfstage4">_______</span><br>
+							<span>ফ্লাওয়ারিং:  </span><span style="color:blue" id="pfstage5">_______</span><br>
+							<span>মিল্কি:  </span><span style="color:blue" id="pfstage6">_______</span><br>
+							<span>ডাফ:  </span><span style="color:blue" id="pfstage7">_______</span><br>
+							<span>রাইপেনিং:  </span><span style="color:blue" id="pfstage8">_______</span><br>
+							<span>হারভেস্ট:  </span><span style="color:blue" id="pfstage9">_______</span><br>
+							<span>মোট:  </span><span style="color:blue" id="pfstageTotal">_______</span><br>
+
+
+                            <div class="col-lg-12 col-md-12 text-center">
+                                <button type="button" class="btn btn-primary btn-block text-uppercase mb-3" onclick="showEditProfileForm()">
+                                Edit<small><i class="fas fa-pencil-alt ml-2"></i></small></button>
+                                <button type="button" class="btn btn-dark btn-block text-uppercase" onclick="signOut()">
+                                Sign Out<small><i class="fas fa-sign-out-alt ml-2"></i></small></button>
+                            </div>
+                        </div>
+						<div>
+						<br>
+						<button onclick="window.print()">Print info</button>
+						</div>
+                        <div id="editProfileForm">
+                            <h2 class="h2 text-center text-dark mb-3">তথ্য আপডেট করুন</h2>
+                            <div class="form-group">
+                                <label for="name">ডিলারের নাম</label>
+                                <input type="text" class="form-control" id="blockname" onblur="checkblockname()">
+                            </div>
+                            <div class="form-group">
+                                <label for="union">ইউনিয়ন</label>
+                                <input type="text" class="form-control" id="union" onblur="checkunion()">
+                            </div>
+                            <div class="form-group"><label for="lastupdate">lastupdate<span class="text-danger ml-1">*</span></label><input type="datetime-local" class="form-control" id="lastupdate" onblur="checklastupdate()"></div>
+                           <center><h5>বোরো বীজতলা(জাত অনুযায়ী)-হেঃ<hr/></h5></center>
+							<div class="form-group"><label for="seedbedhybrid">হাইব্রিড<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="seedbedhybrid" onblur="checkseedbedhybrid()"></div>
+                            <div class="form-group"><label for="seedbedinbrid">উফশি<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="seedbedinbrid" onblur="checkseedbedinbrid()"></div>
+                            <div class="form-group"><label for="seedbedlocal">স্থানীয়<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="seedbedlocal" onblur="checkseedbedlocal()"></div>
+
+							<center><h5>বোরো বীজতলা(ধরণ অনুযায়ী)-হেঃ<hr/></h5></center>
+							<div class="form-group"><label for="seedbedstandard">আদর্শ<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="seedbedstandard" onblur="checkseedbedstandard()"></div>
+                            <div class="form-group"><label for="seedbeddrought">শুকনা<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="seedbeddrought" onblur="checkseedbeddrought()"></div>
+                            <div class="form-group"><label for="seedbedgeneral">সাধারণ<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="seedbedgeneral" onblur="checkseedbedgeneral()"></div>
+
+							<center><h5>বোরো আবাদ অগ্রগতি(হেঃ)<hr/></h5></center>
+							<div class="form-group"><label for="achivehybrid">হাইব্রিড<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="achivehybrid" onblur="checkachivehybrid()"></div>
+                            <div class="form-group"><label for="achiveinbrid">উফশি<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="achiveinbrid" onblur="checkachiveinbrid()"></div>
+                            <div class="form-group"><label for="achivelocal">স্থানীয়<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="achivelocal" onblur="checkachivelocal()"></div>
+
+							<center><h5>বোরো ফসলের স্তর পরিস্থিতি(হেঃ)<hr/></h5></center>
+							<div class="form-group"><label for="stage1">রিকোভারী<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="stage1" onblur="checkstage1()"></div>
+                            <div class="form-group"><label for="stage2">টিলারিং<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="stage2" onblur="checkstage2()"></div>
+                            <div class="form-group"><label for="stage3">পিআই<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="stage3" onblur="checkstage3()"></div>
+                            <div class="form-group"><label for="stage4">বুটিং<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="stage4" onblur="checkstage4()"></div>
+                            <div class="form-group"><label for="stage5">ফ্লাওয়ারিং<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="stage5" onblur="checkstage5()"></div>
+                            <div class="form-group"><label for="stage6">মিল্কি<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="stage6" onblur="checkstage6()"></div>
+                            <div class="form-group"><label for="stage7">ডাফ<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="stage7" onblur="checkstage7()"></div>
+                            <div class="form-group"><label for="stage8">রাইপেনিং<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="stage8" onblur="checkstage8()"></div>
+                            <div class="form-group"><label for="stage9">হারভেস্ট<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="stage9" onblur="checkstage9()"></div>
+                            <div class="form-group"><label for="stageTotal">মোট<span class="text-danger ml-1">*</span></label><input type="number" class="form-control" id="stageTotal" onblur="checkstageTotal()"></div>
+
+                            <button type="button" class="btn btn-primary btn-block text-uppercase mb-3" onclick="saveProfile()">Save</button>
+                            <button type="button" class="btn btn-dark btn-block text-uppercase" onclick="hideEditProfileForm()">Cancle</button>
+                        </div>
+						<br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+
+
+    <!-- Custom JavaScript -->
+    <script src="../js/fbinit.js"></script>    <script src="../js/12/appboro.js"></script>
+
+    <script src="../js/12/app.js"></script>
+
+</body>
+</html>
