@@ -41,7 +41,7 @@
     </div>
   </div> 
   <div class="dropdown">
-    <button class="dropbtn">District 
+    <button class="dropbtn">Gopalganj 
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
@@ -58,6 +58,18 @@
       <a href="./Rajbari.html">Rajbari</a>
       <a href="./Shariatpur.html">Shariatpur</a>
       <a href="./Tangail.html">Tangail</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Upazila 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="./Gopalganj/Kashiani.html">Kashiani</a>
+      <a href="./Gopalganj/Kotalipara.html">Kotalipara</a>
+      <a href="./Gopalganj/Muksudpur.html">Muksudpur</a>
+      <a href="./Gopalganj/Sadar.html">Sadar</a>
+      <a href="./Gopalganj/Tungipara.html">Tungipara</a>
     </div>
   </div> 
 
@@ -102,7 +114,7 @@
 					
     <script>
       var database = firebase.database();
-      database.ref('projectdemo-oilcrop').orderByChild('division').equalTo('Dhaka').once('value', function(snapshot) {
+      database.ref('projectdemo-oilcrop').orderByChild('district').equalTo('Gopalganj').once('value', function(snapshot) {
         if (snapshot.exists()) {
           var content = '';
           snapshot.forEach(function(data) {

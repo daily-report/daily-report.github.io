@@ -41,7 +41,7 @@
     </div>
   </div> 
   <div class="dropdown">
-    <button class="dropbtn">District 
+    <button class="dropbtn">Manikganj 
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
@@ -58,6 +58,20 @@
       <a href="./Rajbari.html">Rajbari</a>
       <a href="./Shariatpur.html">Shariatpur</a>
       <a href="./Tangail.html">Tangail</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Upazila 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="./Manikganj/Doulatpur.html">Doulatpur</a>
+      <a href="./Manikganj/Gior.html">Gior</a>
+      <a href="./Manikganj/Harirampur.html">Harirampur</a>
+      <a href="./Manikganj/Sadar.html">Sadar</a>
+      <a href="./Manikganj/Saturia.html">Saturia</a>
+      <a href="./Manikganj/Shibaloy.html">Shibaloy</a>
+      <a href="./Manikganj/Singiar.html">Singiar</a>
     </div>
   </div> 
 
@@ -102,7 +116,7 @@
 					
     <script>
       var database = firebase.database();
-      database.ref('projectdemo-oilcrop').orderByChild('division').equalTo('Dhaka').once('value', function(snapshot) {
+      database.ref('projectdemo-oilcrop').orderByChild('district').equalTo('Manikganj').once('value', function(snapshot) {
         if (snapshot.exists()) {
           var content = '';
           snapshot.forEach(function(data) {
