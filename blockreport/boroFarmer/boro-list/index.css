@@ -80,7 +80,6 @@ tr:nth-child(even) {background-color: #f2f2f2;}
   padding: 12px;
 }
 
-/*
 
 #myTable tr td:first-child::before {
     content: counter(rowNumber);
@@ -97,4 +96,3 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 #myTable tr.header, #myTable tr:hover {
   background-color: #f1f1f1;
 }
-*/
