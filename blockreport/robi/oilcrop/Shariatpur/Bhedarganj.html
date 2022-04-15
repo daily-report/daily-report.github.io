@@ -3,9 +3,9 @@
   <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="./../topbar.css">
-<link rel="stylesheet" type="text/css" href="./../../../css/index.css">
-		<link rel="stylesheet" href="./../../../css/stylenav.css">
+<link rel="stylesheet" href="./../../topbar.css">
+<link rel="stylesheet" type="text/css" href="./../../../../css/index.css">
+		<link rel="stylesheet" href="./../../../../css/stylenav.css">
 
   
   
@@ -25,39 +25,52 @@
 
 <body>
 <div class="navbar">
-  <a href="./../../../index.html">Home</a>  <div class="dropdown">
+  <a href="./../../../../index.html">Home</a>  <div class="dropdown">
     <button class="dropbtn">Dhaka 
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-      <a href="./../barisal-div/index.html">Barishal</a>
-      <a href="./../Chattagram-div/index.html">Chattogram</a>
-      <a href="./../dhaka-div/index.html">Dhaka</a>
-      <a href="./../khulna-div/index.html">Khulna</a>
-      <a href="./../mymensingh-div/index.html">Mymensingh</a>
-      <a href="./../Rajshahi-div/index.html">Rajshahi</a>
-      <a href="./../Rangpur-div/index.html">Rangpur</a>
-      <a href="./../sylhet-div/index.html">Sylhet</a>
+      <a href="./../../barisal-div/index.html">Barishal</a>
+      <a href="./../../Chattagram-div/index.html">Chattogram</a>
+      <a href="./../../dhaka-div/index.html">Dhaka</a>
+      <a href="./../../khulna-div/index.html">Khulna</a>
+      <a href="./../../mymensingh-div/index.html">Mymensingh</a>
+      <a href="./../../Rajshahi-div/index.html">Rajshahi</a>
+      <a href="./../../Rangpur-div/index.html">Rangpur</a>
+      <a href="./../../sylhet-div/index.html">Sylhet</a>
     </div>
   </div> 
   <div class="dropdown">
-    <button class="dropbtn">District 
+    <button class="dropbtn">Shariatpur 
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-      <a href="./Dhaka.html">Dhaka</a>
-      <a href="./Faridpur.html">Faridpur</a>
-      <a href="./Gazipur.html">Gazipur</a>
-      <a href="./Gopalganj.html">Gopalganj</a>
-      <a href="./Kishoreganj.html">Kishoreganj</a>
-      <a href="./Madaripur.html">Madaripur</a>
-      <a href="./Manikganj.html">Manikganj</a>
-      <a href="./Munshiganj.html">Munshiganj</a>
-      <a href="./Narayanganj.html">Narayanganj</a>
-      <a href="./Narsingdi.html">Narsingdi</a>
-      <a href="./Rajbari.html">Rajbari</a>
-      <a href="./Shariatpur.html">Shariatpur</a>
-      <a href="./Tangail.html">Tangail</a>
+      <a href="./../Dhaka.html">Dhaka</a>
+      <a href="./../Faridpur.html">Faridpur</a>
+      <a href="./../Gazipur.html">Gazipur</a>
+      <a href="./../Gopalganj.html">Gopalganj</a>
+      <a href="./../Kishoreganj.html">Kishoreganj</a>
+      <a href="./../Madaripur.html">Madaripur</a>
+      <a href="./../Manikganj.html">Manikganj</a>
+      <a href="./../Munshiganj.html">Munshiganj</a>
+      <a href="./../Narayanganj.html">Narayanganj</a>
+      <a href="./../Narsingdi.html">Narsingdi</a>
+      <a href="./../Rajbari.html">Rajbari</a>
+      <a href="./../Shariatpur.html">Shariatpur</a>
+      <a href="./../Tangail.html">Tangail</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Bhedarganj 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="./../Shariatpur/Bhedarganj.html">Bhedarganj</a>
+      <a href="./../Shariatpur/Damudya.html">Damudya</a>
+      <a href="./../Shariatpur/Gosairhat.html">Gosairhat</a>
+      <a href="./../Shariatpur/Naria.html">Naria</a>
+      <a href="./../Shariatpur/Sadar.html">Sadar</a>
+      <a href="./../Shariatpur/Zajira.html">Zajira</a>
     </div>
   </div> 
 
@@ -102,7 +115,7 @@
 					
     <script>
       var database = firebase.database();
-      database.ref('projectdemo-oilcrop').orderByChild('division').equalTo('Dhaka').once('value', function(snapshot) {
+      database.ref('projectdemo-oilcrop').orderByChild('upazila').equalTo('Bhedarganj').once('value', function(snapshot) {
         if (snapshot.exists()) {
           var content = '';
           snapshot.forEach(function(data) {

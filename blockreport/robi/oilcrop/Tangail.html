@@ -41,7 +41,7 @@
     </div>
   </div> 
   <div class="dropdown">
-    <button class="dropbtn">District 
+    <button class="dropbtn">Tangail 
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
@@ -58,6 +58,25 @@
       <a href="./Rajbari.html">Rajbari</a>
       <a href="./Shariatpur.html">Shariatpur</a>
       <a href="./Tangail.html">Tangail</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Upazila 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="./Tangail/Basail.html">Basail</a>
+      <a href="./Tangail/Bhuapur.html">Bhuapur</a>
+      <a href="./Tangail/Delduar.html">Delduar</a>
+      <a href="./Tangail/Dhanbari.html">Dhanbari</a>
+      <a href="./Tangail/Ghatail.html">Ghatail</a>
+      <a href="./Tangail/Gopalpur.html">Gopalpur</a>
+      <a href="./Tangail/Kalihati.html">Kalihati</a>
+      <a href="./Tangail/Madhupur.html">Madhupur</a>
+      <a href="./Tangail/Mirzapur.html">Mirzapur</a>
+      <a href="./Tangail/Nagarpur.html">Nagarpur</a>
+      <a href="./Tangail/Sadar.html">Sadar</a>
+      <a href="./Tangail/Sakhipur.html">Sakhipur</a>
     </div>
   </div> 
 
@@ -102,7 +121,7 @@
 					
     <script>
       var database = firebase.database();
-      database.ref('projectdemo-oilcrop').orderByChild('division').equalTo('Dhaka').once('value', function(snapshot) {
+      database.ref('projectdemo-oilcrop').orderByChild('district').equalTo('Tangail').once('value', function(snapshot) {
         if (snapshot.exists()) {
           var content = '';
           snapshot.forEach(function(data) {
