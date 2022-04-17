@@ -1,72 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="./../topbar.css">
-<link rel="stylesheet" type="text/css" href="./../../../css/index.css">
-		<link rel="stylesheet" href="./../../../css/stylenav.css">
+<link rel="stylesheet" href="topbar.css">
+<link rel="stylesheet" type="text/css" href="../../css/index.css">
+		<link rel="stylesheet" href="../../css/stylenav.css">
 
   
   
-  
-
   
     <title>oilcrop</title>
     <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-   <script src="../../../js/fbinit.js"></script>
+   <script src="../../js/fbinit.js"></script>
    
-   
-	
 </head>
-
-
-
 <body>
+
 <div class="navbar">
-  <a href="./../../../index.html">Home</a>  <div class="dropdown">
-    <button class="dropbtn">Dhaka 
+  <a href="./../../index.html">Home</a>  <div class="dropdown">
+    <button class="dropbtn">Division 
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-      <a href="./../barisal-div/index.html">Barishal</a>
-      <a href="./../Chattagram-div/index.html">Chattogram</a>
-      <a href="./../dhaka-div/index.html">Dhaka</a>
-      <a href="./../khulna-div/index.html">Khulna</a>
-      <a href="./../mymensingh-div/index.html">Mymensingh</a>
-      <a href="./../Rajshahi-div/index.html">Rajshahi</a>
-      <a href="./../Rangpur-div/index.html">Rangpur</a>
-      <a href="./../sylhet-div/index.html">Sylhet</a>
+      <a href="./barisal-div/index.html">Barishal</a>
+      <a href="./Chattagram-div/index.html">Chattagram</a>
+      <a href="./dhaka-div/index.html">Dhaka</a>
+      <a href="./khulna-div/index.html">Khulna</a>
+      <a href="./mymensingh-div/index.html">Mymensingh</a>
+      <a href="./Rajshahi-div/index.html">Rajshahi</a>
+      <a href="./Rangpur-div/index.html">Rangpur</a>
+      <a href="./sylhet-div/index.html">Sylhet</a>
     </div>
   </div> 
-  <div class="dropdown">
-    <button class="dropbtn">District 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="./Dhaka.html">Dhaka</a>
-      <a href="./Faridpur.html">Faridpur</a>
-      <a href="./Gazipur.html">Gazipur</a>
-      <a href="./Gopalganj.html">Gopalganj</a>
-      <a href="./Kishoreganj.html">Kishoreganj</a>
-      <a href="./Madaripur.html">Madaripur</a>
-      <a href="./Manikganj.html">Manikganj</a>
-      <a href="./Munshiganj.html">Munshiganj</a>
-      <a href="./Narayanganj.html">Narayanganj</a>
-      <a href="./Narsingdi.html">Narsingdi</a>
-      <a href="./Rajbari.html">Rajbari</a>
-      <a href="./Shariatpur.html">Shariatpur</a>
-      <a href="./Tangail.html">Tangail</a>
-    </div>
-  </div> 
-
- </div>
-
+</div>
  
- <!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">-->
-
-  
   <h4 style="text-align: center;"><span style="color: #800000;">তেল জাতীয় ফসল উৎপাদন বৃদ্ধি প্রকল্প</span></h4> 
   <div style="overflow-x:auto;">
     <table border="1" align="center" table rules="all" style="width:100%" id="myTable">
@@ -102,19 +71,19 @@
 					
     <script>
       var database = firebase.database();
-      database.ref('projectdemo-oilcrop').orderByChild('division').equalTo('Dhaka').once('value', function(snapshot) {
+      database.ref('projectdemo-oilcrop').orderByChild('division').once('value', function(snapshot) {
         if (snapshot.exists()) {
           var content = '';
           snapshot.forEach(function(data) {
             var val = data.val();
             content += '<tr>';
             content += '<td>' + val.blockname + '<br>' + val.union + '<br>' + val.lastupdate + '</td>';
-      content += '<td>' + val.oilcropfarmer1 + '</td>';content += '<td>' + val.oilcropfarmer1address + '<br>' + '</td>';content += '<td>' + val.oilcropfarmer1nid + '<br>'  + val.oilcropfarmer1mobile + '</td>';content += '<td>' + val.oilcropfarmer1variety + '<br>' + '</td>';content += '<td>' + val.oilcropfarmer1date + '<br>' + '</td>';content += '<td>' + val.oilcropfarmer1comment + '<br>' + '</td>';            
+			content += '<td>' + val.oilcropfarmer1 + '</td>';content += '<td>' + val.oilcropfarmer1address + '<br>' + '</td>';content += '<td>' + val.oilcropfarmer1nid + '<br>'  + val.oilcropfarmer1mobile + '</td>';content += '<td>' + val.oilcropfarmer1variety + '<br>' + '</td>';content += '<td>' + val.oilcropfarmer1date + '<br>' + '</td>';content += '<td>' + val.oilcropfarmer1comment + '<br>' + '</td>';            
             content += '<td>' + val.oilcropfarmer2 + '</td>';content += '<td>' + val.oilcropfarmer2address + '<br>' + '</td>';content += '<td>' + val.oilcropfarmer2nid + '<br>'  + val.oilcropfarmer2mobile + '</td>';content += '<td>' + val.oilcropfarmer2variety + '<br>' + '</td>';content += '<td>' + val.oilcropfarmer2date + '<br>' + '</td>';content += '<td>' + val.oilcropfarmer2comment + '<br>' + '</td>';
             content += '<td>' + val.oilcropfarmer3 + '</td>';content += '<td>' + val.oilcropfarmer3address + '<br>' + '</td>';content += '<td>' + val.oilcropfarmer3nid + '<br>'  + val.oilcropfarmer3mobile + '</td>';content += '<td>' + val.oilcropfarmer3variety + '<br>' + '</td>';content += '<td>' + val.oilcropfarmer3date + '<br>' + '</td>';content += '<td>' + val.oilcropfarmer3comment + '<br>' + '</td>';
             content += '<td>' + val.oilcropfarmer4 + '</td>';content += '<td>' + val.oilcropfarmer4address + '<br>' + '</td>';content += '<td>' + val.oilcropfarmer4nid + '<br>'  + val.oilcropfarmer4mobile + '</td>';content += '<td>' + val.oilcropfarmer4variety + '<br>' + '</td>';content += '<td>' + val.oilcropfarmer4date + '<br>' + '</td>';content += '<td>' + val.oilcropfarmer4comment + '<br>' + '</td>';
             content += '<td>' + val.oilcropfarmer5 + '</td>';content += '<td>' + val.oilcropfarmer5address + '<br>' + '</td>';content += '<td>' + val.oilcropfarmer5nid + '<br>'  + val.oilcropfarmer5mobile + '</td>';content += '<td>' + val.oilcropfarmer5variety + '<br>' + '</td>';content += '<td>' + val.oilcropfarmer5date + '<br>' + '</td>';content += '<td>' + val.oilcropfarmer5comment + '<br>' + '</td>';
-            			content += '<td>' + val.oilcropfarmer6 + '</td>';content += '<td>' + val.oilcropfarmer6address + '<br>' + '</td>';content += '<td>' + val.oilcropfarmer6nid + '<br>'  + val.oilcropfarmer6mobile + '</td>';content += '<td>' + val.oilcropfarmer6variety + '<br>' + '</td>';content += '<td>' + val.oilcropfarmer6date + '<br>' + '</td>';content += '<td>' + val.oilcropfarmer6comment + '<br>' + '</td>';
+            content += '<td>' + val.oilcropfarmer6 + '</td>';content += '<td>' + val.oilcropfarmer6address + '<br>' + '</td>';content += '<td>' + val.oilcropfarmer6nid + '<br>'  + val.oilcropfarmer6mobile + '</td>';content += '<td>' + val.oilcropfarmer6variety + '<br>' + '</td>';content += '<td>' + val.oilcropfarmer6date + '<br>' + '</td>';content += '<td>' + val.oilcropfarmer6comment + '<br>' + '</td>';
 
             content += '</tr>';
           });
@@ -181,12 +150,5 @@ function myFunction() {
 }
 </script>
 
-	</body>
-	
+</body>
 </html>
-	
-	
-	
-	
-	
-	
