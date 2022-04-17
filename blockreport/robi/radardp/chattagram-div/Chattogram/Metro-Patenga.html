@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./../../topbar.css">
+<link rel="stylesheet" type="text/css" href="./../../../../css/index.css">
+		<link rel="stylesheet" href="./../../../../css/stylenav.css">
+
+  
+  
+  
+
+  
+    <title>radardp</title>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+   <script src="../../../js/fbinit.js"></script>
+   
+   
+	
+</head>
+
+
+
+<body>
+<div class="navbar">
+  <a href="./../../../../index.html">Home</a>  <div class="dropdown">
+    <button class="dropbtn">Chattogram 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="./../../barisal-div/index.html">Barishal</a>
+      <a href="./../../chattagram-div/index.html">Chattogram</a>
+      <a href="./../../dhaka-div/index.html">Dhaka</a>
+      <a href="./../../khulna-div/index.html">Khulna</a>
+      <a href="./../../mymensingh-div/index.html">Mymensingh</a>
+      <a href="./../../rajshahi-div/index.html">Rajshahi</a>
+      <a href="./../../rangpur-div/index.html">Rangpur</a>
+      <a href="./../../sylhet-div/index.html">Sylhet</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Chattogram 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="./../Bandarban.html">Bandarban</a>
+      <a href="./../Brahmanbaria.html">Brahmanbaria</a>
+      <a href="./../Chandpur.html">Chandpur</a>
+      <a href="./../Chattogram.html">Chattogram</a>
+      <a href="./../Coxbazar.html">Coxbazar</a>
+      <a href="./../Cumilla.html">Cumilla</a>
+      <a href="./../Feni.html">Feni</a>
+      <a href="./../Khagrachhari.html">Khagrachhari</a>
+      <a href="./../Lakshmipur.html">Lakshmipur</a>
+      <a href="./../Noakhali.html">Noakhali</a>
+      <a href="./../Rangamati.html">Rangamati</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Metro-Patenga 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="./../Chattogram/Anwara.html">Anwara</a>
+      <a href="./../Chattogram/Banshkhali.html">Banshkhali</a>
+      <a href="./../Chattogram/Boalkhali.html">Boalkhali</a>
+      <a href="./../Chattogram/Chandanaish.html">Chandanaish</a>
+      <a href="./../Chattogram/Fatikchhari.html">Fatikchhari</a>
+      <a href="./../Chattogram/Hathazari.html">Hathazari</a>
+      <a href="./../Chattogram/Karnafuli.html">Karnafuli</a>
+      <a href="./../Chattogram/Lohagara.html">Lohagara</a>
+      <a href="./../Chattogram/Metro-Patenga.html">Metro-Patenga</a>
+      <a href="./../Chattogram/Mirsharai.html">Mirsharai</a>
+      <a href="./../Chattogram/Patiya.html">Patiya</a>
+      <a href="./../Chattogram/Rangunia.html">Rangunia</a>
+      <a href="./../Chattogram/Raozan.html">Raozan</a>
+      <a href="./../Chattogram/Sadar.html">Sadar</a>
+      <a href="./../Chattogram/Sandwip.html">Sandwip</a>
+      <a href="./../Chattogram/Satkania.html">Satkania</a>
+      <a href="./../Chattogram/Sitakunda.html">Sitakunda</a>
+    </div>
+  </div> 
+
+ </div>
+
+ 
+ <!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">-->
+
+  
+  <h4 style="text-align: center;"><span style="color: #800000;">রংপুর বিভাগ কৃষি ও গ্রামীণ উন্নয়ন প্রকল্প</span></h4> 
+  <div style="overflow-x:auto;">
+    <table border="1" align="center" table rules="all" style="width:100%" id="myTable">
+    <tr id="tr">
+	<th rowspan= "2"  style="text-align:center">ব্লকের <br> নাম</th>
+	<th colspan= "6" style="text-align:center"> প্রদর্শনী-১</th><th colspan= "6" style="text-align:center"> প্রদর্শনী-২</th><th colspan= "6" style="text-align:center"> প্রদর্শনী-৩</th>
+	<th colspan= "6" style="text-align:center"> প্রদর্শনী-৪</th><th colspan= "6" style="text-align:center"> প্রদর্শনী-৫</th><th colspan= "6" style="text-align:center"> প্রদর্শনী-৬</th>
+	
+       <tr> 
+        
+        
+        <th>নাম </th><th>ঠিকানা </th><th>এনআইডি ও মোবাইল নং</th><th>জাত</th><th>স্থপনের তারিখ</th><th>অবস্থা/মন্তব্য</th><th>নাম </th><th>ঠিকানা </th><th>এনআইডি ও মোবাইল নং</th><th>জাত</th><th>স্থপনের তারিখ</th><th>অবস্থা/মন্তব্য</th><th>নাম </th><th>ঠিকানা </th><th>এনআইডি ও মোবাইল নং</th><th>জাত</th><th>স্থপনের তারিখ</th><th>অবস্থা/মন্তব্য</th><th>নাম </th><th>ঠিকানা </th><th>এনআইডি ও মোবাইল নং</th><th>জাত</th><th>স্থপনের তারিখ</th><th>অবস্থা/মন্তব্য</th><th>নাম </th><th>ঠিকানা </th><th>এনআইডি ও মোবাইল নং</th><th>জাত</th><th>স্থপনের তারিখ</th><th>অবস্থা/মন্তব্য</th><th>নাম </th><th>ঠিকানা </th><th>এনআইডি ও মোবাইল নং</th><th>জাত</th><th>স্থপনের তারিখ</th><th>অবস্থা/মন্তব্য</th>
+        
+		
+        
+		
+		
+        
+        
+		
+        
+        
+ 
+</tr>
+
+      </tr>
+	</table>
+		<div>
+			<br>
+			<button onclick="window.print()">Print info</button>
+		</div> 
+			<button onclick="exportTableToExcel('myTable')">Export Table Data To Excel File</button>
+					
+    <script>
+      var database = firebase.database();
+      database.ref('projectdemo-radardp').orderByChild('upazila').equalTo('Metro-Patenga').once('value', function(snapshot) {
+        if (snapshot.exists()) {
+          var content = '';
+          snapshot.forEach(function(data) {
+            var val = data.val();
+            content += '<tr>';
+            content += '<td>' + val.blockname + '<br>' + val.union + '<br>' + val.lastupdate + '</td>';
+      content += '<td>' + val.radardpfarmer1 + '</td>';content += '<td>' + val.radardpfarmer1address + '<br>' + '</td>';content += '<td>' + val.radardpfarmer1nid + '<br>'  + val.radardpfarmer1mobile + '</td>';content += '<td>' + val.radardpfarmer1variety + '<br>' + '</td>';content += '<td>' + val.radardpfarmer1date + '<br>' + '</td>';content += '<td>' + val.radardpfarmer1comment + '<br>' + '</td>';            
+            content += '<td>' + val.radardpfarmer2 + '</td>';content += '<td>' + val.radardpfarmer2address + '<br>' + '</td>';content += '<td>' + val.radardpfarmer2nid + '<br>'  + val.radardpfarmer2mobile + '</td>';content += '<td>' + val.radardpfarmer2variety + '<br>' + '</td>';content += '<td>' + val.radardpfarmer2date + '<br>' + '</td>';content += '<td>' + val.radardpfarmer2comment + '<br>' + '</td>';
+            content += '<td>' + val.radardpfarmer3 + '</td>';content += '<td>' + val.radardpfarmer3address + '<br>' + '</td>';content += '<td>' + val.radardpfarmer3nid + '<br>'  + val.radardpfarmer3mobile + '</td>';content += '<td>' + val.radardpfarmer3variety + '<br>' + '</td>';content += '<td>' + val.radardpfarmer3date + '<br>' + '</td>';content += '<td>' + val.radardpfarmer3comment + '<br>' + '</td>';
+            content += '<td>' + val.radardpfarmer4 + '</td>';content += '<td>' + val.radardpfarmer4address + '<br>' + '</td>';content += '<td>' + val.radardpfarmer4nid + '<br>'  + val.radardpfarmer4mobile + '</td>';content += '<td>' + val.radardpfarmer4variety + '<br>' + '</td>';content += '<td>' + val.radardpfarmer4date + '<br>' + '</td>';content += '<td>' + val.radardpfarmer4comment + '<br>' + '</td>';
+            content += '<td>' + val.radardpfarmer5 + '</td>';content += '<td>' + val.radardpfarmer5address + '<br>' + '</td>';content += '<td>' + val.radardpfarmer5nid + '<br>'  + val.radardpfarmer5mobile + '</td>';content += '<td>' + val.radardpfarmer5variety + '<br>' + '</td>';content += '<td>' + val.radardpfarmer5date + '<br>' + '</td>';content += '<td>' + val.radardpfarmer5comment + '<br>' + '</td>';
+            			content += '<td>' + val.radardpfarmer6 + '</td>';content += '<td>' + val.radardpfarmer6address + '<br>' + '</td>';content += '<td>' + val.radardpfarmer6nid + '<br>'  + val.radardpfarmer6mobile + '</td>';content += '<td>' + val.radardpfarmer6variety + '<br>' + '</td>';content += '<td>' + val.radardpfarmer6date + '<br>' + '</td>';content += '<td>' + val.radardpfarmer6comment + '<br>' + '</td>';
+
+            content += '</tr>';
+          });
+          $('#myTable').append(content);
+        }
+      });
+    </script>
+	
+	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+		
+		<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+<script>function exportTableToExcel(myTable, filename = ''){
+    var downloadLink;
+    var dataType = 'application/vnd.ms-excel';
+    var tableSelect = document.getElementById(myTable);
+    var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+    
+    // Specify file name
+    filename = filename?filename+'.xls':'excel_data.xls';
+    
+    // Create download link element
+    downloadLink = document.createElement("a");
+    
+    document.body.appendChild(downloadLink);
+    
+    if(navigator.msSaveOrOpenBlob){
+        var blob = new Blob(['\ufeff', tableHTML], {
+            type: dataType
+        });
+        navigator.msSaveOrOpenBlob( blob, filename);
+    }else{
+        // Create a link to the file
+        downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+    
+        // Setting the file name
+        downloadLink.download = filename;
+        
+        //triggering the function
+        downloadLink.click();
+    }
+}
+</script>
+
+	</body>
+	
+</html>
+	
+	
+	
+	
+	
+	
