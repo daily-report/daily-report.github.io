@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./../../topbar.css">
+<link rel="stylesheet" type="text/css" href="./../../../../css/index.css">
+		<link rel="stylesheet" href="./../../../../css/stylenav.css">
+
+  
+  
+  
+
+  
+    <title>Aus Report</title>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+   <script src="../../../js/fbinit.js"></script>
+   
+   
+	
+</head>
+
+
+
+<body>
+<div class="navbar">
+    <a href="./../../../../index.html">Home</a>  <div class="dropdown">
+    <button class="dropbtn">Rajshahi 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="./../../barisal-div/index.html">Barishal</a>
+      <a href="./../../Chattagram-div/index.html">Chattagram</a>
+      <a href="./../../dhaka-div/index.html">Dhaka</a>
+      <a href="./../../khulna-div/index.html">Khulna</a>
+      <a href="./../../mymensingh-div/index.html">Mymensingh</a>
+      <a href="./../../Rajshahi-div/index.html">Rajshahi</a>
+      <a href="./../../Rangpur-div/index.html">Rangpur</a>
+      <a href="./../../sylhet-div/index.html">Sylhet</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Bogra 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="./../Bogra.html">Bogra</a>
+      <a href="./../Chapainawabganj.html">Chapainawabganj</a>
+      <a href="./../Joypurhat.html">Joypurhat</a>
+      <a href="./../Naogaon.html">Naogaon</a>
+      <a href="./../Natore.html">Natore</a>
+      <a href="./../Pabna.html">Pabna</a>
+      <a href="./../Rajshahi.html">Rajshahi</a>
+      <a href="./../Sirajganj.html">Sirajganj</a>
+    </div>
+  </div> 
+ <div class="dropdown">
+    <button class="dropbtn">Sonatala 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="./../Bogra/Adamdighi.html">Adamdighi</a>
+      <a href="./../Bogra/Dhunot.html">Dhunot</a>
+      <a href="./../Bogra/Dupchanchia.html">Dupchanchia</a>
+      <a href="./../Bogra/Gabtali.html">Gabtali</a>
+      <a href="./../Bogra/Kahaloo.html">Kahaloo</a>
+      <a href="./../Bogra/Nondigram.html">Nondigram</a>
+      <a href="./../Bogra/Sadar.html">Sadar</a>
+      <a href="./../Bogra/Shajahanpur.html">Shajahanpur</a>
+      <a href="./../Bogra/Shariakandi.html">Shariakandi</a>
+      <a href="./../Bogra/Sherpur.html">Sherpur</a>
+      <a href="./../Bogra/Shibganj.html">Shibganj</a>
+      <a href="./../Bogra/Sonatala.html">Sonatala</a>
+    </div>
+  </div> 
+
+ </div>
+
+ 
+ <!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">-->
+
+  
+  <h4 style="text-align: center;"><span style="color: #800000;">আউশ আবাদ পরিস্থিতি</span></h4> 
+  <div style="overflow-x:auto;">
+    <table border="1" align="center" table rules="all" style="width:100%" id="myTable">
+    <tr id="tr">
+	<th rowspan= "2"  style="text-align:center">ব্লকের <br> নাম</th>
+	<th colspan= "4" style="text-align:center">আউশ আবাদের অগ্রগতি(হেঃ)</th>
+	<th colspan= "10" style="text-align:center">আউশ আবাদের স্তর পরিস্থিতি(%)</th>
+	
+	
+	
+	
+	
+	
+	
+	
+       <tr> 
+	    
+        
+        
+        
+        
+		
+        
+        <th>হাইব্রিড</th><th>উফশী</th><th>স্থানীয়</th><th>মোট</th><th>রিকভারী</th><th>টিলারিং</th><th>গড় পিআই</th><th>বুটিং</th><th>ফ্লাওয়ারিং </th><th>মিল্কি</th><th>ডাফ</th><th>রাইপেনিং</th><th>হারভেস্ট</th><th>মোট</th>
+		
+		
+        
+		
+        
+ 
+</tr>
+
+      </tr>
+	</table>
+		<div>
+			<br>
+			<button onclick="window.print()">Print info</button>
+		</div> 
+			<button onclick="exportTableToExcel('myTable')">Export Table Data To Excel File</button>
+					
+    <script>
+      var database = firebase.database();
+      database.ref('aus').orderByChild('upazila').equalTo('Sonatala').once('value', function(snapshot) {
+        if (snapshot.exists()) {
+          var content = '';
+          snapshot.forEach(function(data) {
+            var val = data.val();
+            content += '<tr>';
+            content += '<td>' + val.blockname + '<br>' + val.union + '<br>' + val.lastupdate + '</td>';
+            content += '<td>' + val.aushybrid + '</td>';
+            content += '<td>' + val.ausinbrid + '</td>';
+            content += '<td>' + val.auslocal + '</td>';
+            content += '<td>' + val.austotal + '</td>';
+            content += '<td>' + val.ausrecovery + '</td>';
+            content += '<td>' + val.austillering + '</td>';
+            content += '<td>' + val.auspi+ '</td>';
+            content += '<td>' + val.ausbooting + '</td>';
+            content += '<td>' + val.ausflowering + '</td>';
+            content += '<td>' + val.ausmilking + '</td>';
+            content += '<td>' + val.ausdough + '</td>';
+            content += '<td>' + val.ausripening + '</td>';
+            content += '<td>' + val.ausharvest + '</td>';
+            content += '<td>' + val.austotlapercent + '</td>';
+
+            content += '</tr>';
+          });
+          $('#myTable').append(content);
+        }
+      });
+    </script>
+	
+	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+		
+		<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+<script>function exportTableToExcel(myTable, filename = ''){
+    var downloadLink;
+    var dataType = 'application/vnd.ms-excel';
+    var tableSelect = document.getElementById(myTable);
+    var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+    
+    // Specify file name
+    filename = filename?filename+'.xls':'excel_data.xls';
+    
+    // Create download link element
+    downloadLink = document.createElement("a");
+    
+    document.body.appendChild(downloadLink);
+    
+    if(navigator.msSaveOrOpenBlob){
+        var blob = new Blob(['\ufeff', tableHTML], {
+            type: dataType
+        });
+        navigator.msSaveOrOpenBlob( blob, filename);
+    }else{
+        // Create a link to the file
+        downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+    
+        // Setting the file name
+        downloadLink.download = filename;
+        
+        //triggering the function
+        downloadLink.click();
+    }
+}
+</script>
+
+	</body>
+	
+</html>
+	
+	
+	
+	
+	
+	
