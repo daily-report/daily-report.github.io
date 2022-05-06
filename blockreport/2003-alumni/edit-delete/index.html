@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SSC-2003 | Alumni | RSC</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+<center>
+    <h1>Edit/Delete Member
+        <br/><small><em>SSC-2003 | Alumni | RSC</em></small>
+    </h1>
+</center>
+
+    <!-- add user module -->
+<!--    <section id="add-user-module" >
+        <button id="open-add-user-form-btn">+</button>
+        <form>
+            <h2>Add User</h2>
+            name:<br>
+            <input type='text' data-key='name' class='user-input'><br>
+            age:<br>
+            <input type='text' data-key='age' class='user-input'><br>
+            email:<br>
+            <input type='text' data-key='email' class='user-input'><br>
+            <button type='button' id="add-user-btn">add user</button>
+        </form>
+    </section>
+-->
+    <!-- edit user module -->
+    <section id="edit-user-module">
+        <form>
+            <h2>Edit user</h2>
+            <input type="hidden" class="edit-userid">
+            name:<br>
+            <input type='text' data-key='name' class='edit-user-input'><br>
+            Village:<br>
+            <input type='text' data-key='company' class='edit-user-input'><br>
+            Phone:<br>
+            <input type='text' data-key='phone' class='edit-user-input'><br>
+            Informer:<br>
+            <input type='text' data-key='message' class='edit-user-input'><br>
+            <button type='button' id="edit-user-btn">save</button>
+        </form>
+    </section>
+
+
+    <!-- show user module -->
+    <ul id="user-list"></ul>
+    <div id="user-detail"></div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+
+  </body>
+
+</html>
